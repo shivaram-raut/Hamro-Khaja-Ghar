@@ -19,7 +19,7 @@
             <div class="logo">
                 <img src="images/logo.png" class="image-responsive">
             </div>
-            <div class="menu text-right">
+            <div class="menu">
                 <ul>
                     <li>
                         <a href="#">Home</a>
@@ -28,32 +28,29 @@
                         <a href="#">Foods</a>
                     </li>
                     <li>
-                        <a href="#">Cart</a>
-                    </li>
-                    <li>
-                        <a href="#">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Us</a>
+                        <a href="#">Login </a>
                     </li>
                 </ul>
             </div>
             <div class="clear-fix"></div>
+        </div>
+        <div class="nav-cart-icon">
+            <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
         </div>
 
     </section>
     <!-- navigation-bar Section  ends here-->
 
     <!-- search-food Section -->
-    <section class="search-food text-center">
+    <section class="search-food">
         <div class="container">
             <form action="">
                 <input type="search" name="searched-food" id="searched-food"
                     placeholder="Search your favourite food here..." autocomplete="off">
-                <input type="submit" name="submit" value="Search" class="btn">
+                <input type="submit" name="submit" value="Search">
             </form>
-            <div class="active-hour">
-                <span> <b>Active Hours<br> 7:00 AM - 10:00 PM </b> </span>
+            <div class="active-hour btn">
+                <span> Active Hours<br> 7:00 AM - 10:00 PM </span>
             </div>
         </div>
 
@@ -64,7 +61,7 @@
     <section class="categories">
         <div class="container">
             <h2 class="text-center"> Featured Categories</h2>
-            <p class="text-center add-padding">We currently serve the following categories of food. Click on your
+            <p class="text-center add-bottom-padding">We currently serve the following categories of food. Click on your
                 favourite category
                 to see the menu.</p>
             <div class="cat-grid-container">
@@ -84,6 +81,11 @@
                 </div>
             </div>
         </div>
+        <a href="#">
+            <div class="view-all btn">
+                <span> View All Categories </span> 
+            </div>
+        </a>
     </section>
     <!-- categories section ends here -->
 
@@ -91,7 +93,8 @@
     <!-- food-menu section starts here -->
     <section class="food-menu">
         <div class="container">
-            <h2 class="text-center ">Menu</h2>
+            <h2 class="text-center"> Featured Foods</h2>
+            <p class="text-center add-bottom-padding">These are the popupar foods we serve.</p>
             <div class="menu-grid-container">
                 <div class="food-menu-box">
                     <div class="food-menu-image">
@@ -185,7 +188,22 @@
                     <div class="food-details">
                         <div class="food-name">Food Name </div>
                         <div class="food-price">Rs 500.00</div>
-                        <div class="food-description"> Food Description, this line is expected to be.. </div>
+                        <div class="food-description"> Food Description, this line is expected to be longer as as as sometimes. Let's see if this works. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fuga, culpa quisquam non labore quas, iusto eius perspiciatis  </div>
+                        <div class="cart-btn">
+                            <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
+                        </div>
+                    </div>
+                    <div class="clear-fix"></div>
+                </div>
+
+                <div class="food-menu-box">
+                    <div class="food-menu-image">
+                        <img src="images/pizza.jpeg" alt="" class="image-responsive">
+                    </div>
+                    <div class="food-details">
+                        <div class="food-name">Food Name </div>
+                        <div class="food-price">Rs 500.00</div>
+                        <div class="food-description"> Food Description, this line is expected to be longer as as as sometimes. Let's see if this works. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fuga, culpa quisquam non labore quas, iusto eius perspiciatis  </div>
                         <div class="cart-btn">
                             <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
                         </div>
@@ -196,6 +214,11 @@
 
 
         </div>
+        <a href="#">
+            <div class="view-all btn">
+                <span> View All Menu </span> 
+            </div>
+        </a>
     </section>
     <!-- food-menu section ends here -->
 
@@ -205,9 +228,15 @@
             <div class="footer-section">
                 <div class="footer-logo">
                     <img src="images/logo.png" alt="logo" class="image-responsive">
+                    <div class="company-desc text-center">
+                        <p>We serve the best quality foods in the town.<br>
+                            "भोक लागे, हामी छौँ!"
+                        </p>
+                    </div>
                 </div>
+                
 
-                <div class="footer-info">
+                <div class="company-info">
                     <div class="footer-heading"> COMPANY</div>
                     <ul>
                         <li>
@@ -224,22 +253,27 @@
                 </div>
 
                 <div class="social-media">
-                    <div class="footer-heading"> FOLLOW US</div>
+                    <div class="footer-heading text-center"> FOLLOW US</div>
                     <div class="social-media-icon">
-                        <a href="#" class="social-media-icon">
+                        <a href="https://www.facebook.com/" target="_blank">
                     <img src="images/facebook.png" alt="facebook-icon" class="image-responsive">
                     </a>
                     </div>
 
                     <div class="social-media-icon">
-                        <a href="#" class="social-media-icon">
+                        <a href="https://www.instagram.com/" target="_blank">
                     <img src="images/instagram.png" alt="instagram-icon" class="image-responsive">
                         </a>
                     </div>
 
                     <div class="social-media-icon">
-                        <a href="#" class="social-media-icon">
+                        <a href="https://www.whatsapp.com" target="_blank"> 
                     <img src="images/whatsapp.png" alt="whatsapp-icon" class="image-responsive">
+                    </a>
+                    </div>
+                    <div class="social-media-icon">
+                        <a href="https://github.com/shivaram-raut/hamro-khaja-ghar" target="_blank" title="Go to th github page of this project-work for source code">
+                    <img src="images/github.png" alt="github-icon" class="image-responsive">
                     </a>
                     </div>
                      
@@ -248,7 +282,7 @@
                 </div>
             </div>
 
-
+            <hr style="margin: 2%;">
             <p class="copyright-msg text-center">
                 &#169; 2024 Hamro Khaja Ghar All rights reserved. Develoved by Shivaram Raut.
             </p>

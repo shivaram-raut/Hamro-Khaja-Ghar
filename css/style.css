@@ -41,14 +41,16 @@ a {
     padding: 1%;
 }
 
-.btn {
-    background-color: #E33E33;
-    color: white;
+.add-bottom-padding{
+    padding-bottom: 1%;
 }
 
-.btn:hover {
-    background-color: #DFDAD6;
-    color: #E33E33;
+.btn {
+    background-color: #E88D67;
+    color: white;
+    font-size: 1rem;
+    padding: 1%;
+    border-radius: 10px;
 }
 
 h2{
@@ -61,6 +63,8 @@ h2{
 
 
 /* CSS for navigation-bar section */
+
+
 
  .navigation-bar{
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
@@ -79,6 +83,7 @@ h2{
 .menu {
     line-height: 55px;
     font-size: 17px;
+    text-align: right;
 }
 
 .menu ul {
@@ -103,16 +108,24 @@ h2{
     border-radius: 15px;
 }
 
+
 .navigation-bar .container {
     margin: 0 auto;
     padding: 0;
+}
+
+.nav-cart-icon{
+    position: absolute;
+    right: 5rem;
+    bottom: 0.8rem;
+    width:1.4rem;
 }
 
 /* CSS for search-food section */
 .search-food {
     position: relative;
     background-image: url(../images/home_page_bg_image.jpg);
-    padding: 10%;
+    padding: 10% 8%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -121,8 +134,9 @@ h2{
 
 .search-food input[type="search"] {
     width: 60%;
-    padding: 2%;
-    font-size: 15px;
+    padding: 1.8%;
+    font-size: 1.1rem;
+    text-align: center;
     border-radius: 10px;
     border: none;
     outline: none;
@@ -135,9 +149,9 @@ h2{
 
 .search-food input[type="submit"] {
     width: 15%;
-    padding: 2%;
+    padding: 1.8%;
     margin-left: 5px;
-    font-size: 15px;
+    font-size: 1.1rem;
     border-radius: 10px;
     border: none;
     background-color: white;
@@ -151,20 +165,17 @@ h2{
 }
 
 .active-hour{
-    background-color: #E88D67;
     position: absolute;
-    color: white;
-    bottom: 15px;
-    right: 15px;
-    padding: 1%;
-    border-radius: 10px;
+    bottom: 13px;
+    right: 13px;
 
 }
 
 
 /*  CSS for categories */
 .categories{
-    padding: 3% 0;
+    padding: 3% 0 7% 0;
+    position: relative;
 }
 
 
@@ -199,25 +210,37 @@ h2{
     padding: 10px;
 }
 
+.view-all{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+.view-all:hover{
+    transform: scale(1.04, 1.04);
+    transition: box-shadow 0.3s ease;
+
+}
+
 
 /* CSS for food-menu  */
 
 .food-menu{
+    position: relative;
     background-color: #EEEDEB;
-    padding: 2% 0;
+    padding: 2% 0 7% 0;
 }
 
 .menu-grid-container{
     display: grid;
     grid-template-columns: auto auto;
-    gap: 15px 15px;
+    gap: 10px 10px;
 }
 
 .food-menu-box{
     background-color: white;
     border-radius: 7px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-    padding: 1%;
+    padding: 2%;
 
     
 }
@@ -266,39 +289,51 @@ h2{
 }
 
  /* CSS for footer */
+
  .footer{
     background-color: #2F3645;
-    margin-top: 7%;
+    margin-top: 6% ;
     padding-top: 5%;
+    border: 1px solid #2F3645;
 
  }
 
  .footer-section{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    gap: 0 10%;
+    grid-template-columns: 31% 30% 30%;
+    gap: 0 9%;
  }
 
  .footer-logo{
-    padding: 10% 0;
+    padding: 8% 0;
  }
-.footer-info ul{
+
+ .company-desc{
+    color: #EEEDEB;
+
+ }
+ .company-info{
+    text-align: center;
+    padding: 5%;
+ }
+.company-info ul{
     list-style-type: none;
 
 }
 
-.footer-info ul li{
-    padding: 10px;
+.company-info ul li{
+    padding: 5px;
     display: block;
     font-size: 20px;
     
 }
 
-.footer-info ul li a{
+.company-info ul li a{
     color:#EEEDEB;
 
 }
 
+ 
 .social-media ul{
     list-style-type: none;
 
@@ -319,8 +354,7 @@ h2{
     font-size: 20px;
     font-weight: bold;
     color:#EEEDEB;
-    text-decoration: underline;
-    padding: 5%;
+    padding: 5% 0;
 
 }
 
@@ -336,11 +370,132 @@ h2{
 
 .copyright-msg{
     color:white;
-    padding: 5%;
+    padding: 2%;
 }
 
 
+/* CSS for for tablet, mobile size or smaller screen */
+
+@media only screen and (max-width: 950px){
+
+    .logo{
+        width: 40%;
+    }
+
+    .container {
+        width: 90%;
+    
+    }
+
+    .nav-cart-icon{
+        right: 3rem;
+    }
+
+    .menu{
+        text-align: center;
+    }
+    .menu-grid-container{
+        grid-template-columns: auto;
+        gap: 10px 10px;
+    }
+
+    .footer-section{
+        grid-template-columns: 31% 31% 35%;
+        gap: 0 3%;
+     }
+
+     .social-media-icon{
+        margin: 2%;
+     }
+
+}
+
+@media only screen and (max-width: 600px){
+   
+    .container {
+        width: 95%;
+
+    }
+    /* Navbar section */
+    
+    .logo{
+        width: 50%;
+        float:none;
+        margin: 1% auto;
+    }
+
+    .menu{
+        text-align: center;
+        line-height: 30px;
+        font-size: 15px;
+        padding: 0 3% 2% 3%;
+    }
+
+    .nav-cart-icon{
+        width: 1rem;
+    }
+
+    /* Search section */
+    .search-food {
+        padding: 18% 0;
+    
+    }
+    .search-food input[type="search"] {
+        width: 78%;
+        font-size: 0.95rem;
+    }
+
+    .search-food input[type="submit"] {
+        width: 18%;
+        margin-left: 1px;
+        font-size: 0.95rem;
+    }
+
+    .active-hour{
+        font-size: 0.9rem;
+        bottom: 9px;
+        right: 9px;
+    
+    }
+
+    /* Categories section */
+
+    .categories{
+        padding: 15% 1%;
+    }
+    .cat-grid-container{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px 15px;
+    }
+
+    .box:hover{
+        box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.3);
+        transform: scale(1.04, 1.04);
+    }
+    .view-all{
+        font-size: 0.9rem;
+        bottom: 12px;
+        right: 9px;
+    }
 
 
+    /* Menu section */
 
+    .food-menu{
+        padding: 5% 0 12% 0;
+    }
+
+    .menu-grid-container{
+        grid-template-columns: auto;
+        gap: 10px 10px;
+    }
+
+    /* footer section */
+
+    .footer-section{
+        grid-template-columns: auto;
+
+  }
+}
 
