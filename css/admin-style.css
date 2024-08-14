@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    /* border: 1px solid red; */
+    margin: 0 auto 5px auto;
+    padding: 5px;
+
+}
+
+.image-responsive {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
+
+/* CSS for navigation-bar section */
+
+.navigation-bar {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: white;
+
+}
+
+.logo {
+    width: 28%;
+    float: left;
+}
+
+.menu {
+    line-height: 55px;
+    font-size: 17px;
+    text-align: right;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    padding: 10px;
+    display: inline;
+
+}
+
+.menu ul li a {
+    color: #E33E33;
+}
+
+.menu ul li a:hover {
+    color: #B43F3F;
+    font-weight: bold;
+}
+
+.menu ul li.active a {
+    color: white;
+    background-color: #E33E33;
+    padding: 10px 20px;
+    border-radius: 15px;
+    opacity: 90%;
+    font-weight: 500;
+}
+
+.navigation-bar .container {
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/* CSs for   manage-employees section */
+
+.heading{
+    padding: 4% 0  2% 0;
+    margin: 1%;
+}
+
+.table-full{
+    width: 100%;
+}
+
+.employee-table{
+    min-height: 28vh;
+    margin-top: 2%;
+}
+
+table tr th{
+    /* border-bottom: 1px solid black; */
+    border-right: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td{
+    padding: 1%;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+
+}
+
+
+.btn-primary{
+    background-color: #2d8659;
+    color: white;
+    font-weight: bold;
+    width: auto;
+    display: inline-block;
+    padding: 1%;
+    margin-bottom: 5px;
+    border-radius: 10px;
+
+}
+
+.btn-primary:hover{
+    background-color: #26734d;
+    transform: scale(1.04, 1.04);
+    transition: transform 0.3s ease;
+}
+
+.btn-secondary{
+    background-color: #00a3cc;
+    color: white;
+    padding: 2% 3%;
+    margin: 8px;
+    border-radius: 3px;
+
+}
+.btn-secondary:hover{
+    background-color: #008fb3;
+}
+.btn-danger{
+    background-color: #b32d00;
+    color: white;
+    padding: 2% 3%;
+    margin: 8px;
+    border-radius: 3px;
+
+}
+.btn-danger:hover{
+    background-color: #992600;
+}
+
+
+
+/* css for add-employee input form */
+
+
+.overlay {
+    width: 100%;
+    background-color: rgba(0,0,0, 0.8);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: -10;
+    opacity: 0;
+    transition: 0.6s;
+
+}
+
+.show-overlay{
+    opacity:1;
+    z-index: 99;
+}
+
+.form-heading {
+    font-size: 40px;
+    margin-bottom: 15px;
+
+}
+
+.add-employee-form input{
+    outline: none;
+}
+
+.add-employee-form {
+    width: 35%;
+    background-color: white;
+    padding: 3%;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    transition: 0.8s;
+}
+
+.show-add-employee-form{
+    top: 50%;
+
+}
+
+.cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1% 3%;
+    font-size: 1.6rem;
+    border-radius: 1px;
+}
+
+.cross:hover {
+    background-color: #E33E33;
+    color: white;
+    cursor: pointer;
+}
+
+
+.add-employee-form input {
+    font-size: 16px;
+    width: 100%;
+    height: 40px;
+    margin-top: 1%;
+    margin-bottom: 6%;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 3%;
+}
+
+.add-employee-form input:focus {
+    border: 1px solid #E33E33;
+
+}
+
+.add-employee-form label {
+    font-size: 18px;
+
+}
+
+.add-employee-button{
+    width: 100%;
+    background-color: #2d8659;
+    color: white;
+    border: none !important;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 4%;
+}
+
+.add-employee-button:hover {
+    background-color: #26734d;
+}
+
+ 
+
+
+
+/* css for footer section */
+.footer{ 
+    width: 100%;
+    background-color: #2F3645;
+    margin: 6% auto 0;
+    padding-top: 1%;
+    text-align: center;
+    border: 1px solid #2F3645;
+
+ }
+
+ .footer-logo{
+    width: 25%;
+    margin: auto;
+
+ }
+
+ .copyright-msg{
+    color:white;
+    padding: 5px;
+    text-align:center;
+
+}
+
+ 

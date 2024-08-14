@@ -35,6 +35,8 @@
 
 a {
     text-decoration: none;
+    color: black;
+
 }
 
 .add-padding{
@@ -46,7 +48,7 @@ a {
 }
 
 .btn {
-    background-color: #E88D67;
+    background-color: #D95F59;
     color: white;
     font-size: 1rem;
     padding: 1%;
@@ -58,6 +60,7 @@ h2{
     font-size: 25px;
     padding: 1%;
 }
+
 
  
 
@@ -94,32 +97,35 @@ h2{
     padding: 10px;
     display: inline;
 
+
 }
 
 .menu ul li a {
 
-    color: #686D76;
+    color: #E33E33;
 }
 
 .menu ul li a:hover {
-    color: white;
-    background-color: #E33E33;
-    padding: 10px;
-    border-radius: 15px;
+    color: #B43F3F;
+    font-weight: bold;
 }
-
 
 .navigation-bar .container {
     margin: 0 auto;
     padding: 0;
 }
 
-.nav-cart-icon{
-    position: absolute;
-    right: 5rem;
-    bottom: 0.8rem;
-    width:1.4rem;
+.menu ul li.active a {
+    color: white;
+    background-color: #E33E33;
+    padding: 10px 20px;
+    border-radius: 15px;
+    opacity: 90%;
+    font-weight: 500;
 }
+
+
+
 
 /* CSS for search-food section */
 .search-food {
@@ -182,32 +188,34 @@ h2{
 .cat-grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 10px 10px;
+    gap: 15px 10px;
 }
 
 .box{
     margin: 6px;
-    height: 100%;
+    height: 95%;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.3)
 
 }
-
-.box:hover{
-    box-shadow: 12px 12px 4px rgba(0, 0, 0, 0.3);
-    transform: scale(1.04, 1.04);
-    transition: box-shadow 0.3s ease;
-
-}
+ 
 .box-image{
     height: 80%;
+    overflow: hidden;
+    /* border:2px solid white; */
+}
+.box-image:hover{
+    transform: scale(1.09, 1.09);
+    transition: transform 0.6s ease-out;
 }
 
 .food-title{
     background-color: #FCF8F3;
     height: 20%;
-    padding: 10px;
+    padding: 20px;
+    text-align: center;
+
 }
 
 .view-all{
@@ -217,7 +225,8 @@ h2{
 }
 .view-all:hover{
     transform: scale(1.04, 1.04);
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    background-color: #B43F3F;
 
 }
 
@@ -333,7 +342,7 @@ h2{
 
 }
 
- 
+  
 .social-media ul{
     list-style-type: none;
 
@@ -358,6 +367,10 @@ h2{
 
 }
 
+.icon-container{
+    padding-left: 0;
+}
+
 .social-media-icon{
     width: 40px;
     float: left;
@@ -368,6 +381,7 @@ h2{
 
 }
 
+ 
 .copyright-msg{
     color:white;
     padding: 2%;
@@ -387,9 +401,6 @@ h2{
     
     }
 
-    .nav-cart-icon{
-        right: 3rem;
-    }
 
     .menu{
         text-align: center;
@@ -399,6 +410,9 @@ h2{
         gap: 10px 10px;
     }
 
+    .cat-grid-container{
+        grid-template-columns: auto auto;
+    }    
     .footer-section{
         grid-template-columns: 31% 31% 35%;
         gap: 0 3%;
@@ -412,9 +426,10 @@ h2{
 
 @media only screen and (max-width: 600px){
    
+
     .container {
         width: 95%;
-
+    
     }
     /* Navbar section */
     
@@ -431,9 +446,7 @@ h2{
         padding: 0 3% 2% 3%;
     }
 
-    .nav-cart-icon{
-        width: 1rem;
-    }
+
 
     /* Search section */
     .search-food {
@@ -464,15 +477,11 @@ h2{
         padding: 15% 1%;
     }
     .cat-grid-container{
-        display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         gap: 15px 15px;
     }
 
-    .box:hover{
-        box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.3);
-        transform: scale(1.04, 1.04);
-    }
+    
     .view-all{
         font-size: 0.9rem;
         bottom: 12px;
@@ -488,7 +497,6 @@ h2{
 
     .menu-grid-container{
         grid-template-columns: auto;
-        gap: 10px 10px;
     }
 
     /* footer section */
@@ -497,5 +505,10 @@ h2{
         grid-template-columns: auto;
 
   }
+
+  .icon-container{
+    padding-left: 15%;
+}
+
 }
 
