@@ -1,3 +1,6 @@
+<?php include('config/constants.php'); ?>
+
+
 <!--  head section -->
 <!DOCTYPE html>
 <html lang="en">
