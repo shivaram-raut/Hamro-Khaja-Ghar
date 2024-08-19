@@ -1,7 +1,6 @@
 <?php 
 
     session_start();
-    
     // constants for database credentials:
         define('SITEURL', 'http://localhost/hamro-khaja-ghar/');
         define('HOST','localhost');

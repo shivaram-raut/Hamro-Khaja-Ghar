@@ -9,8 +9,8 @@
     <title>Hamro-khaja-ghar</title>
 
     <link rel="stylesheet" href="../css/admin-style.css">
-    <script src="../javascript/script.js"></script>
-    <script src="../javascript/add-employee-form-input.js"></script>
+    <script src="../javascript/active-page.js"></script>
+    <script src="../javascript/manage-employee-forms.js"></script>
 </head>
 
 <body>

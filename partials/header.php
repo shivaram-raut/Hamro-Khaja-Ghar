@@ -14,7 +14,7 @@
 
     <!-- linking css file -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="javascript/script.js"></script>
+    <script src="javascript/active-page.js"></script>
 </head>
 
 <body>

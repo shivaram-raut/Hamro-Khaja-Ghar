@@ -1,68 +1,15 @@
 <?php
-// Include necessary files and start the session at the very top
 include("../partials/admin-header.php");
 include("../partials/admin-navigation-bar.php");
-
-// Process the value from the form and save it in the database.
-
-// Check whether the submit button is clicked or not.
-if (isset($_POST['submit'])) {
-
-    // Get data from the add-employee form
-    $full_name = $_POST['full_name'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $re_password = $_POST['re_password'];
-
-    // Check if the passwords match
-    if ($password === $re_password) {
-        // Check if the username already exists
-        $check_username = "SELECT * FROM tbl_employee WHERE username = '$username'";
-        $check_res = mysqli_query($conn, $check_username);
-
-        if (mysqli_num_rows($check_res) > 0) {
-            // Username already exists
-            $_SESSION['employee_added_msg'] = "Username already exists. Please choose a different one.";
-        } else {
-            // Encrypt the password using bcrypt
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-            // Insert the data into the database
-            $sql = "INSERT INTO tbl_employee SET
-                full_name = '$full_name',
-                username = '$username',
-                password = '$hashed_password'
-                ";
-
-            // Execute query and save the data in the database
-            $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
-            if ($res == true) {
-                $_SESSION['employee_added_msg'] = "Employee added successfully!";
-            } else {
-                $_SESSION['employee_added_msg'] = "Something went wrong!";
-            }
-        }
-
-        // Redirect back to the manage-employees page
-        header("Location:" . SITEURL . 'admin/manage-employees.php');
-        exit; // Stop script execution after the redirect
-    } else {
-        // Handle the case where passwords do not match
-        $_SESSION['employee_added_msg'] = "Confirmation password didn't match!";
-    }
-}
-
-// HTML and other content come after header logic
 ?>
 
-<!-- Main Content Section starts here -->
 <!-- add-employee input form starts here! -->
 <div class="overlay"> </div>
-<div class="add-employee-form">
+<div class="form add-employee-form">
     <span class="cross">&times;</span>
     <div class="form-heading">Add Employee</div>
-    <form action="" method="post">
+    <form action="add-employee.php" method="post">
+        <input type="hidden" name="form_id" value="form1" />
         <div>
             <label for="full_name">Full Name</label>
             <input type="text" id="full_name" name="full_name" placeholder="Full Name" required>
@@ -79,23 +26,75 @@ if (isset($_POST['submit'])) {
             <label for="re_password">Retype Password</label>
             <input type="password" id="re_password" name="re_password" placeholder="Retype Password" required>
         </div>
-        <input type="submit" name="submit" value="Add Employee" class="add-employee-button">
+        <input type="submit" name="submit" value="Add Employee" class="add-employee submit-button">
     </form>
 </div>
 <!-- add-employee input form stops here! -->
+
+
+<!-- update-employee form starts here -->
+<div class="form  update-form">
+    <span class="cross">&times;</span>
+    <div class="form-heading">Update Employee</div>
+    <form action="update-employee.php" method="post">
+        <input type="hidden" name="form_id" value="form2" />
+        <input type="hidden" name="id" id="update_employee_id">
+        <div>
+            <label for="update_employee_fullname">Full Name</label>
+            <input type="text" id="update_employee_fullname" name="full_name" required>
+        </div>
+        <input type="hidden" name="existing-username" id="existing-username">
+        <div>
+            <label for="update_employee_username">Username</label>
+            <input type="text" id="update_employee_username" name="username" placeholder="Username" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <div>
+            <label for="re_password">Retype Password</label>
+            <input type="password" id="re_password" name="re_password" placeholder="Retype Password">
+        </div>
+        <input type="submit" name="submit" value="Update Employee" class="update-employee submit-button">
+    </form>
+</div>
+<!-- update-employee form stops here! -->
+
+
+
+<!-- Delete employee form starts here -->
+<div class="form delete-form">
+    <span class="cross">&times;</span>
+    <div class="form-heading">Delete Employee</div>
+    <div class="confirm-delete">Are you sure you want to delete?</div>
+    <form action="" method="post">
+        <input type="hidden" name="id" id="delete_employee_id">
+        <input type="radio" id="yes" name="delete-user" value="yes">
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="delete-user" value="no">
+        <label for="no">No <label><br>
+        <input type="submit" name="submit" value=" Delete employee" class="add-employee-button">
+
+    </form>
+</div>
+<!-- delete-employee form stops here! -->
+
+
+<!-- Main Content Section starts here -->
 
 <section class="main-content">
     <div class="container">
 
         <!--  notification-msg box-->
 
-        <?php if (isset($_SESSION['employee_added_msg'])): ?>
+        <?php if (isset($_SESSION['notification_msg'])): ?>
             <div class="notification-msg">
-                <?php echo $_SESSION['employee_added_msg']; ?>
+                <?php echo $_SESSION['notification_msg']; ?>
                 <span class="cross cross1">&times;</span>
             </div>
             <script src="../javascript/notification-msg.js"></script>
-            <?php unset($_SESSION['employee_added_msg']); // Clear the message after displaying 
+            <?php unset($_SESSION['notification_msg']); // Clear the message after displaying 
             ?>
         <?php endif; ?>
 
@@ -124,6 +123,7 @@ if (isset($_POST['submit'])) {
 
                     if ($count > 0) {
                         while ($rows = mysqli_fetch_assoc($res)) {
+                            $id = $rows['id'];
                             $full_name = $rows['full_name'];
                             $username = $rows['username'];
 
@@ -135,8 +135,9 @@ if (isset($_POST['submit'])) {
 
                                 <td>
                                     <div>
-                                        <span class="update-btn">&#9998; </span> <span class="update-txt">Update</span>
-                                        <span class="delete-btn">&#128465; </span> <span class="delete-txt">Delete</span>
+                                        <span class="update-employee-btn" data-id="<?php echo $id; ?>" data-fullname="<?php echo $full_name; ?>" data-username="<?php echo $username; ?>">&#9998; Update </span>
+                                        <span class="delete-employee-btn" data-user-id="<?php echo $id; ?>">&#128465;Delete</span>
+
                                     </div>
                                 </td>
                             </tr>
@@ -146,16 +147,6 @@ if (isset($_POST['submit'])) {
                     }
                 }
                 ?>
-
-                <!-- <tr>
-                    <td>1.</td>
-                    <td>Shivaram Raut</td>
-                    <td>shiva@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn-secondary">Update </a>
-                        <a href="#" class="btn-danger">Delete </a>
-                    </td>
-                </tr> -->
             </table>
         </div>
     </div>
