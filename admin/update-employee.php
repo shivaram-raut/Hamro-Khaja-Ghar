@@ -29,7 +29,7 @@ $failure_msg = "Something went wrong";
 $password_mismatch_msg = "Confirmation password didn't match";
 
 // Check whether the submit button is clicked or not.
-if (isset($_POST['submit']) && $_POST['form_id'] == 'form2') {
+if (isset($_POST['submit']) && $_POST['form_id'] === 'update-employee-form') {
 
     // Get data from the update-employee form
     $full_name = $_POST['full_name'];

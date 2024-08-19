@@ -9,7 +9,7 @@ include("../partials/admin-navigation-bar.php");
     <span class="cross">&times;</span>
     <div class="form-heading">Add Employee</div>
     <form action="add-employee.php" method="post">
-        <input type="hidden" name="form_id" value="form1" />
+        <input type="hidden" name="form_id" value="add-employee-form" />
         <div>
             <label for="full_name">Full Name</label>
             <input type="text" id="full_name" name="full_name" placeholder="Full Name" required>
@@ -37,7 +37,7 @@ include("../partials/admin-navigation-bar.php");
     <span class="cross">&times;</span>
     <div class="form-heading">Update Employee</div>
     <form action="update-employee.php" method="post">
-        <input type="hidden" name="form_id" value="form2" />
+        <input type="hidden" name="form_id" value="update-employee-form" />
         <input type="hidden" name="id" id="update_employee_id">
         <div>
             <label for="update_employee_fullname">Full Name</label>
@@ -67,14 +67,15 @@ include("../partials/admin-navigation-bar.php");
 <div class="form delete-form">
     <span class="cross">&times;</span>
     <div class="form-heading">Delete Employee</div>
-    <div class="confirm-delete">Are you sure you want to delete?</div>
-    <form action="" method="post">
-        <input type="hidden" name="id" id="delete_employee_id">
-        <input type="radio" id="yes" name="delete-user" value="yes">
-        <label for="yes">Yes</label><br>
-        <input type="radio" id="no" name="delete-user" value="no">
-        <label for="no">No <label><br>
-        <input type="submit" name="submit" value=" Delete employee" class="add-employee-button">
+    <div class="confirm-delete-qsn">Are you sure you want to delete?</div>
+    <form action="delete-employee.php" method="post">
+        <input type="hidden" name="form_id" value="delete-employee-form" />
+        <input type="hidden" name="id" id="delete_employee_id" />
+
+        <input type="submit" name="submit" value="Yes" class=" submit-button delete-employee-yes" />
+        <span class="cross submit-button delete-employee-no "> No </span>
+        <div class="clear-fix"></div>
+
 
     </form>
 </div>

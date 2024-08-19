@@ -22,6 +22,10 @@ a {
 
 }
 
+.clear-fix{
+    clear: both;
+}
+
 
 
 
@@ -233,15 +237,9 @@ table tr:hover{
     font-size: 18px;
 
 }
+ 
 
-form input[type="radio"]{
-    all: initial;
-    width: 10%;
-}
 
-form label{
-    all: initial;
-}
 .cross {
     position: absolute;
     top: 0;
@@ -283,7 +281,44 @@ form label{
 }
 
 .update-employee:hover{
-    background-color: #008fb3;
+    background-color: #026e89;
+    cursor: pointer;
+}
+
+.confirm-delete-qsn{
+    font-size: 17px;
+    padding: 1% 5%;
+}
+
+.delete-employee-yes{
+    background-color: #E33E33 !important;
+    width: 30% !important;
+    margin: 10% 10% 0 1% !important;
+    float: left;
+
+}
+
+.delete-employee-yes:hover{
+    background-color:#B43F3F !important;
+    cursor: pointer;
+}
+
+.delete-employee-no{
+    background-color: #2d8659 !important;
+    width: 30% !important;
+    margin: 10% 0 0 12% !important;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative !important;
+    float: left;
+
+}
+
+.delete-employee-no:hover{
+    background-color:#26734d !important;
+    cursor: pointer;
 }
 
 

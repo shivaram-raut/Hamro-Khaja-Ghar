@@ -2,7 +2,7 @@
 <?php
 include("../config/constants.php");
 // Check whether the submit button is clicked or not.
-if (isset($_POST['submit']) && $_POST['form_id'] == 'form1') {
+if (isset($_POST['submit']) && $_POST['form_id'] === 'add-employee-form') {
 
     // Get data from the add-employee form
     $full_name = $_POST['full_name'];
