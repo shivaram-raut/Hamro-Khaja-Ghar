@@ -5,7 +5,7 @@ include("../partials/admin-navigation-bar.php");
 
 <!-- add-employee input form starts here! -->
 <div class="overlay"> </div>
-<div class="form add-employee-form">
+<div class="form add-form">
     <span class="cross">&times;</span>
     <div class="form-heading">Add Employee</div>
     <form action="add-employee.php" method="post">
@@ -26,7 +26,7 @@ include("../partials/admin-navigation-bar.php");
             <label for="re_password">Retype Password</label>
             <input type="password" id="re_password" name="re_password" placeholder="Retype Password" required>
         </div>
-        <input type="submit" name="submit" value="Add Employee" class="add-employee submit-button">
+        <input type="submit" name="submit" value="Add Employee" class="form-add-btn submit-button">
     </form>
 </div>
 <!-- add-employee input form stops here! -->
@@ -38,15 +38,15 @@ include("../partials/admin-navigation-bar.php");
     <div class="form-heading">Update Employee</div>
     <form action="update-employee.php" method="post">
         <input type="hidden" name="form_id" value="update-employee-form" />
-        <input type="hidden" name="id" id="update_employee_id">
+        <input type="hidden" name="id" id="update-employee-id">
         <div>
             <label for="update_employee_fullname">Full Name</label>
-            <input type="text" id="update_employee_fullname" name="full_name" required>
+            <input type="text" id="update-employee-fullname" name="full_name" required>
         </div>
         <input type="hidden" name="existing-username" id="existing-username">
         <div>
             <label for="update_employee_username">Username</label>
-            <input type="text" id="update_employee_username" name="username" placeholder="Username" required>
+            <input type="text" id="update-employee-username" name="username" placeholder="Username" required>
         </div>
         <div>
             <label for="password">Password</label>
@@ -56,7 +56,7 @@ include("../partials/admin-navigation-bar.php");
             <label for="re_password">Retype Password</label>
             <input type="password" id="re_password" name="re_password" placeholder="Retype Password">
         </div>
-        <input type="submit" name="submit" value="Update Employee" class="update-employee submit-button">
+        <input type="submit" name="submit" value="Update Employee" class="form-update-btn submit-button">
     </form>
 </div>
 <!-- update-employee form stops here! -->
@@ -64,16 +64,16 @@ include("../partials/admin-navigation-bar.php");
 
 
 <!-- Delete employee form starts here -->
-<div class="form delete-form">
+<div class="form delete-form" style="width: 30%;">
     <span class="cross">&times;</span>
     <div class="form-heading">Delete Employee</div>
     <div class="confirm-delete-qsn">Are you sure you want to delete?</div>
     <form action="delete-employee.php" method="post">
         <input type="hidden" name="form_id" value="delete-employee-form" />
-        <input type="hidden" name="id" id="delete_employee_id" />
+        <input type="hidden" name="id" id="delete-employee-id" />
 
-        <input type="submit" name="submit" value="Yes" class=" submit-button delete-employee-yes" />
-        <span class="cross submit-button delete-employee-no "> No </span>
+        <input type="submit" name="submit" value="Yes" class=" submit-button delete-yes" />
+        <span class="cross submit-button delete-no "> No </span>
         <div class="clear-fix"></div>
 
 
@@ -99,13 +99,13 @@ include("../partials/admin-navigation-bar.php");
             ?>
         <?php endif; ?>
 
-        <div class="heading">
+        <div class="page-heading">
             <h1> Manage Employee Accounts</h1>
         </div>
 
-        <span class="btn-primary add-employee">Add Employee</span>
+        <span class="btn-primary add-new-btn">Add Employee</span>
 
-        <div class="employee-table">
+        <div class="items-list-table">
             <table class="table-full">
                 <tr>
                     <th>S.N.</th>
@@ -136,8 +136,8 @@ include("../partials/admin-navigation-bar.php");
 
                                 <td>
                                     <div>
-                                        <span class="update-employee-btn" data-id="<?php echo $id; ?>" data-fullname="<?php echo $full_name; ?>" data-username="<?php echo $username; ?>">&#9998; Update </span>
-                                        <span class="delete-employee-btn" data-user-id="<?php echo $id; ?>">&#128465;Delete</span>
+                                        <span class="table-update-btn" data-id="<?php echo $id; ?>" data-fullname="<?php echo $full_name; ?>" data-username="<?php echo $username; ?>">&#9998; Update </span>
+                                        <span class="table-delete-btn" data-user-id="<?php echo $id; ?>">&#128465;Delete</span>
 
                                     </div>
                                 </td>

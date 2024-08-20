@@ -88,7 +88,7 @@ a {
 
 /* CSs for   manage-employees section */
 
-.heading {
+.page-heading {
     padding: 2% 0 2% 0;
     margin: 1%;
 }
@@ -100,8 +100,8 @@ a {
 
 }
 
-.employee-table {
-    min-height: 32vh;
+.items-list-table {
+    min-height: 38vh;
     margin-top: 2%;
 
 }
@@ -131,14 +131,14 @@ table tr:hover{
 
 }
 
-.update-employee-btn{
+.table-update-btn{
     color:#008fb3;
     cursor: pointer;
     margin-right: 10%;
 
 }
  
-.delete-employee-btn{
+.table-delete-btn{
     color:red;
     cursor: pointer;
 }
@@ -164,7 +164,7 @@ table tr:hover{
  
 
 
-/* css for add-employee input form */
+/* css for add, update and delete input form */
 
 .overlay {
     width: 100%;
@@ -257,7 +257,6 @@ table tr:hover{
 
 .submit-button {
     width: 100%;
-    /* background-color: #2d8659; */
     color: white;
     border: none !important;
     padding: 10px;
@@ -267,56 +266,55 @@ table tr:hover{
     margin-top: 4%;
 }
 
-.add-employee{
+.form-add-btn{
     background-color: #2d8659;
 
 }
 
-.add-employee:hover {
+.form-add-btn:hover {
     background-color: #26734d;
 }
 
-.update-employee{
+.form-update-btn{
     background-color:#008fb3;
 }
 
-.update-employee:hover{
+.form-update-btn:hover{
     background-color: #026e89;
     cursor: pointer;
 }
 
 .confirm-delete-qsn{
-    font-size: 17px;
-    padding: 1% 5%;
+    font-size: 20px;
 }
 
-.delete-employee-yes{
+.delete-yes{
     background-color: #E33E33 !important;
-    width: 30% !important;
-    margin: 10% 10% 0 1% !important;
+    width: 35% !important;
+    margin-top: 10% !important;
     float: left;
 
 }
 
-.delete-employee-yes:hover{
+.delete-yes:hover{
     background-color:#B43F3F !important;
     cursor: pointer;
 }
 
-.delete-employee-no{
-    background-color: #2d8659 !important;
-    width: 30% !important;
-    margin: 10% 0 0 12% !important;
+.delete-no{
+    background-color: #2d8659;
+    width: 35%;
+    margin-top: 10%;
     padding: 10px;
     text-align: center;
     font-size: 18px;
     border-radius: 5px;
     position: relative !important;
-    float: left;
+    float: right;
 
 }
 
-.delete-employee-no:hover{
+.delete-no:hover{
     background-color:#26734d !important;
     cursor: pointer;
 }

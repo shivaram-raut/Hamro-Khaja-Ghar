@@ -24,7 +24,7 @@ if (isset($_POST['submit']) && $_POST['form_id'] == 'delete-employee-form') {
 
 }
 else{
-        $_SESSION['notification_msg'] = "Something went wrong";
+        $_SESSION['notification_msg'] = "Something went wrong!";
          header("Location:" . SITEURL . 'admin/manage-employees.php');
 
 }

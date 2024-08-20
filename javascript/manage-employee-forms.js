@@ -1,10 +1,10 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const update_employee_id = document.getElementById('update_employee_id');
-    const delete_employee_id = document.getElementById('delete_employee_id');
-    const update_employee_fullname = document.getElementById('update_employee_fullname');
-    const update_employee_username = document.getElementById('update_employee_username');
+    const update_employee_id = document.getElementById('update-employee-id');
+    const delete_employee_id = document.getElementById('delete-employee-id');
+    const update_employee_fullname = document.getElementById('update-employee-fullname');
+    const update_employee_username = document.getElementById('update-employee-username');
     const existing_username = document.getElementById('existing-username');
 
 
@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Setup event listeners for different buttons
-    handleButtonClick(".add-employee", ".add-employee-form");
-    handleButtonClick(".update-employee-btn", ".update-form");
-    handleButtonClick(".delete-employee-btn", ".delete-form");
+    handleButtonClick(".add-new-btn", ".add-form");
+    handleButtonClick(".table-update-btn", ".update-form");
+    handleButtonClick(".table-delete-btn", ".delete-form");
 
 });
