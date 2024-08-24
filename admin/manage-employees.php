@@ -1,5 +1,4 @@
 <?php
-include("../partials/admin-header.php");
 include("../partials/admin-navigation-bar.php");
 ?>
 
@@ -11,8 +10,8 @@ include("../partials/admin-navigation-bar.php");
     <form action="add-employee.php" method="post">
         <input type="hidden" name="form_id" value="add-employee-form" />
         <div>
-            <label for="full_name">Full Name</label>
-            <input type="text" id="full_name" name="full_name" placeholder="Full Name" required>
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Full Name" autofocus required>
         </div>
         <div>
             <label for="username">Username</label>
@@ -20,12 +19,17 @@ include("../partials/admin-navigation-bar.php");
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="password" class="password" name="password" placeholder="Password" required>
         </div>
         <div>
             <label for="re_password">Retype Password</label>
-            <input type="password" id="re_password" name="re_password" placeholder="Retype Password" required>
+            <input type="password" id="re_password" class="re_password" name="re_password" placeholder="Retype Password" required>
         </div>
+        <div>
+            <input type="checkbox" id="check-box" class="check-box">
+            <label id="show-password"  >Show Password</label>
+        </div>
+        <div class="clear-fix"></div>
         <input type="submit" name="submit" value="Add Employee" class="form-add-btn submit-button">
     </form>
 </div>
@@ -40,22 +44,27 @@ include("../partials/admin-navigation-bar.php");
         <input type="hidden" name="form_id" value="update-employee-form" />
         <input type="hidden" name="id" id="update-employee-id">
         <div>
-            <label for="update_employee_fullname">Full Name</label>
+            <label for="update-employee-fullname">Full Name</label>
             <input type="text" id="update-employee-fullname" name="full_name" required>
         </div>
         <input type="hidden" name="existing-username" id="existing-username">
         <div>
-            <label for="update_employee_username">Username</label>
+            <label for="update-employee-username">Username</label>
             <input type="text" id="update-employee-username" name="username" placeholder="Username" required>
         </div>
         <div>
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="password" id="password" class="password" name="password" placeholder="Password">
         </div>
         <div>
             <label for="re_password">Retype Password</label>
-            <input type="password" id="re_password" name="re_password" placeholder="Retype Password">
+            <input type="password" id="re_password" class="re_password" name="re_password" placeholder="Retype Password">
         </div>
+        <div>
+            <input type="checkbox" id="check-box" class="check-box">
+            <label id="show-password" >Show Password</label>
+        </div>
+        <div class="clear-fix"></div>
         <input type="submit" name="submit" value="Update Employee" class="form-update-btn submit-button">
     </form>
 </div>
@@ -152,5 +161,8 @@ include("../partials/admin-navigation-bar.php");
         </div>
     </div>
 </section>
+
+<!-- Adding the javascirpt file -->
+<script src="../javascript/manage-employee-forms.js"></script>
 
 <?php include("../partials/admin-footer.php"); ?>

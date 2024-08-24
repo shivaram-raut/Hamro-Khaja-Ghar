@@ -1,4 +1,4 @@
-<?php include('../config/constants.php'); ?>
+<?php  include("../config/constants.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="../css/admin-style.css">
     <script src="../javascript/active-page.js"></script>
-    <script src="../javascript/manage-employee-forms.js"></script>
+    <script src="../javascript/show-password.js"></script>
 </head>
 
 <body>

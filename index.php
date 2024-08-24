@@ -1,9 +1,7 @@
  
-<?php include("partials/header.php"); ?>
- <!-- navigation-bar section -->
- <?php include("partials/navigation-bar.php"); ?>
-
-
+<?php
+include("partials/navigation-bar.php");
+?>
 
  <!-- search-food Section -->
  <section class="search-food">
@@ -43,6 +41,12 @@
              <div class="box">
                  <a href="#"><img src="images/momo.jpeg" alt="momo" class="image-responsive box-image">
                      <h3 class="food-title">Momo</h3>
+                 </a>
+             </div>
+             <div class="box">
+                 <a href="#"> <img src="images/chowmein.jpg" alt="chowmein" class="image-responsive box-image">
+
+                     <h3 class="food-title">Chowmein</h3>
                  </a>
              </div>
          </div>

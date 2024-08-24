@@ -1,4 +1,6 @@
-<?php include('config/constants.php'); ?>
+<?php 
+include('config/constants.php');
+?>
 
 
 <!--  head section -->
@@ -15,6 +17,10 @@
     <!-- linking css file -->
     <link rel="stylesheet" href="css/style.css">
     <script src="javascript/active-page.js"></script>
+    <script src="javascript/input-form.js"></script>
+    <script src="javascript/show-password.js"></script>
+
+
 </head>
 
 <body>

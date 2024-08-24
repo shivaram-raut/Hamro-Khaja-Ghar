@@ -61,7 +61,7 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'update-employee-form') {
                 ";
             $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-            if ($res == true) {
+            if ($res === true) {
                 $_SESSION['notification_msg'] = $success_msg;
             } else {
                 $_SESSION['notification_msg'] = $failure_msg;
@@ -80,7 +80,7 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'update-employee-form') {
                 WHERE id = $id;
                 ";
         $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-        if ($res == true) {
+        if ($res === true) {
             $_SESSION['notification_msg'] = $success_msg;
         } else {
             $_SESSION['notification_msg'] = $failure_msg;

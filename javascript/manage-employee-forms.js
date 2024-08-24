@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to handle button clicks
     function handleButtonClick(buttonClass, formClass) {
         var buttons = document.querySelectorAll(buttonClass);
-        if (buttons) {
+        if (buttons.length > 0) {
             buttons.forEach(function (button) {
                 button.addEventListener("click", function () {
                     const delete_user_id = this.getAttribute('data-user-id');
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         var closeButtons = document.querySelectorAll(".cross");
-        if (closeButtons) {
+        if (closeButtons.length > 0) {
             closeButtons.forEach(function (button) {
                 button.addEventListener("click", function () {
                     closeModal(formClass);
