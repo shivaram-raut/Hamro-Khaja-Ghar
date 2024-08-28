@@ -384,12 +384,11 @@ h2{
 }
  
 .box-image{
-    height: 80%;
+    height: 80% ;
     overflow: hidden;
-    /* border:2px solid white; */
 }
-.box-image:hover{
-    transform: scale(1.09, 1.09);
+.box a img:hover{
+    transform: scale(1.06, 1.06);
     transition: transform 0.6s ease-out;
 }
 

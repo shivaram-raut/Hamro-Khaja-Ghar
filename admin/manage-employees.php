@@ -11,7 +11,7 @@ include("../partials/admin-navigation-bar.php");
         <input type="hidden" name="form_id" value="add-employee-form" />
         <div>
             <label for="full-name">Full Name</label>
-            <input type="text" id="full-name" name="full-name" placeholder="Full Name" autofocus required>
+            <input type="text" id="full-name" name="full-name" placeholder="Full Name" required>
         </div>
         <div>
             <label for="username">Username</label>
@@ -73,16 +73,16 @@ include("../partials/admin-navigation-bar.php");
 
 
 <!-- Delete employee form starts here -->
-<div class="form delete-form" style="width: 30%;">
+<div class="form delete-form" style="width: 31%;">
     <span class="cross">&times;</span>
     <div class="form-heading">Delete Employee</div>
-    <div class="confirm-delete-qsn">Are you sure you want to delete?</div>
+    <div class="confirm-delete-qsn">Delete the employee permanently.</div>
     <form action="delete-employee.php" method="post">
         <input type="hidden" name="form_id" value="delete-employee-form" />
         <input type="hidden" name="id" id="delete-employee-id" />
 
-        <input type="submit" name="submit" value="Yes" class=" submit-button delete-yes" />
-        <span class="cross submit-button delete-no "> No </span>
+        <input type="submit" name="submit" value="Delete" class=" submit-button delete-yes" />
+        <span class="cross submit-button delete-no "> Cancel </span>
         <div class="clear-fix"></div>
 
 

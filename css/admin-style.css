@@ -12,7 +12,7 @@
 
 }
 
-.main-content{
+.main-content {
     min-height: 70vh;
 }
 
@@ -26,7 +26,7 @@ a {
 
 }
 
-.clear-fix{
+.clear-fix {
     clear: both;
 }
 
@@ -99,7 +99,7 @@ a {
 
 .table-full {
     width: 100%;
-    box-shadow: 0 0 2px 1px  #e6e6e6;
+    box-shadow: 0 0 2px 1px #e6e6e6;
 
 
 }
@@ -119,31 +119,32 @@ table tr th {
 
 table tr td {
     padding: 1%;
-    
+
 }
 
 table tr:nth-child(odd) {
     background-color: #e6e6e6;
 
 }
+
 table tr:nth-child(even) {
     background-color: white;
 }
 
-table tr:hover{
+table tr:hover {
     background-color: #cccccc;
 
 }
 
-.table-update-btn{
-    color:#008fb3;
+.table-update-btn {
+    color: #008fb3;
     cursor: pointer;
     margin-right: 10%;
 
 }
- 
-.table-delete-btn{
-    color:red;
+
+.table-delete-btn {
+    color: red;
     cursor: pointer;
 }
 
@@ -154,16 +155,16 @@ table tr:hover{
     font-weight: bold;
     width: auto;
     display: inline-block;
-    padding: 1%;
+    padding: 1% 3%;
     margin-bottom: 5px;
     border-radius: 10px;
-
 }
 
 .btn-primary:hover {
     background-color: #26734d;
     transform: scale(1.04, 1.04);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-secondary {
@@ -183,7 +184,7 @@ table tr:hover{
     transform: scale(1.04, 1.04);
     transition: transform 0.3s ease;
 }
- 
+
 
 
 /* css for add, update and delete input form */
@@ -235,7 +236,8 @@ table tr:hover{
     outline: none;
 }
 
-.form input {
+.form input[type="text"],
+.form input[type="password"] {
     font-size: 16px;
     width: 100%;
     height: 40px;
@@ -247,19 +249,35 @@ table tr:hover{
     padding-left: 3%;
 }
 
+.form input[type="file"] {
+    font-size: 16px;
+    width: 78%;
+    margin: 2% 0 6% 12%;
+    outline: none;
+    transform: scale(1.31);
+}
+
+
+.form input[type="radio"] {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+
 .form input:focus {
     border: 1px solid #E33E33;
 
 }
 
-
-
+.form input[type="file"]:focus{
+    border: none;
+}
 
 .form label {
     font-size: 18px;
+    display: block;
 
 }
- 
 
 
 .cross {
@@ -288,29 +306,30 @@ table tr:hover{
     margin-top: 4%;
 }
 
-.form-add-btn{
+.form-add-btn {
     background-color: #2d8659;
 
 }
 
 .form-add-btn:hover {
     background-color: #26734d;
+    cursor: pointer;
 }
 
-.form-update-btn{
-    background-color:#008fb3;
+.form-update-btn {
+    background-color: #008fb3;
 }
 
-.form-update-btn:hover{
+.form-update-btn:hover {
     background-color: #026e89;
     cursor: pointer;
 }
 
-.confirm-delete-qsn{
+.confirm-delete-qsn {
     font-size: 20px;
 }
 
-.delete-yes{
+.delete-yes {
     background-color: #E33E33 !important;
     width: 35% !important;
     margin-top: 10% !important;
@@ -318,12 +337,12 @@ table tr:hover{
 
 }
 
-.delete-yes:hover{
-    background-color:#B43F3F !important;
+.delete-yes:hover {
+    background-color: #B43F3F !important;
     cursor: pointer;
 }
 
-.delete-no{
+.delete-no {
     background-color: #2d8659;
     width: 35%;
     margin-top: 10%;
@@ -336,23 +355,23 @@ table tr:hover{
 
 }
 
-.delete-no:hover{
-    background-color:#26734d !important;
+.delete-no:hover {
+    background-color: #26734d !important;
     cursor: pointer;
 }
 
 /* css for showing and hiding password */
-#check-box{
+#check-box {
     width: 20px;
-    float: left; 
+    height: 20px;
+    float: left;
     margin: 0;
 
 }
 
-#show-password{
+#show-password {
     font-size: 15px;
-    padding: 1% 2%;
-    margin-top: 2%;
+    padding: 2px 6px;
     float: left;
 }
 

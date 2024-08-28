@@ -2,9 +2,9 @@
  <?php
     include('admin-header.php');
 
-    if (!isset($_SESSION['admin-user'])) {
-        header('Location:' . SITEURL . 'index.php');
-    }
+    // if (!isset($_SESSION['admin-user'])) {
+    //     header('Location:' . SITEURL . 'index.php');
+    // }
     ?>
 
  <section class="navigation-bar">

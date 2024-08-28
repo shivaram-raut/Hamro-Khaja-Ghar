@@ -20,7 +20,7 @@
                     </li>
                     <?php else: ?>
                 <li class="login-btn">
-                    <a href="#">Login </a>
+                    <a href="admin/">Login </a>
                     <ul id="dropdown">
                         <li id="customer-login-btn">Customer</li>
                         <li id="employee-login-btn">Employee</li>
@@ -70,7 +70,7 @@
 <div id="admin-login-form" class="form">
     <span class="cross">&times;</span>
     <div class="form-heading">Login</div>
-    <form action="admin/verify-admin.php" method="post">
+    <form action="admin/admin-login.php" method="post">
         <input type="hidden" name="form-id" value="admin-login-form" />
         <input type="hidden" name="redirect-uri" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 
