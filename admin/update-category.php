@@ -1,23 +1,24 @@
-
 <?php
 include("../config/constants.php");
 
-// Check whether the submit button is clicked or not.
-if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
+if (isset($_POST['submit']) && $_POST['form_id'] === 'update-category-form') {
 
-    // Get data from the add-category form
-
+    $id = $_POST['id'];
     $title = $_POST['title'];
+    $existing_image = $_POST['existing-image'];
 
-    if (isset($_FILES["image"]["name"])) {
 
+    // check whether the update image input fied is empty or not
+    if (isset($_FILES["image"]["name"]) && $_FILES["image"]["name"] !== "") {
+
+        // handle the new image:
         $image_name = $_FILES["image"]["name"];
         $source_path = $_FILES["image"]["tmp_name"];
 
         // check whether the uploaded file is image or not
         $check = getimagesize($source_path);
         if ($check !== false) {
-            
+
             // check the size of the image file, 5000000bytes = 5MB
             if ($_FILES["image"]["size"] > 5000000) {
                 $_SESSION['notification_msg'] = "Upload an image smaller than 5 MB!";
@@ -25,11 +26,15 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
                 exit();
             }
 
+            // delete the existing image from the /image/categories folder:
+            $path = "../images/categories/" . $existing_image;
+            $remove = unlink($path);
+
             // providing the unique name to the image file
 
-            $img_ext = end(explode(".", $image_name)); //gets image extension
+            $image_extension = end(explode(".", $image_name)); //gets image extension
 
-            $image_name = "food-category-" .$title.  uniqid(mt_rand(0, 99999)) . "." . $img_ext;
+            $image_name = "food-category-" .$title. uniqid(mt_rand(0, 99999)) . "." . $image_extension;
 
 
             $destination_path = "../images/categories/" . $image_name;
@@ -47,6 +52,8 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
             header("Location:" . SITEURL . 'admin/manage-categories.php');
             exit();
         }
+    } else {
+        $image_name = $existing_image;
     }
 
     if (isset($_POST['featured'])) {
@@ -61,19 +68,20 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
         $available = "No";
     }
 
-
-    $sql = "INSERT INTO tbl_category SET
-                title = '$title',
-                featured = '$featured',
-                image_name = '$image_name',
-                available = '$available'
-                ";
+    // insert the data into the database:
+    $sql = "UPDATE  tbl_category SET
+    title = '$title',
+    featured = '$featured',
+    image_name = '$image_name',
+    available = '$available'
+    WHERE id = '$id'
+    ";
 
     // Execute query and save the data in the database
     $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     if ($res == true) {
-        $_SESSION['notification_msg'] = "Category added successfully!";
+        $_SESSION['notification_msg'] = "Category updated successfully!";
     } else {
         $_SESSION['notification_msg'] = "Something went wrong!";
     }
@@ -82,5 +90,3 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
 } else {
     header("Location:" . SITEURL . 'admin/manage-categories.php');
 }
-
-?>

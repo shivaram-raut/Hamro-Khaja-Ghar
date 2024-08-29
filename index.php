@@ -1,7 +1,6 @@
- 
-<?php
-include("partials/navigation-bar.php");
-?>
+ <?php
+    include("partials/navigation-bar.php");
+    ?>
 
  <!-- search-food Section -->
  <section class="search-food">
@@ -26,12 +25,36 @@ include("partials/navigation-bar.php");
              favourite category
              to see the menu.</p>
          <div class="cat-grid-container">
-             <div class="box">
-                 <a href="#"> <img src="images/pizza.jpeg" alt="pizza" class="image-responsive box-image">
-                     <h3 class="food-title">Pizza</h3>
-                 </a>
-             </div>
-             <div class="box">
+
+             <?php
+                $sql = "SELECT * FROM tbl_category WHERE featured = 'Yes' AND available = 'Yes' LIMIT 4 ";
+                $res = mysqli_query($conn, $sql);
+
+                if ($res == TRUE) {
+                    $count = mysqli_num_rows($res);
+
+                    if ($count > 0) {
+                        while ($rows = mysqli_fetch_assoc($res)) {
+                            $title = $rows['title'];
+                            $image = $rows['image_name'];
+                            // $featured = $rows['featured'];
+                            // $available = $rows['available'];
+
+
+                ?>
+                         <div class="box">
+
+                             <a href="#"> <img src="<?php echo 'images/categories/' . $image; ?>" alt="<? echo $title ?>" class="image-responsive box-image">
+                                 <h3 class="food-title"> <?php echo $title ?> </h3>
+                             </a>
+                         </div>
+             <?php
+                        }
+                    }
+                }
+                ?>
+
+             <!-- <div class="box">
                  <a href="#"> <img src="images/chowmein.jpg" alt="chowmein" class="image-responsive box-image">
 
                      <h3 class="food-title">Chowmein</h3>
@@ -55,7 +78,7 @@ include("partials/navigation-bar.php");
          <div class="view-all btn">
              <span> View All Categories </span>
          </div>
-     </a>
+     </a> -->
  </section>
  <!-- categories section ends here -->
 

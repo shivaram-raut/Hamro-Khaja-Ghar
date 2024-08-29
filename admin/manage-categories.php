@@ -1,4 +1,3 @@
-
 <?php include("../partials/admin-navigation-bar.php"); ?>
 
 <!-- add-category input form starts here! -->
@@ -18,13 +17,13 @@
         </div>
         <div>
             <label style="margin:1% 0;">Featured:</label>
-            <input type="radio" id="featured-yes" name="featured" value="yes"><label for="featured-yes" style="display:inline; cursor:pointer; margin-right: 15px;"> Yes </label>
+            <input type="radio" id="featured-yes" name="featured" value="Yes"><label for="featured-yes" style="display:inline; cursor:pointer; margin-right: 15px;"> Yes </label>
             <input type="radio" id="featured-no" name="featured" value="No"><label for="featured-no" style="display:inline; cursor:pointer;"> No </label>
 
         </div>
         <div>
             <label style="margin:4% 0 1%;">Available:</label>
-            <input type="radio" id="available-yes" name="available" value="yes"><label for="available-yes" style="display:inline; cursor:pointer; margin-right: 15px;"> Yes </label>
+            <input type="radio" id="available-yes" name="available" value="Yes"><label for="available-yes" style="display:inline; cursor:pointer; margin-right: 15px;"> Yes </label>
             <input type="radio" id="available-no" name="available" value="No"><label for="available-no" style="display:inline; cursor:pointer;"> No </label>
 
         </div>
@@ -34,60 +33,63 @@
 <!-- add-category input form stops here! -->
 
 
-<!-- update-employee form starts here -->
+<!-- update-category form starts here -->
 <div class="form  update-form">
     <span class="cross">&times;</span>
-    <div class="form-heading">Update Employee</div>
-    <form action="update-employee.php" method="post">
-        <input type="hidden" name="form_id" value="update-employee-form" />
-        <input type="hidden" name="id" id="update-employee-id">
+    <div class="form-heading">Update Category</div>
+
+    <form action="update-category.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="form_id" value="update-category-form" />
+        <input type="hidden" name="id" id="update-category-id">
         <div>
-            <label for="update-employee-fullname">Full Name</label>
-            <input type="text" id="update-employee-fullname" name="full_name" required>
-        </div>
-        <input type="hidden" name="existing-username" id="existing-username">
-        <div>
-            <label for="update-employee-username">Username</label>
-            <input type="text" id="update-employee-username" name="username" placeholder="Username" required>
+            <label for="update-category-title">Title</label>
+            <input type="text" id="update-category-title" name="title" required>
         </div>
         <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" class="password" name="password" placeholder="Password">
+            <label for="new-category-image">Update Image:</label>
+            <input type="file" id="new-category-image" name="image">
+            <input type="hidden" name="existing-image" id="existing-image">
+
         </div>
         <div>
-            <label for="re_password">Retype Password</label>
-            <input type="password" id="re_password" class="re_password" name="re_password" placeholder="Retype Password">
+            <label style="margin:1% 0;">Featured:</label>
+            <input type="radio" id="update-featured-yes" name="featured" value="Yes"><label for="update-featured-yes" style="display:inline; cursor:pointer; margin-right: 15px;"> Yes </label>
+            <input type="radio" id="update-featured-no" name="featured" value="No"><label for="update-featured-no" style="display:inline; cursor:pointer;"> No </label>
+
         </div>
         <div>
-            <input type="checkbox" id="check-box" class="check-box">
-            <label id="show-password" >Show Password</label>
+            <label style="margin:4% 0 1%;">Available:</label>
+            <input type="radio" id="update-available-yes" name="available" value="Yes"><label for="update-available-yes" style="display:inline; cursor:pointer; margin-right: 15px;"> Yes </label>
+            <input type="radio" id="update-available-no" name="available" value="No"><label for="update-available-no" style="display:inline; cursor:pointer;"> No </label>
+
         </div>
-        <div class="clear-fix"></div>
-        <input type="submit" name="submit" value="Update Employee" class="form-update-btn submit-button">
+        <input type="submit" name="submit" value="Update Category" class="form-update-btn submit-button" style="margin: 8% 0 4%;">
     </form>
 </div>
-<!-- update-employee form stops here! -->
+<!-- update-category form stops here! -->
 
 
 
-<!-- Delete employee form starts here -->
+<!-- Delete category form starts here -->
 <div class="form delete-form" style="width: 30%;">
     <span class="cross">&times;</span>
     <br>
-    <div class="form-heading">Delete Employee</div>
-    <div class="confirm-delete-qsn">Are you sure you want to delete?</div>
-    <form action="delete-employee.php" method="post">
-        <input type="hidden" name="form_id" value="delete-employee-form" />
-        <input type="hidden" name="id" id="delete-employee-id" />
+    <div class="form-heading">Delete Category</div>
+    <div class="confirm-delete-qsn">Delete the category permanently</div>
+    <form action="delete-category.php" method="post">
+        <input type="hidden" name="form_id" value="delete-category-form" />
+        <input type="hidden" name="id" id="delete-category-id" />
+        <input type="hidden" name="image" id="delete-category-image" />
 
-        <input type="submit" name="submit" value="Yes" class=" submit-button delete-yes" />
-        <span class="cross submit-button delete-no "> No </span>
+
+        <input type="submit" name="submit" value="Delete" class=" submit-button delete-yes" />
+        <span class="cross submit-button delete-no "> Cancel</span>
         <div class="clear-fix"></div>
 
 
     </form>
 </div>
-<!-- delete-employee form stops here! -->
+<!-- delete-category form stops here! -->
 
 
 <!-- Main Content Section starts here -->
@@ -120,8 +122,8 @@
                     <th>Title</th>
                     <th>Image</th>
                     <th style="text-align:center;">Featured</th>
-                    <th style="text-align:center;">available</th>
-                    <th style="text-align:center;">Actions</th>
+                    <th style="text-align:center;">Available</th>
+                    <th>Actions</th>
 
 
                 </tr>
@@ -147,15 +149,18 @@
                             <tr>
                                 <td><?php echo $sn++; ?></td>
                                 <td><?php echo $title; ?></td>
-                                <td style="width: 13%; overflow:hidden;text-align:center;";><img src = '<?php echo "../images/categories/".$image; ?>' style="width: 100%; margin: 0 auto;"></td>
+                                <td style="width: 13%; overflow:hidden;text-align:center;" ;><img src='<?php echo "../images/categories/" . $image; ?>' style="width: 100%; margin: 0 auto;"></td>
                                 <td style="text-align:center;"><?php echo $featured; ?></td>
                                 <td style="text-align:center;"><?php echo $available; ?></td>
 
 
                                 <td>
                                     <div>
-                                        <span class="table-update-btn" data-id="<?php echo $id; ?>" data-fullname="<?php echo $full_name; ?>" data-username="<?php echo $username; ?>">&#9998; Update </span>
-                                        <span class="table-delete-btn" data-user-id="<?php echo $id; ?>">&#128465;Delete</span>
+                                        <span class="table-update-btn" data-id="<?php echo $id; ?>" data-title="<?php echo $title; ?>" data-image="<?php echo $image; ?>" data-featured="<?php echo $featured; ?>" data-available="<?php echo $available; ?>">&#9998; Update </span>
+
+                                        <!-- <span class ="table-update-btn">&#9998; Update </span> -->
+
+                                        <span class="table-delete-btn" data-item-id="<?php echo $id; ?>" data-image="<?php echo $image; ?>">&#128465;Delete</span>
 
                                     </div>
                                 </td>
@@ -172,7 +177,7 @@
 </section>
 
 <!-- Adding the javascirpt file -->
-<script src="../javascript/manage-employee-forms.js"></script>
+<script src="../javascript/manage-category-form.js"></script>
 
 
 <?php include("../partials/admin-footer.php"); ?>
