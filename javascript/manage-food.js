@@ -1,16 +1,19 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const update_category_id = document.getElementById('update-category-id');
-    const update_category_title = document.getElementById('update-category-title');
+    const update_food_id = document.getElementById('update-food-id');
+    const update_food_title = document.getElementById('update-food-title');
+    const update_food_price = document.getElementById('update-food-price');
     const existing_image = document.getElementById('existing-image');
+    const food_category_id = document.getElementById('food-category-id');
+    const update_food_description = document.getElementById('update-food-description');
     const update_featured_yes = document.getElementById('update-featured-yes');
     const update_featured_no = document.getElementById('update-featured-no');
     const update_available_yes = document.getElementById('update-available-yes');
     const update_available_no = document.getElementById('update-available-no');
 
-    const delete_category_id = document.getElementById('delete-category-id');
-    const delete_category_image = document.getElementById('delete-category-image');
+    const delete_food_id = document.getElementById('delete-food-id');
+    const delete_food_image = document.getElementById('delete-food-image');
 
 
 
@@ -37,31 +40,43 @@ document.addEventListener("DOMContentLoaded", function () {
                 button.addEventListener("click", function () {
 
                     if (buttonClass === '.table-delete-btn') {
-                        const delete_item_id = this.getAttribute('data-item-id');
-                        const delete_cat_image = this.getAttribute('data-image')
-                        if (delete_category_id) {
-                            delete_category_id.value = delete_item_id;
+                        const food_id = this.getAttribute('data-item-id');
+                        const food_image = this.getAttribute('data-image')
+                        if (food_id) {
+                            delete_food_id.value = food_id;
                         }
 
-                        if (delete_cat_image) {
-                            delete_category_image.value = delete_cat_image;
+                        if (food_image) {
+                            delete_food_image.value = food_image;
                         }
                     }
 
                     else if (buttonClass === '.table-update-btn') {
                         const id = this.getAttribute('data-id');
                         if (id) {
-                            update_category_id.value = id;
+                            update_food_id.value = id;
                         }
 
                         const title = this.getAttribute('data-title');
                         if (title) {
-                            update_category_title.value = title;
+                            update_food_title.value = title;
                         }
+            
+                        const price = parseFloat(this.getAttribute('data-price').trim());
+                        update_food_price.value = price;
+
                         const image = this.getAttribute('data-image');
                         if (image) {
                             existing_image.value = image;
                         }
+
+                        const food_description = this.getAttribute('data-description');
+                        if(food_description){
+                            update_food_description.value = food_description;
+                        }
+
+                        const category = this.getAttribute('data-category').trim(); 
+                        food_category_id.value = category;
 
                         const data_featured = this.getAttribute('data-featured');
                         if (data_featured === "Yes") {

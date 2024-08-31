@@ -145,7 +145,7 @@ include("../partials/admin-navigation-bar.php");
 
                                 <td>
                                     <div>
-                                        <span class="table-update-btn" data-id="<?php echo $id; ?>" data-fullname="<?php echo $full_name; ?>" data-username="<?php echo $username; ?>">&#9998; Update </span>
+                                        <span class="table-update-btn" data-id="<?php echo $id; ?>" data-fullname="<?php echo $full_name; ?>" data-username="<?php echo $username; ?>">&#9998;Update </span>
                                         <span class="table-delete-btn" data-user-id="<?php echo $id; ?>">&#128465;Delete</span>
 
                                     </div>

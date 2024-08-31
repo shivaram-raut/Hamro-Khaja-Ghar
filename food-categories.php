@@ -85,8 +85,6 @@
                     while ($rows = mysqli_fetch_assoc($res)) {
                         $title = $rows['title'];
                         $image = $rows['image_name'];
-                        // $featured = $rows['featured'];
-                        // $available = $rows['available'];
 
 
             ?>

@@ -3,11 +3,15 @@
 include("../config/constants.php");
 
 // Check whether the submit button is clicked or not.
-if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
+if (isset($_POST['submit']) && $_POST['form_id'] === 'add-food-form') {
 
     // Get data from the add-category form
 
     $title = $_POST['title'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $category_id = $_POST['category'];
+
 
     if (isset($_FILES["image"]["name"])) {
 
@@ -17,7 +21,7 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
         // check whether the uploaded file is image or not
         $check = getimagesize($source_path);
         if ($check !== false) {
-            
+
             // check the size of the image file, 5000000bytes = 5MB
             if ($_FILES["image"]["size"] > 5000000) {
                 $_SESSION['notification_msg'] = "Upload an image smaller than 5 MB!";
@@ -26,26 +30,25 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
             }
 
             // providing the unique name to the image file
-
             $image_extension_array = explode(".", $image_name);
             $image_extension = end($image_extension_array); //gets image extension
 
-            $image_name = "food-category-" .$title.  uniqid(mt_rand(0, 99999)) . "." . $image_extension;
+            $image_name = "menu-" . $title .  uniqid(mt_rand(0, 99999)) . "." . $image_extension;
 
 
-            $destination_path = "../images/categories/" . $image_name;
+            $destination_path = "../images/menu/" . $image_name;
 
             //upload the image
             $upload = move_uploaded_file($source_path, $destination_path);
 
             if ($upload === false) {
                 $_SESSION['notification_msg'] = "Image upload failed";
-                header("Location:" . SITEURL . 'admin/manage-categories.php');
+                header("Location:" . SITEURL . 'admin/manage-menu.php');
                 exit();
             }
         } else {
             $_SESSION['notification_msg'] = "Invalid image file!";
-            header("Location:" . SITEURL . 'admin/manage-categories.php');
+            header("Location:" . SITEURL . 'admin/manage-menu.php');
             exit();
         }
     }
@@ -61,27 +64,36 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
     } else {
         $available = "No";
     }
+ 
 
+    // Prepare the SQL statement using placeholders
+$stmt = $conn->prepare("INSERT INTO tbl_menu (title, price, food_description, image_name, category, featured, available) 
+VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-    $sql = "INSERT INTO tbl_category SET
-                title = '$title',
-                featured = '$featured',
-                image_name = '$image_name',
-                available = '$available'
-                ";
+// Check if the statement was prepared successfully
+if ($stmt === false) {
+die('Prepare failed: ' . htmlspecialchars($conn->error));
+}
 
-    // Execute query and save the data in the database
-    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+ 
+$stmt->bind_param("sdssiss", $title, $price, $description, $image_name, $category_id, $featured, $available);
 
-    if ($res == true) {
-        $_SESSION['notification_msg'] = "Category added successfully!";
-    } else {
-        $_SESSION['notification_msg'] = "Something went wrong!";
-    }
-    header("Location:" . SITEURL . 'admin/manage-categories.php');
-    exit();
+// Execute the prepared statement
+if ($stmt->execute()) {
+$_SESSION['notification_msg'] = "Food added successfully!";
 } else {
-    header("Location:" . SITEURL . 'admin/manage-categories.php');
+$_SESSION['notification_msg'] = "Something went wrong!";
+}
+
+// Close the prepared statement
+$stmt->close();
+
+// Redirect to the manage menu page
+header("Location: " . SITEURL . 'admin/manage-menu.php');
+exit();
+
+} else {
+    header("Location:" . SITEURL . 'admin/manage-menu.php');
 }
 
 ?>

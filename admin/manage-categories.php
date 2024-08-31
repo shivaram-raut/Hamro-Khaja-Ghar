@@ -75,7 +75,7 @@
     <span class="cross">&times;</span>
     <br>
     <div class="form-heading">Delete Category</div>
-    <div class="confirm-delete-qsn">Delete the category permanently</div>
+    <div class="confirm-delete-qsn">Delete the category permanently.</div>
     <form action="delete-category.php" method="post">
         <input type="hidden" name="form_id" value="delete-category-form" />
         <input type="hidden" name="id" id="delete-category-id" />
@@ -121,8 +121,8 @@
                     <th>S.N.</th>
                     <th>Title</th>
                     <th>Image</th>
-                    <th style="text-align:center;">Featured</th>
-                    <th style="text-align:center;">Available</th>
+                    <th>Featured</th>
+                    <th>Available</th>
                     <th>Actions</th>
 
 
@@ -149,14 +149,14 @@
                             <tr>
                                 <td><?php echo $sn++; ?></td>
                                 <td><?php echo $title; ?></td>
-                                <td style="width: 13%; overflow:hidden;text-align:center;" ;><img src='<?php echo "../images/categories/" . $image; ?>' style="width: 100%; margin: 0 auto;"></td>
-                                <td style="text-align:center;"><?php echo $featured; ?></td>
-                                <td style="text-align:center;"><?php echo $available; ?></td>
+                                <td style="width: 13%; overflow:hidden;" ;><img src='<?php echo "../images/categories/" . $image; ?>' style="width: 100%; margin: 0 auto;"></td>
+                                <td><?php echo $featured; ?></td>
+                                <td><?php echo $available; ?></td>
 
 
                                 <td>
                                     <div>
-                                        <span class="table-update-btn" data-id="<?php echo $id; ?>" data-title="<?php echo $title; ?>" data-image="<?php echo $image; ?>" data-featured="<?php echo $featured; ?>" data-available="<?php echo $available; ?>">&#9998; Update </span>
+                                        <span class="table-update-btn" data-id="<?php echo $id; ?>" data-title="<?php echo $title; ?>" data-image="<?php echo $image; ?>" data-featured="<?php echo $featured; ?>" data-available="<?php echo $available; ?>">&#9998;Update </span>
 
                                         <!-- <span class ="table-update-btn">&#9998; Update </span> -->
 

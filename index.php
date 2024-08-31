@@ -53,32 +53,14 @@
                     }
                 }
                 ?>
-
-             <!-- <div class="box">
-                 <a href="#"> <img src="images/chowmein.jpg" alt="chowmein" class="image-responsive box-image">
-
-                     <h3 class="food-title">Chowmein</h3>
-                 </a>
-             </div>
-
-             <div class="box">
-                 <a href="#"><img src="images/momo.jpeg" alt="momo" class="image-responsive box-image">
-                     <h3 class="food-title">Momo</h3>
-                 </a>
-             </div>
-             <div class="box">
-                 <a href="#"> <img src="images/chowmein.jpg" alt="chowmein" class="image-responsive box-image">
-
-                     <h3 class="food-title">Chowmein</h3>
-                 </a>
-             </div>
          </div>
+
+         <a href="food-categories.php">
+             <div class="view-all btn">
+                 <span> View All Categories </span>
+             </div>
+         </a>
      </div>
-     <a href="food-categories.php">
-         <div class="view-all btn">
-             <span> View All Categories </span>
-         </div>
-     </a> -->
  </section>
  <!-- categories section ends here -->
 
@@ -89,129 +71,49 @@
          <h2 class="text-center"> Featured Foods</h2>
          <p class="text-center add-bottom-padding">These are the popupar foods we serve.</p>
          <div class="menu-grid-container">
-             <div class="food-menu-box">
-                 <div class="food-menu-image">
-                     <img src="images/pizza.jpeg" alt="" class="image-responsive">
-                 </div>
-                 <div class="food-details">
-                     <div class="food-name">Food Name </div>
-                     <div class="food-price">Rs 500.00</div>
-                     <div class="food-description"> Food Description, this line is expected to be.. </div>
-                     <div class="cart-btn">
-                         <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
-                     </div>
-                 </div>
-                 <div class="clear-fix"></div>
+             <?php
+                $sql = "SELECT * FROM tbl_menu WHERE featured = 'Yes' AND available = 'Yes' LIMIT 10 ";
+                $res = mysqli_query($conn, $sql);
 
-             </div>
-             <div class="food-menu-box">
-                 <div class="food-menu-image">
-                     <img src="images/pizza.jpeg" alt="" class="image-responsive">
-                 </div>
-                 <div class="food-details">
-                     <div class="food-name">Food Name </div>
-                     <div class="food-price">Rs 500.00</div>
-                     <div class="food-description"> Food Description, this line is expected to be.. </div>
-                     <div class="cart-btn">
-                         <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
-                     </div>
-                 </div>
-                 <div class="clear-fix"></div>
-             </div>
-             <div class="food-menu-box">
-                 <div class="food-menu-image">
-                     <img src="images/pizza.jpeg" alt="" class="image-responsive">
-                 </div>
-                 <div class="food-details">
-                     <div class="food-name">Food Name </div>
-                     <div class="food-price">Rs 500.00</div>
-                     <div class="food-description"> Food Description, this line is expected to be.. </div>
-                     <div class="cart-btn">
-                         <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
-                     </div>
-                 </div>
-                 <div class="clear-fix"></div>
-             </div>
-             <div class="food-menu-box">
-                 <div class="food-menu-image">
-                     <img src="images/pizza.jpeg" alt="" class="image-responsive">
-                 </div>
-                 <div class="food-details">
-                     <div class="food-name">Food Name </div>
-                     <div class="food-price">Rs 500.00</div>
-                     <div class="food-description"> Food Description, this line is expected to be.. </div>
-                     <div class="cart-btn">
-                         <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
-                     </div>
-                 </div>
-                 <div class="clear-fix"></div>
-             </div>
-             <div class="food-menu-box">
-                 <div class="food-menu-image">
-                     <img src="images/pizza.jpeg" alt="" class="image-responsive">
-                 </div>
-                 <div class="food-details">
-                     <div class="food-name">Food Name </div>
-                     <div class="food-price">Rs 500.00</div>
-                     <div class="food-description"> Food Description, this line is expected to be.. </div>
-                     <div class="cart-btn">
-                         <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
-                     </div>
-                 </div>
-                 <div class="clear-fix"></div>
-             </div>
-             <div class="food-menu-box">
-                 <div class="food-menu-image">
-                     <img src="images/pizza.jpeg" alt="" class="image-responsive">
-                 </div>
-                 <div class="food-details">
-                     <div class="food-name">Food Name </div>
-                     <div class="food-price">Rs 500.00</div>
-                     <div class="food-description"> Food Description, this line is expected to be.. </div>
-                     <div class="cart-btn">
-                         <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
-                     </div>
-                 </div>
-                 <div class="clear-fix"></div>
-             </div>
-             <div class="food-menu-box">
-                 <div class="food-menu-image">
-                     <img src="images/pizza.jpeg" alt="" class="image-responsive">
-                 </div>
-                 <div class="food-details">
-                     <div class="food-name">Food Name </div>
-                     <div class="food-price">Rs 500.00</div>
-                     <div class="food-description"> Food Description, this line is expected to be longer as as as sometimes. Let's see if this works. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fuga, culpa quisquam non labore quas, iusto eius perspiciatis </div>
-                     <div class="cart-btn">
-                         <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
-                     </div>
-                 </div>
-                 <div class="clear-fix"></div>
-             </div>
+                if ($res == true) {
+                    $count = mysqli_num_rows($res);
 
-             <div class="food-menu-box">
-                 <div class="food-menu-image">
-                     <img src="images/pizza.jpeg" alt="" class="image-responsive">
-                 </div>
-                 <div class="food-details">
-                     <div class="food-name">Food Name </div>
-                     <div class="food-price">Rs 500.00</div>
-                     <div class="food-description"> Food Description, this line is expected to be longer as as as sometimes. Let's see if this works. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fuga, culpa quisquam non labore quas, iusto eius perspiciatis </div>
-                     <div class="cart-btn">
-                         <a href="#"><img src="images/cart.svg" alt="cart-icon" class="image-responsive"></a>
-                     </div>
-                 </div>
-                 <div class="clear-fix"></div>
-             </div>
+                    if ($count > 0) {
+                        while ($rows = mysqli_fetch_assoc($res)) {
+                            $title = $rows['title'];
+                            $image = $rows['image_name'];
+                            $price = $rows['price'];
+                            $description = $rows['food_description'];
+                ?>
+
+                         <div class="food-menu-box">
+                             <div class="food-menu-image">
+                                 <img src="<?php echo 'images/menu/' . $image; ?>" alt="<?php echo $title; ?>" class="image-responsive">
+                             </div>
+                             <div class="food-details">
+                                 <div class="food-name"><?php echo $title; ?></div>
+                                 <div class="food-price"><?php echo 'Rs.'. $price; ?></div>
+                                 <div class="food-description"> <?php echo $description; ?> </div>
+                                 <div class="cart-btn">
+                                     <a href="#"><img src="images/cart.png" alt="cart-icon" class="image-responsive"></a>
+                                 </div>
+                             </div>
+                             <div class="clear-fix"></div>
+                         </div>
+
+             <?php
+                        }
+                    }
+                }
+
+                ?>
          </div>
-
-
+         <a href="#">
+             <div class="view-all btn">
+                 <span> View All Menu </span>
+             </div>
+         </a>
      </div>
-     <a href="#">
-         <div class="view-all btn">
-             <span> View All Menu </span>
-         </div>
-     </a>
  </section>
  <!-- food-menu section ends here -->
 

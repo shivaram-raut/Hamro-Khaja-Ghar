@@ -18,7 +18,7 @@
                      <a href="../index.php">Home</a>
                  </li>
                  <li>
-                     <a href="manage-menu.php">Foods</a>
+                     <a href="manage-menu.php">Menu</a>
                  </li>
                  <li>
                      <a href="manage-categories.php">Categories</a>
