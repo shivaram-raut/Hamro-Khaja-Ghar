@@ -12,8 +12,12 @@
                     <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="food-categories.php">Foods</a>
+                    <a href="food-menu.php">Menu</a>
                 </li>
+                <li>
+                    <a href="food-categories.php">Categories</a>
+                </li>
+                
                 <?php if(isset($_SESSION['admin-user'])): ?>
                     <li>
                         <a href="admin/index.php"> Dashboard </a>

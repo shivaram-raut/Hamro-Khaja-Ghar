@@ -16,6 +16,10 @@
 
 }
 
+.page-heading {
+    margin: 1%;
+}
+
 .image-responsive {
     width: 100%;
 }
@@ -424,7 +428,7 @@ h2{
 .menu-grid-container{
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 10px 10px;
+    /* gap: 10px 10px; */
 }
 
 .food-menu-box{
@@ -432,6 +436,7 @@ h2{
     border-radius: 7px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     padding: 2%;
+    margin: 1%;
 
     
 }
@@ -478,6 +483,53 @@ h2{
     overflow: auto;
     
 }
+
+/* CSS for the menu page */
+.menu-page-grid{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.category-bar{
+    position:relative;
+    /* overflow-y: auto; */
+    /* background-color: white; */
+    /* border-right: 1px solid red; */
+}
+
+.sticky-cat-section{
+    position:sticky;
+    top: 150px;
+}
+
+.category-bar ul{
+    list-style-type: none;
+}
+
+.category-bar ul li{
+    padding: 5%;
+    padding-left: 8%;
+    font-size: 17px;
+}
+
+.category-bar ul li:hover{
+    cursor: pointer;
+    background-color: #cccccc;
+    border-radius: 5px;
+}
+
+.menu-list{
+    padding:1%;
+    margin: 1% auto;
+
+}
+
+.active-menu{
+    background-color: white !important;
+    border-radius: 5px;
+    color:crimson;
+}
+
+
 
  /* CSS for footer */
 

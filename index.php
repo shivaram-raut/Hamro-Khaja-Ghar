@@ -44,7 +44,7 @@
                 ?>
                          <div class="box">
 
-                             <a href="#"> <img src="<?php echo 'images/categories/' . $image; ?>" alt="<? echo $title ?>" class="image-responsive box-image">
+                             <a href="<?php echo SITEURL."food-menu.php?category=".$title ?>" > <img src="<?php echo 'images/categories/' . $image; ?>" alt="<?php echo $title ?>" class="image-responsive box-image">
                                  <h3 class="food-title"> <?php echo $title ?> </h3>
                              </a>
                          </div>
@@ -108,7 +108,7 @@
 
                 ?>
          </div>
-         <a href="#">
+         <a href="food-menu.php">
              <div class="view-all btn">
                  <span> View All Menu </span>
              </div>
