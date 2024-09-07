@@ -24,7 +24,7 @@
                     </li>
                     <?php else: ?>
                 <li class="login-btn">
-                    <a href="admin/">Login </a>
+                    <a id="login-btn">Login </a>
                     <ul id="dropdown">
                         <li id="customer-login-btn">Customer</li>
                         <li id="employee-login-btn">Employee</li>

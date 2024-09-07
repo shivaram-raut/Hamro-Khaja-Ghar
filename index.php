@@ -55,11 +55,6 @@
                 ?>
          </div>
 
-         <a href="food-categories.php">
-             <div class="view-all btn">
-                 <span> View All Categories </span>
-             </div>
-         </a>
      </div>
  </section>
  <!-- categories section ends here -->
@@ -108,11 +103,7 @@
 
                 ?>
          </div>
-         <a href="food-menu.php">
-             <div class="view-all btn">
-                 <span> View All Menu </span>
-             </div>
-         </a>
+       
      </div>
  </section>
  <!-- food-menu section ends here -->
