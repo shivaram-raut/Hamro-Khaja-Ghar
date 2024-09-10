@@ -233,7 +233,7 @@
                 </tr>
 
                 <?php
-                $sql = "SELECT * FROM tbl_menu";
+                $sql = "SELECT * FROM tbl_menu ORDER BY category ASC ";
                 $res = mysqli_query($conn, $sql);
 
                 if ($res == TRUE) {

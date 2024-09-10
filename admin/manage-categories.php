@@ -129,7 +129,7 @@
                 </tr>
 
                 <?php
-                $sql = "SELECT * FROM tbl_category";
+                $sql = "SELECT * FROM tbl_category ORDER BY title ASC ";
                 $res = mysqli_query($conn, $sql);
 
                 if ($res == TRUE) {

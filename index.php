@@ -5,8 +5,8 @@
  <!-- search-food Section -->
  <section class="search-food">
      <div class="container">
-         <form action="">
-             <input type="search" name="searched-food" id="searched-food" placeholder="Search your favourite food here..." autocomplete="off">
+         <form action="search-food.php" method="POST">
+             <input type="search" name="searched-food" id="searched-food" placeholder="Search your favourite food..." autocomplete="off" required>
              <input type="submit" name="submit" value="Search">
          </form>
          <div class="active-hour btn">

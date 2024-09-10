@@ -8,9 +8,22 @@
             <div class="category-bar">
                 <div class="sticky-cat-section">
                     <ul class="category-list">
-                        <li class="active-menu" data-category="all">
-                            All
-                        </li>
+
+                        <?php
+                        if (isset($_SESSION['searched_food'])): ?>
+
+                            <li class="active-menu">Searched Food</li>
+                            <li data-category="all">
+                                All
+                            </li>
+
+                        <?php else: ?>
+
+                            <li class="active-menu" data-category="all">
+                                All
+                            </li>
+
+                        <?php endif; ?>
 
                         <?php
                         $sql = "SELECT title FROM tbl_category ORDER BY title ASC ";
@@ -39,13 +52,33 @@
             </div>
 
             <div class="menu-list">
-                <div class="page-heading text-center">
-                    <h1>Our Food Menu </h1>
-                </div>
-                <div class="menu-grid-container">
+                <!-- search-food Section -->
 
+
+                <section class="search-menu">
+                    <div class="container">
+                        <form action="search-food.php" method="POST">
+                            <input type="search" name="searched-food" id="searched-food" placeholder="Search your favourite food..." autocomplete="off" required>
+                            <input type="submit" name="submit" value="Search">
+                        </form>
+
+                    </div>
+
+                </section>
+                <!-- search-food section ends here -->
+
+
+                <div class="menu-grid-container">
+                    
                     <?php
-                    $sql = "SELECT * FROM tbl_menu WHERE available = 'Yes' ORDER BY category ASC ";
+                    if(isset($_SESSION['searched_food'])){
+                        $search = $_SESSION['searched_food'];
+                        $sql = "SELECT * FROM tbl_menu WHERE title LIKE '%$search%' OR food_description LIKE '%$search%' ";
+                        unset($_SESSION['searched_food']);
+                    }
+                    else{
+                        $sql = "SELECT * FROM tbl_menu WHERE available = 'Yes' ORDER BY category ASC ";
+                    }
                     $res = mysqli_query($conn, $sql);
 
                     if ($res == true) {
