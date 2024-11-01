@@ -34,7 +34,7 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'update-category-form') {
 
             $image_extension = end(explode(".", $image_name)); //gets image extension
 
-            $image_name = "food-category-" .$title. uniqid(mt_rand(0, 99999)) . "." . $image_extension;
+            $image_name = "food-category-" . $title . uniqid(mt_rand(0, 99999)) . "." . $image_extension;
 
 
             $destination_path = "../images/categories/" . $image_name;

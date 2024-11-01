@@ -52,7 +52,6 @@ if (errorMessage && formId) {
  handleButtonClick("#employee-login-btn","#admin-login-form");
  handleButtonClick("#customer-login-btn","#customer-login-form");
  handleButtonClick("#login-btn", "#customer-login-form");
- handleButtonClick("#admin-update-btn","#admin-update-form");
-
+ 
 
 });

@@ -59,5 +59,5 @@
 
 
  <!-- Adding the javascript file -->
- <script src="../javascript/input-form.js"></script>
+ <script src="../javascript/admin-update.js"></script>
  <?php include("../partials/admin-footer.php"); ?>

@@ -1,5 +1,36 @@
 <?php include("partials/navigation-bar.php"); ?>
 
+
+<!-- cart pop-up starts here -->
+<div class="overlay"> </div>
+<div id="cart-box" class="form">
+    <span class="cross">&times;</span>
+    <form action="">
+        <div class="popup-menu-box">
+
+            <div class="menu-image">
+                <img src="images/menu/menu-Chicken Ham Burger 3724266e03e73bf82c.jpeg" id="image-src" class="image-responsive">
+            </div>
+            <div class="menu-details">
+                <div id="food-item">Burger</div>
+                <div id="item-price">Rs. 100</div>
+                <div id="item-description"> This is burger. This burger is very tasty. You should buy this burger. </div>
+            </div>
+            <div>
+                <label for="item-quantity">Quantity: </label>
+                <input style="width:40%; height:30px;" type="number" id="item-quantity" value="1" min="1">
+            </div>
+            <div id="total-price" style="font-size: 18px; padding: 7px 0 0 7px;">
+                Total price: Rs. 100
+            </div>
+
+        </div>
+        <button type="submit" name="submit">Add to Cart</button>
+    </form>
+</div>
+
+<!-- cart pop-up ends here -->
+
 <section class="food-menu">
 
     <div class="container" style="width:95%;">
@@ -58,7 +89,18 @@
                 <section class="search-menu">
                     <div class="container">
                         <form action="search-food.php" method="POST">
-                            <input type="search" name="searched-food" id="searched-food" placeholder="Search your favourite food..." autocomplete="off" required>
+                            <?php
+                            if (isset($_SESSION['searched_food'])): ?>
+
+                                <input type="search" name="searched-food" id="searched-food" value="<?php echo $_SESSION['searched_food'] ?>" autocomplete="off" required>
+
+
+                            <?php else: ?>
+
+                                <input type="search" name="searched-food" id="searched-food" placeholder="Search your favourite food..." autocomplete="off" required>
+
+                            <?php endif; ?>
+
                             <input type="submit" name="submit" value="Search">
                         </form>
 
@@ -69,14 +111,14 @@
 
 
                 <div class="menu-grid-container">
-                    
+
                     <?php
-                    if(isset($_SESSION['searched_food'])){
+                    if (isset($_SESSION['searched_food'])) {
                         $search = $_SESSION['searched_food'];
-                        $sql = "SELECT * FROM tbl_menu WHERE title LIKE '%$search%' OR food_description LIKE '%$search%' ";
+                        $truncated_search = substr($search, 0, -1); //handling the cases for plural of the titles
+                        $sql = "SELECT * FROM tbl_menu WHERE title LIKE '%$truncated_search%' OR food_description LIKE '%$truncated_search%' ";
                         unset($_SESSION['searched_food']);
-                    }
-                    else{
+                    } else {
                         $sql = "SELECT * FROM tbl_menu WHERE available = 'Yes' ORDER BY category ASC ";
                     }
                     $res = mysqli_query($conn, $sql);
@@ -118,7 +160,10 @@
                                             <div class="food-price"><?php echo 'Rs.' . $price; ?></div>
                                             <div class="food-description"> <?php echo $description; ?> </div>
                                             <div class="cart-btn">
-                                                <a href="#"><img src="images/cart.png" alt="cart-icon" class="image-responsive"></a>
+                                                <!-- <span class="login-pop-up"><img src="images/cart.png" alt="cart-icon" class="image-responsive"></span> -->
+
+                                                <span class="cart-pop-up" data-title="<?php echo $title; ?>" data-price="<?php echo $price; ?>" data-description="<?php echo $description; ?>" data-image="<?php echo 'images/menu/' . $image; ?>"><img src="images/cart.png" alt="cart-icon" class="image-responsive"> </span>
+
                                             </div>
                                         </div>
                                         <div class="clear-fix"></div>
@@ -140,4 +185,6 @@
 
 <?php include("partials/footer.php"); ?>
 
+<script src="javascript/cart-popup.js"></script>
+<script src="javascript/login-popup.js"></script>
 <script src="javascript/filter-menu.js"></script>
