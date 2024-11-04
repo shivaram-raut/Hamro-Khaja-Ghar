@@ -1,4 +1,4 @@
-<?php include("partials/navigation-bar.php"); ?>
+<?php include("../partials/navigation-bar.php"); ?>
 
 
 <!-- cart pop-up starts here -->
@@ -9,7 +9,7 @@
         <div class="popup-menu-box">
 
             <div class="menu-image">
-                <img src="images/menu/menu-Chicken Ham Burger 3724266e03e73bf82c.jpeg" id="image-src" class="image-responsive">
+                <img src="../images/menu/menu-Chicken Ham Burger 3724266e03e73bf82c.jpeg" id="image-src" class="image-responsive">
             </div>
             <div class="menu-details">
                 <div id="food-item">Burger</div>
@@ -153,7 +153,7 @@
                                     <div class="food-menu-box">
 
                                         <div class="food-menu-image">
-                                            <img src="<?php echo 'images/menu/' . $image; ?>" alt="<?php echo $title; ?>" class="image-responsive">
+                                            <img src="<?php echo '../images/menu/' . $image; ?>" alt="<?php echo $title; ?>" class="image-responsive">
                                         </div>
                                         <div class="food-details">
                                             <div class="food-name"><?php echo $title; ?></div>
@@ -162,7 +162,7 @@
                                             <div class="cart-btn">
                                                 <!-- <span class="login-pop-up"><img src="images/cart.png" alt="cart-icon" class="image-responsive"></span> -->
 
-                                                <span class="cart-pop-up" data-title="<?php echo $title; ?>" data-price="<?php echo $price; ?>" data-description="<?php echo $description; ?>" data-image="<?php echo 'images/menu/' . $image; ?>"><img src="images/cart.png" alt="cart-icon" class="image-responsive"> </span>
+                                                <span class="cart-pop-up" data-title="<?php echo $title; ?>" data-price="<?php echo $price; ?>" data-description="<?php echo $description; ?>" data-image="<?php echo '../images/menu/' . $image; ?>"><img src="../images/cart.png" alt="cart-icon" class="image-responsive"> </span>
 
                                             </div>
                                         </div>
@@ -183,8 +183,8 @@
     </div>
 </section>
 
-<?php include("partials/footer.php"); ?>
+<?php include("../partials/footer.php"); ?>
 
-<script src="javascript/cart-popup.js"></script>
-<script src="javascript/login-popup.js"></script>
-<script src="javascript/filter-menu.js"></script>
+<script src="../javascript/cart-popup.js"></script>
+<script src="../javascript/login-popup.js"></script>
+<script src="../javascript/filter-menu.js"></script>

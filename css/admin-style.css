@@ -299,21 +299,6 @@ table tr:hover {
 }
 
 
-.cross {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 6px 15px;
-    font-size: 1.6rem;
-    border-radius: 1px;
-}
-
-.cross:hover {
-    background-color: #E33E33;
-    color: white;
-    cursor: pointer;
-}
-
 .submit-button {
     width: 100%;
     color: white;
@@ -380,7 +365,7 @@ table tr:hover {
 }
 
 /* css for showing and hiding password */
-#check-box {
+.check-box {
     width: 20px;
     height: 20px;
     float: left;
@@ -388,7 +373,7 @@ table tr:hover {
 
 }
 
-#show-password {
+.show-password {
     font-size: 15px;
     padding: 2px 6px;
     float: left;
@@ -401,12 +386,12 @@ table tr:hover {
     right: 5%;
     top: -50%;
     margin: 20px;
-    width: 45%;
+    width: auto;
     font-size: 17px;
     color: red;
     background-color: #dff0d8;
-    padding: 0.9%;
-    text-align: center;
+    padding: 0.9% 60px;
+    text-align: left;
     border-radius: 10px;
     z-index: 50;
     transition: all 0.8s;
@@ -418,7 +403,20 @@ table tr:hover {
 
 }
 
+.cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px 15px;
+    font-size: 1.6rem;
+    border-radius: 1px;
+}
 
+.cross:hover {
+    background-color: #E33E33;
+    color: white;
+    cursor: pointer;
+}
 
 /* css for footer section */
 .footer {

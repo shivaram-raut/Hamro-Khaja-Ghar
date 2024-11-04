@@ -203,6 +203,7 @@ h2 {
 
 }
 
+
 .form {
     width: 35%;
     background-color: white;
@@ -295,20 +296,68 @@ h2 {
     text-decoration: underline;
 }
 
-#error-msg {
+.error-msg {
     color: red;
     text-align: center;
 }
 
+#customer-sign-up-form{
+    margin: auto;
+    margin-top: 3% !important;
+    width: 50%;
+    padding: 3%;
+    box-shadow: 0 0 10px 3px grey;
+}
+
+
+/* css for notification-msg box */
+
+.notification-msg {
+    position: absolute;
+    right: 5%;
+    top: -50%;
+    margin: 20px;
+    width: auto;
+    font-size: 17px;
+    color: red;
+    background-color: #dff0d8;
+    padding: 0.9% 60px;
+    text-align: left;
+    border-radius: 10px;
+    z-index: 50;
+    transition: all 0.8s;
+    overflow: hidden;
+}
+
+.show-notification-msg {
+    top: 12%;
+
+}
+
+.cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px 15px;
+    font-size: 1.6rem;
+    border-radius: 1px;
+}
+
+.cross:hover {
+    background-color: #E33E33;
+    color: white;
+    cursor: pointer;
+}
+
 /* css for showing and hiding password */
-#check-box {
+.form .check-box {
     width: 20px;
     float: left;
     margin: 0;
 
 }
 
-#show-password {
+.form .show-password {
     font-size: 15px;
     padding: 1% 2%;
     margin-top: 2%;
@@ -591,7 +640,98 @@ h2 {
     font-size: 15px;
 }
 
+/* CSS for my-cart page */
 
+/* CSS for table */
+.table-full {
+    width: 100%;
+    box-shadow: 0 0 2px 1px #e6e6e6;
+
+
+}
+
+.items-list-table {
+    min-height: 38vh;
+    margin-top: 2%;
+
+}
+
+table tr th {
+    padding: 1% 4px;
+    text-align: center;
+    background-color: #cccccc;
+
+}
+
+table tr td {
+    padding: 4px;
+    text-align: center;
+
+
+}
+
+table tr:nth-child(odd) {
+    background-color: #cccccc;
+
+
+}
+
+table tr:nth-child(even) {
+    background-color: #e6e6e6;
+}
+
+table tr:hover {
+    /* background-color: #cccccc; */
+    background-color: #bfbfbf;
+
+}
+
+.table-update-btn {
+    color: #008fb3;
+    cursor: pointer;
+    margin-right: 10%;
+
+}
+
+.table-delete-btn {
+    color: red;
+    cursor: pointer;
+}
+
+.confirm-delete-qsn {
+    font-size: 20px;
+}
+
+.delete-yes {
+    background-color: #E33E33 !important;
+    width: 35% !important;
+    margin-top: 10% !important;
+    float: left;
+
+}
+
+.delete-yes:hover {
+    background-color: #B43F3F !important;
+    cursor: pointer;
+}
+
+.delete-no {
+    background-color: #2d8659;
+    width: 35%;
+    margin-top: 10%;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative !important;
+    float: right;
+
+}
+
+.delete-no:hover {
+    background-color: #26734d !important;
+    cursor: pointer;
+}
 
 /* CSS for footer */
 

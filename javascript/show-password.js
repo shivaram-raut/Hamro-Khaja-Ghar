@@ -6,14 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var re_password_btns = document.querySelectorAll(".re_password");
     var check_boxes = document.querySelectorAll(".check-box");
 
-    // password_btns.forEach(function(btn){
-    //     btn.type = "password";
-    // });
-
-    // re_password_btns.forEach(function(btn){
-    //     btn.type = "password";
-    // });
-
+    
     function toggle(btn){
         if (btn.type === "password") {
             btn.type = "text";

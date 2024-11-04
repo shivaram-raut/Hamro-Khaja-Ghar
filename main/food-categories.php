@@ -1,4 +1,4 @@
-<?php include("partials/navigation-bar.php"); ?>
+<?php include("../partials/navigation-bar.php"); ?>
 
  
 
@@ -27,7 +27,7 @@
             ?>
                         <div class="box">
 
-                            <a href="<?php echo SITEURL."food-menu.php?category=".$title ?>"> <img src="<?php echo 'images/categories/' . $image; ?>" alt="<? echo $title ?>" class="image-responsive box-image">
+                            <a href="<?php echo SITEURL."main/food-menu.php?category=".$title ?>"> <img src="<?php echo '../images/categories/' . $image; ?>" alt="<? echo $title ?>" class="image-responsive box-image">
                                 <h3 class="food-title"> <?php echo $title ?> </h3>
                             </a>
                         </div>
@@ -40,4 +40,4 @@
 </section>
 <!-- categories section ends here -->
 
-<?php include("partials/footer.php"); ?>
+<?php include("../partials/footer.php"); ?>

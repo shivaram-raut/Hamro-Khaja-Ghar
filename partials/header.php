@@ -1,5 +1,5 @@
 <?php 
-include('config/constants.php');
+include('../config/constants.php');
 ?>
 
 
@@ -15,10 +15,10 @@ include('config/constants.php');
 
 
     <!-- linking css file -->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="javascript/active-page.js"></script>
-    <script src="javascript/input-form.js"></script>
-    <script src="javascript/show-password.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../javascript/active-page.js"></script>
+    <script src="../javascript/input-form.js"></script>
+    <script src="../javascript/show-password.js"></script>
 
 
 </head>

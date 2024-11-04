@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function filterItems(selectedCategory) {
         // Show/Hide food items based on the selected category
         foodItems.forEach(foodItem => {
-            if (selectedCategory === "all" || foodItem.getAttribute("data-category") === selectedCategory) {
+            if (foodItem.getAttribute("data-category") === selectedCategory || selectedCategory === "all") {
                 foodItem.style.display = "block"; // Show matching items
             } else {
                 foodItem.style.display = "none"; // Hide non-matching items

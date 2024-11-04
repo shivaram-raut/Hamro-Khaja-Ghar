@@ -3,7 +3,7 @@
     <div class="container">
         <div class="footer-section">
             <div class="footer-logo">
-                <img src="images/logo.png" alt="logo" class="image-responsive">
+                <img src="../images/logo.png" alt="logo" class="image-responsive">
                 <div class="company-desc text-center">
                     <p>We serve the best quality foods in the town.<br>
                         "भोक लागे, हामी छौँ!"
@@ -35,24 +35,24 @@
 
                     <div class="social-media-icon">
                         <a href="https://www.facebook.com/" target="_blank">
-                            <img src="images/facebook.png" alt="facebook-icon" class="image-responsive">
+                            <img src="../images/facebook.png" alt="facebook-icon" class="image-responsive">
                         </a>
                     </div>
 
                     <div class="social-media-icon">
                         <a href="https://www.instagram.com/" target="_blank">
-                            <img src="images/instagram.png" alt="instagram-icon" class="image-responsive">
+                            <img src="../images/instagram.png" alt="instagram-icon" class="image-responsive">
                         </a>
                     </div>
 
                     <div class="social-media-icon">
                         <a href="https://www.whatsapp.com" target="_blank">
-                            <img src="images/whatsapp.png" alt="whatsapp-icon" class="image-responsive">
+                            <img src="../images/whatsapp.png" alt="whatsapp-icon" class="image-responsive">
                         </a>
                     </div>
                     <div class="social-media-icon">
                         <a href="https://github.com/shivaram-raut/hamro-khaja-ghar" target="_blank" title="Go to th github page of this project-work for source code">
-                            <img src="images/github.png" alt="github-icon" class="image-responsive">
+                            <img src="../images/github.png" alt="github-icon" class="image-responsive">
                         </a>
                     </div>
                 </div>

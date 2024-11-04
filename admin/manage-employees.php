@@ -27,7 +27,7 @@ include("../partials/admin-navigation-bar.php");
         </div>
         <div>
             <input type="checkbox" id="check-box" class="check-box">
-            <label id="show-password"  >Show Password</label>
+            <label id="show-password" class="show-password">Show Password</label>
         </div>
         <div class="clear-fix"></div>
         <input type="submit" name="submit" value="Add Employee" class="form-add-btn submit-button">
@@ -62,7 +62,7 @@ include("../partials/admin-navigation-bar.php");
         </div>
         <div>
             <input type="checkbox" id="check-box" class="check-box">
-            <label id="show-password" >Show Password</label>
+            <label id="show-password" class="show-password">Show Password</label>
         </div>
         <div class="clear-fix"></div>
         <input type="submit" name="submit" value="Update Employee" class="form-update-btn submit-button">
