@@ -24,20 +24,21 @@
 <div class="container">
     <h2 style="text-align: center; margin: 1%;"> My Cart </h2>
     <div class="items-list-table">
+        <!-- <table style="width: 80%; margin: auto; "> -->
         <table class="table-full">
+
             <tr>
-                <th>S.N.</th>
-                <th>Title</th>
-                <th>Image</th>
-                <th>Featured</th>
-                <th>Available</th>
+                <th>Food-items</th>
+                <th>Quantity</th>
+                <th> Total Price </th>
                 <th>Actions</th>
 
 
             </tr>
 
             <?php
-            $sql = "SELECT * FROM tbl_category ORDER BY title ASC ";
+            $user_id = $_SESSION['user-id'];
+            $sql = "SELECT * FROM tbl_cart WHERE user_id = $user_id ";
             $res = mysqli_query($conn, $sql);
 
             if ($res == TRUE) {
@@ -46,29 +47,49 @@
 
                 if ($count > 0) {
                     while ($rows = mysqli_fetch_assoc($res)) {
-                        $id = $rows['id'];
-                        $title = $rows['title'];
-                        $image = $rows['image_name'];
-                        $featured = $rows['featured'];
-                        $available = $rows['available'];
+                        $food_item_id = $rows['food_item_id'];
+                        $quantity = $rows['quantity'];
+                        $total_price = $rows['total_price'];
+
+
+                        $inner_sql = "SELECT title, price, image_name FROM tbl_menu WHERE id = $food_item_id ";
+                        $inner_res = mysqli_query($conn, $inner_sql);
+
+                        if (mysqli_num_rows($inner_res) == 1) {
+                            $inner_row = mysqli_fetch_assoc($inner_res);
+                            $food_item = $inner_row['title'];
+                            $image = $inner_row['image_name'];
+                            $price = $inner_row['price'];
+                        }
 
 
             ?>
                         <tr>
-                            <td><?php echo $sn++; ?></td>
-                            <td><?php echo $title; ?></td>
-                            <td style="width: 10%; overflow:hidden;" ;><img src='<?php echo "../images/categories/" . $image; ?>' style="width: 100%; margin: 0 auto;"></td>
-                            <td><?php echo $featured; ?></td>
-                            <td><?php echo $available; ?></td>
+                            <td>
+                                <div class="food-menu-box">
+
+                                    <div class="food-menu-image">
+                                        <img src="<?php echo '../images/menu/' . $image; ?>" alt="<?php echo $food_item; ?>" class="image-responsive">
+                                    </div>
+                                    <div class="food-details">
+                                        <div class="food-name"><?php echo $food_item; ?></div>
+                                        <div class="food-price"><?php echo 'Rs.' . $price; ?></div>
+                                    </div>
+                                    <div class="clear-fix"></div>
+                                </div>
+
+                            </td>
+                            <td><?php echo $quantity ?></td>
+                            <td><?php echo "Rs. " . $total_price; ?> </td>
 
 
                             <td>
                                 <div>
-                                    <span class="table-update-btn" data-id="<?php echo $id; ?>" data-title="<?php echo $title; ?>" data-image="<?php echo $image; ?>" data-featured="<?php echo $featured; ?>" data-available="<?php echo $available; ?>">&#9998;Update </span>
+                                    <span class="table-update-btn">&#9998;Update </span>
 
                                     <!-- <span class ="table-update-btn">&#9998; Update </span> -->
 
-                                    <span class="table-delete-btn" data-item-id="<?php echo $id; ?>" data-image="<?php echo $image; ?>">&#128465;Delete</span>
+                                    <span class="table-delete-btn">&#128465;Delete</span>
 
                                 </div>
                             </td>

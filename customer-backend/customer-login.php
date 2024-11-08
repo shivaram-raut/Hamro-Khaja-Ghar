@@ -3,7 +3,7 @@ include("../config/constants.php");
 
 function invalidCreds($redirect_uri)
 {
-    $errorMessage = "Invalid username or password.";
+    $errorMessage = "Invalid email or password.";
     header("Location:" . $redirect_uri . "?error=" . urlencode($errorMessage) . "&show=customer-login-form");
     exit;
 }
@@ -46,11 +46,11 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'customer-login-form') {
     if (mysqli_num_rows($res) == 1) {
         $row = mysqli_fetch_assoc($res);
         $hashed_password = $row['password'];
-        $user = $row['full_name'];
+        $user_id = $row['id'];
 
         if (password_verify($password, $hashed_password)) {
-            $_SESSION['customer-user'] = $user;
-            header("Location:" . $new_redirect_uri);
+            $_SESSION['user-id'] = $user_id;
+            header("Location:" . SITEURL . "index.php");
             exit;
         } else {
             invalidCreds($redirect_uri);

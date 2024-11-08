@@ -1,6 +1,5 @@
- <?php
-    include("../partials/navigation-bar.php");
-    ?>
+ <?php include("../partials/navigation-bar.php"); ?>
+ <?php include("../partials/cart-popup.php"); ?>
 
  <!-- search-food Section -->
  <section class="search-food">
@@ -44,7 +43,7 @@
                 ?>
                          <div class="box">
 
-                             <a href="<?php echo SITEURL."main/food-menu.php?category=".$title ?>" > <img src="<?php echo '../images/categories/' . $image; ?>" alt="<?php echo $title ?>" class="image-responsive box-image">
+                             <a href="<?php echo SITEURL . "main/food-menu.php?category=" . $title ?>"> <img src="<?php echo '../images/categories/' . $image; ?>" alt="<?php echo $title ?>" class="image-responsive box-image">
                                  <h3 class="food-title"> <?php echo $title ?> </h3>
                              </a>
                          </div>
@@ -67,7 +66,7 @@
          <p class="text-center add-bottom-padding">These are the popupar foods we serve.</p>
          <div class="menu-grid-container">
              <?php
-                $sql = "SELECT * FROM tbl_menu WHERE featured = 'Yes' AND available = 'Yes' LIMIT 10 ";
+                $sql = "SELECT * FROM tbl_menu WHERE featured = 'Yes' AND available = 'Yes' LIMIT 6 ";
                 $res = mysqli_query($conn, $sql);
 
                 if ($res == true) {
@@ -75,25 +74,32 @@
 
                     if ($count > 0) {
                         while ($rows = mysqli_fetch_assoc($res)) {
+                            $food_item_id = $rows['id'];
                             $title = $rows['title'];
                             $image = $rows['image_name'];
                             $price = $rows['price'];
                             $description = $rows['food_description'];
                 ?>
 
-                         <div class="food-menu-box">
-                             <div class="food-menu-image">
-                                 <img src="<?php echo '../images/menu/' . $image; ?>" alt="<?php echo $title; ?>" class="image-responsive">
-                             </div>
-                             <div class="food-details">
-                                 <div class="food-name"><?php echo $title; ?></div>
-                                 <div class="food-price"><?php echo 'Rs.'. $price; ?></div>
-                                 <div class="food-description"> <?php echo $description; ?> </div>
-                                 <div class="cart-btn">
-                                     <a href="#"><img src="../images/cart.png" alt="cart-icon" class="image-responsive"></a>
+                         <div class="food-item" data-category="<?php echo $food_category ?>">
+                             <div class="food-menu-box">
+
+                                 <div class="food-menu-image">
+                                     <img src="<?php echo '../images/menu/' . $image; ?>" alt="<?php echo $title; ?>" class="image-responsive">
                                  </div>
+                                 <div class="food-details">
+                                     <div class="food-name"><?php echo $title; ?></div>
+                                     <div class="food-price"><?php echo 'Rs.' . $price; ?></div>
+                                     <div class="food-description"> <?php echo $description; ?> </div>
+                                     <div class="cart-btn">
+                                         <!-- <span class="login-pop-up"><img src="images/cart.png" alt="cart-icon" class="image-responsive"></span> -->
+
+                                         <span class="cart-pop-up" data-food-item-id="<?php echo $food_item_id; ?>" data-title="<?php echo $title; ?>" data-price="<?php echo $price; ?>" data-description="<?php echo $description; ?>" data-image="<?php echo '../images/menu/' . $image; ?>"><img src="../images/cart.png" alt="cart-icon" class="image-responsive"> </span>
+
+                                     </div>
+                                 </div>
+                                 <div class="clear-fix"></div>
                              </div>
-                             <div class="clear-fix"></div>
                          </div>
 
              <?php
@@ -103,10 +109,13 @@
 
                 ?>
          </div>
-       
+
      </div>
  </section>
  <!-- food-menu section ends here -->
 
  <!-- footer section -->
  <?php include("../partials/footer.php"); ?>
+
+ <script src="../javascript/cart-popup.js"></script>
+<script src="../javascript/login-popup.js"></script>

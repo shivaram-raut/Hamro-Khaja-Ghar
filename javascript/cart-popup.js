@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    const food_item_id = document.getElementById("food-item-id");
     const image_src = document.getElementById("image-src");
     const food_item = document.getElementById("food-item");
     const item_price = document.getElementById("item-price");
@@ -30,12 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if(buttons.length > 0){
                 buttons.forEach(function(btn){
                     btn.addEventListener("click", function(){
+                        food_item_id.value= parseInt(this.getAttribute('data-food-item-id').trim());
                         image_src.src = this.getAttribute('data-image');
                         food_item.textContent = this.getAttribute('data-title');
                         price = parseFloat(this.getAttribute('data-price').trim()).toFixed(2);
                         item_price.textContent ="Rs. " + price ;
                         item_description.textContent = this.getAttribute('data-description');
-
                         item_quantity.value = 1; 
                         total_price.textContent = "Total price: Rs. " + price;
 

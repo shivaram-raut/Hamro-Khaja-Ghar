@@ -303,7 +303,7 @@ h2 {
 
 #customer-sign-up-form{
     margin: auto;
-    margin-top: 3% !important;
+    margin-top: 2% !important;
     width: 50%;
     padding: 3%;
     box-shadow: 0 0 10px 3px grey;
@@ -324,7 +324,7 @@ h2 {
     padding: 0.9% 60px;
     text-align: left;
     border-radius: 10px;
-    z-index: 50;
+    z-index: 500;
     transition: all 0.8s;
     overflow: hidden;
 }
@@ -334,7 +334,7 @@ h2 {
 
 }
 
-.cross {
+.cross, .cross1 {
     position: absolute;
     top: 0;
     right: 0;
@@ -343,7 +343,7 @@ h2 {
     border-radius: 1px;
 }
 
-.cross:hover {
+.cross:hover, .cross1:hover {
     background-color: #E33E33;
     color: white;
     cursor: pointer;

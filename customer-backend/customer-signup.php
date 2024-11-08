@@ -45,8 +45,10 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'customer-sign-up-form') {
             $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
             if ($res == true) {
+                $_SESSION['notification_msg']="Welcome to Hamro Khaja Ghar! Now login to your account to order.";
                 // Redirect back to the home page
-                header("Location:" . SITEURL . 'index.php');
+                header("Location:" . SITEURL . 'main/index.php?show=customer-login-form');
+
                 exit;
             } else {
                 $_SESSION['notification_msg'] = "Something went wrong!";

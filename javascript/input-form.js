@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Using setTimeout to add a delay before displaying the error message
                 setTimeout(function() {
                     errorMsgDivs.forEach(function(div) {
-                        div.innerText = "Invalid username or password!";
+                        div.innerText = errorMessage;
                     });
                 }, 400);
             }
@@ -53,10 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const urlParams = new URLSearchParams(window.location.search);
     const errorMessage = urlParams.get('error');
-    const formId = "#" + urlParams.get('show');
+    formId =  urlParams.get('show');
 
     if (errorMessage && formId) {
+        formId= "#" + formId;
         showModal(formId, errorMessage);
+    }
+    else if(formId){
+        formId= "#" + formId;
+        showModal(formId);
     }
 
 

@@ -1,19 +1,9 @@
-<?php
-include("../partials/navigation-bar.php");
-?>
+<?php include("../partials/navigation-bar.php"); ?>
 
 <div class="container">
-    <!--  notification-msg box-->
-    <?php if (isset($_SESSION['notification_msg'])): ?>
-        <div class="notification-msg">
-            <?php echo $_SESSION['notification_msg']; ?>
-            <span class="cross cross1">&times;</span>
-        </div>
-        <script src="../javascript/notification-msg.js"></script>
-        <?php unset($_SESSION['notification_msg']); // Clear the message after displaying 
-        ?>
-    <?php endif; ?>
-
+    <div style="margin-top: 2%;">
+        <h2 style="margin: auto; width: 50%;"> Get Registered to Hamro Khaja Ghar: </h2>
+    </div>
     <!-- customer sign-up form starts here -->
     <div class="form" id="customer-sign-up-form" style="position: static; left: auto; top: auto; z-index: auto; transform: none;">
         <div class="form-heading">Sign Up</div>
@@ -61,24 +51,4 @@ include("../partials/navigation-bar.php");
 
 <?php include("../partials/footer.php"); ?>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById('sign-up-form').addEventListener('submit', function(event) {
-            // Get the password and re-password values
-            const password = document.getElementById('password2').value;
-            const re_password = document.getElementById('re-password2').value;
-            const errorMessage = document.getElementById('error-msg2');
-
-            // Check if passwords match
-            if (password !== re_password) {
-                // Prevent form submission
-                event.preventDefault();
-                // Show an error message
-                errorMessage.textContent = "Confirmation password didn't match!";
-            } else {
-                // Clear any previous error message
-                errorMessage.textContent = "";
-            }
-        });
-    });
-</script>
+<script src="../javascript/customer-re_password-check.js"> </script>
