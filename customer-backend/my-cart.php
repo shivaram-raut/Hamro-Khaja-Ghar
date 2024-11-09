@@ -27,6 +27,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'cart-popup-form') {
             }
     
             if (isset($parsed_url['path'])) {
+                echo "there is path, parsed path: ".$parsed_url['path'];
                 if($parsed_url['path'] == "/hamro-khaja-ghar/main/food-menu.php"){
                     $new_redirect_uri = $redirect_uri;
                 }
@@ -72,7 +73,6 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'cart-popup-form') {
         $insert_query_result = mysqli_query($conn, $insert_query);
 
         if($insert_query_result == true){
-            $_SESSION['notification_msg']= "Food-item successfully added to your cart.";
             header("Location:".$redirect_uri);
         }
 

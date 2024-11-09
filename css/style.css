@@ -482,6 +482,7 @@ h2 {
     /* gap: 10px 10px; */
 }
 
+
 .food-menu-box {
     background-color: white;
     border-radius: 7px;
@@ -512,6 +513,7 @@ h2 {
     padding: 1%;
     float: left;
     width: 82%;
+    text-align:left;
     margin: auto;
     margin-left: 3%;
 }
@@ -646,7 +648,7 @@ h2 {
 .table-full {
     width: 100%;
     box-shadow: 0 0 2px 1px #e6e6e6;
-
+    /* box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4); */
 
 }
 
@@ -657,9 +659,12 @@ h2 {
 }
 
 table tr th {
-    padding: 1% 4px;
-    text-align: center;
-    background-color: #cccccc;
+    padding: 1% 5%;
+    text-align: left;
+    color: white;
+    /* background-color:#D95F59; */
+    background-color: #2F3645;
+
 
 }
 
@@ -670,67 +675,84 @@ table tr td {
 
 }
 
-table tr:nth-child(odd) {
-    background-color: #cccccc;
-
-
-}
-
-table tr:nth-child(even) {
-    background-color: #e6e6e6;
-}
-
-table tr:hover {
-    /* background-color: #cccccc; */
-    background-color: #bfbfbf;
+table input:focus {
+    outline: none;
+    border: 1px solid  #2F3645 ;
+    border-radius: 2px;
 
 }
+
 
 .table-update-btn {
+    border: 1px solid #008fb3;
+    border-radius: 2px;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 1.5% ;
     color: #008fb3;
     cursor: pointer;
-    margin-right: 10%;
+    margin-left: 4%;
 
+}
+
+.table-update-btn:hover{
+    background-color: #008fb3;
+    color: white;
 }
 
 .table-delete-btn {
+    border: 1px solid red;
+    border-radius: 2px;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 50px;
+    padding: 1.5%;
     color: red;
     cursor: pointer;
 }
 
-.confirm-delete-qsn {
-    font-size: 20px;
+.table-delete-btn:hover{
+    background-color:#E33E33;
+    color: white;
 }
 
-.delete-yes {
-    background-color: #E33E33 !important;
-    width: 35% !important;
-    margin-top: 10% !important;
+ 
+
+.food-item-box {
+    background-color: transparent;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); */
+    padding: 1%;
+
+}
+
+.food-item-image {
+    width: 18%;
     float: left;
-
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.delete-yes:hover {
-    background-color: #B43F3F !important;
-    cursor: pointer;
+.food-item-details {
+    position: relative;
+    padding: 1%;
+    float: left;
+    width: 75%;
+    text-align:left;
+    margin: auto;
+    margin-left: 3%;
 }
 
-.delete-no {
-    background-color: #2d8659;
-    width: 35%;
-    margin-top: 10%;
-    padding: 10px;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 5px;
-    position: relative !important;
-    float: right;
 
+.food-item {
+    font-size: 15px;
+    font-weight: 500;
 }
 
-.delete-no:hover {
-    background-color: #26734d !important;
-    cursor: pointer;
+.food-item-price {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 5px 0;
 }
 
 /* CSS for footer */

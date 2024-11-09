@@ -5,7 +5,7 @@ if (isset($_POST['submit']) && $_POST['form_id'] == 'delete-employee-form') {
 
     $id = $_POST['id'];
 
-    $sql = "DELETE FROM tbl_employee WHERE id = '$id' ";
+    $sql = "DELETE FROM tbl_employee WHERE id = $id ";
 
     $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 

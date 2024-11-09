@@ -50,7 +50,13 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'customer-login-form') {
 
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user-id'] = $user_id;
-            header("Location:" . SITEURL . "index.php");
+
+            //storing the user-id in the local storage
+            echo "<script> 
+                localStorage.setItem('user-id', '$user_id'); 
+                window.location.href = '" . SITEURL . "index.php';
+                </script>";
+                
             exit;
         } else {
             invalidCreds($redirect_uri);

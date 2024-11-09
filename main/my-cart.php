@@ -1,25 +1,13 @@
 <?php include("../partials/navigation-bar.php"); ?>
 
-<!-- Delete category form starts here -->
-<div class="form delete-form" style="width: 30%;">
-    <span class="cross">&times;</span>
-    <br>
-    <div class="form-heading">Delete Category</div>
-    <div class="confirm-delete-qsn">Delete the category permanently.</div>
-    <form action="delete-category.php" method="post">
-        <input type="hidden" name="form_id" value="delete-category-form" />
-        <input type="hidden" name="id" id="delete-category-id" />
-        <input type="hidden" name="image" id="delete-category-image" />
-
-
-        <input type="submit" name="submit" value="Delete" class=" submit-button delete-yes" />
-        <span class="cross submit-button delete-no "> Cancel</span>
-        <div class="clear-fix"></div>
-
-
+<div id="cart-box" class="form">
+    <form action="<?php echo SITEURL . 'customer-backend/remove-cart-item.php'; ?>" id="remove-cart-item-form" method="post">
+        <input type="hidden" name="form-id" value="remove-cart-item-form">
+        <input type="hidden" name="redirect-uri" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+        <input type="hidden" name="user-id" value="<?php echo $_SESSION['user-id']; ?>">
+        <input type="hidden" name="food-item-id" id="food-item-id">
     </form>
 </div>
-<!-- delete-category form stops here! -->
 
 <div class="container">
     <h2 style="text-align: center; margin: 1%;"> My Cart </h2>
@@ -31,7 +19,6 @@
                 <th>Food-items</th>
                 <th>Quantity</th>
                 <th> Total Price </th>
-                <th>Actions</th>
 
 
             </tr>
@@ -43,7 +30,6 @@
 
             if ($res == TRUE) {
                 $count = mysqli_num_rows($res);
-                $sn = 1;
 
                 if ($count > 0) {
                     while ($rows = mysqli_fetch_assoc($res)) {
@@ -65,34 +51,31 @@
 
             ?>
                         <tr>
-                            <td>
-                                <div class="food-menu-box">
+                            <td style="width: 45%;">
+                                <div class="food-item-box">
 
-                                    <div class="food-menu-image">
+                                    <div class="food-item-image">
                                         <img src="<?php echo '../images/menu/' . $image; ?>" alt="<?php echo $food_item; ?>" class="image-responsive">
                                     </div>
-                                    <div class="food-details">
-                                        <div class="food-name"><?php echo $food_item; ?></div>
-                                        <div class="food-price"><?php echo 'Rs.' . $price; ?></div>
+                                    <div class="food-item-details">
+                                        <div class="food-item"><?php echo $food_item; ?></div>
+                                        <div class="food-item-price"><?php echo 'Rs.' . $price; ?></div>
+                                        <div>
+                                            <span class="table-delete-btn" data-food-item-id="<?php echo $food_item_id; ?>">&#128465;Remove</span>
+                                        </div>
                                     </div>
                                     <div class="clear-fix"></div>
                                 </div>
 
                             </td>
-                            <td><?php echo $quantity ?></td>
+                            <td style="width: 30%;">
+                                <input style="width:25%; height:30px; text-align: center;" type="number" name="item-quantity" id="item-quantity" value="<?php echo $quantity ?>" min="1" required>
+                                <span class="table-update-btn">&#9998;Update </span>
+
+
+                            </td>
                             <td><?php echo "Rs. " . $total_price; ?> </td>
 
-
-                            <td>
-                                <div>
-                                    <span class="table-update-btn">&#9998;Update </span>
-
-                                    <!-- <span class ="table-update-btn">&#9998; Update </span> -->
-
-                                    <span class="table-delete-btn">&#128465;Delete</span>
-
-                                </div>
-                            </td>
                         </tr>
 
             <?php
@@ -106,3 +89,5 @@
 
 
 <?php include("../partials/footer.php"); ?>
+
+<script src="../javascript/remove-cart-item.js"></script>

@@ -40,8 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         item_quantity.value = 1; 
                         total_price.textContent = "Total price: Rs. " + price;
 
-
-
                         showModal(formId);
                     });
                 });

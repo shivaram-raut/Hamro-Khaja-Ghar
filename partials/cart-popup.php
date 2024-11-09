@@ -4,7 +4,7 @@
     <span class="cross">&times;</span>
     <form action="<?php echo SITEURL . 'customer-backend/my-cart.php'; ?>" method="post">
         <input type="hidden" name="form-id" value="cart-popup-form">
-        <input type="hidden" name="redirect-uri" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+        <input type="hidden" name="redirect-uri" id="redirect-uri" >
         <input type="hidden" name="user-id" value="<?php echo $_SESSION['user-id']; ?>">
         <input type="hidden" name="food-item-id" id="food-item-id">
         <div class="popup-menu-box">
@@ -19,7 +19,7 @@
             </div>
             <div>
                 <label for="item-quantity">Quantity: </label>
-                <input style="width:40%; height:30px;" type="number" name="item-quantity" id="item-quantity" value="1" min="1" required>
+                <input style="width:40%; height:30px; text-align: center;" type="number" name="item-quantity" id="item-quantity" value="1" min="1" required>
             </div>
             <div id="total-price" style="font-size: 18px; padding: 7px 0 0 7px;">
                 Total price: Rs. 100

@@ -1,5 +1,12 @@
-<?php include("header.php"); ?>
-<?php include("notification-msg.php"); ?>
+
+<script src="../javascript/cart-items-num.js" ></script>
+<?php 
+include("header.php");
+
+include("notification-msg.php");
+ 
+include("set-user-id-session.php");
+?>
 
 <!-- home-navigation-bar Section  starts here-->
 <section class="navigation-bar">
@@ -35,7 +42,7 @@
                 <?php endif; ?>
 
                 <li>
-                    <a href="my-cart.php">My Cart </a>
+                    <a href="my-cart.php">My Cart(<span id="cart-items-count" style="font-weight:bold";>0</span>)</a>
                 </li>
             </ul>
         </div>
