@@ -12,7 +12,6 @@
 <div class="container">
     <h2 style="text-align: center; margin: 1%;"> My Cart </h2>
     <div class="items-list-table">
-        <!-- <table style="width: 80%; margin: auto; "> -->
         <table class="table-full">
 
             <tr>
@@ -25,6 +24,7 @@
 
             <?php
             $user_id = $_SESSION['user-id'];
+            $grand_total_price = 0.0;
             $sql = "SELECT * FROM tbl_cart WHERE user_id = $user_id ";
             $res = mysqli_query($conn, $sql);
 
@@ -36,6 +36,8 @@
                         $food_item_id = $rows['food_item_id'];
                         $quantity = $rows['quantity'];
                         $total_price = $rows['total_price'];
+
+                        $grand_total_price += (float)$total_price;
 
 
                         $inner_sql = "SELECT title, price, image_name FROM tbl_menu WHERE id = $food_item_id ";
@@ -74,16 +76,25 @@
 
 
                             </td>
-                            <td><?php echo "Rs. " . $total_price; ?> </td>
+                            <td><?php echo "Rs. " . number_format($total_price,2); ?> </td>
 
                         </tr>
 
+
             <?php
                     }
+                    $grand_total_price = round($grand_total_price, 2);
                 }
             }
             ?>
+            <tr>
+                <td></td>
+                <td class="grand-total-row">Grand-total:</td>
+                <td class="grand-total-row"> <?php echo "Rs. " . number_format($grand_total_price, 2) ?> </td>
+            </tr>
         </table>
+        <a href="<?php echo SITEURL. 'main/checkout.php'; ?>" style="color:white;">  <div class="checkout-btn">Proceed to Checkout </div></a>
+
     </div>
 </div>
 
