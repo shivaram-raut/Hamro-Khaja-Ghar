@@ -14,7 +14,7 @@
                         <?php
                         if (isset($_SESSION['searched_food'])): ?>
 
-                            <li class="active-menu">Searched Food</li>
+                            <li class="active-menu">Searched Food</li> 
                             <li data-category="all">
                                 All
                             </li>
@@ -59,7 +59,7 @@
 
                 <section class="search-menu">
                     <div class="container">
-                        <form action="search-food.php" method="POST">
+                        <form action="search-food.php" id="food-form123" method="POST">
                             <?php
                             if (isset($_SESSION['searched_food'])): ?>
 
@@ -72,7 +72,7 @@
 
                             <?php endif; ?>
 
-                            <input type="submit" name="submit" value="Search">
+                            <input type="submit" name="search-submit" value="Search">
                         </form>
 
                     </div>

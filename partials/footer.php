@@ -64,7 +64,7 @@
 
         <hr style="margin: 2%;">
         <p class="copyright-msg text-center">
-            &#169; 2024 Hamro Khaja Ghar All rights reserved. Develoved by Shivaram Raut.
+            &#169; 2024 Hamro Khaja Ghar All rights reserved.
         </p>
     </div>
 </section>
