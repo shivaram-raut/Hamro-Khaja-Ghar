@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoryItems = document.querySelectorAll(".category-list li");
     const foodItems = document.querySelectorAll(".food-item");
 
-    const search_food_form = document.getElementById('food-form123');
+    const search_food_form = document.getElementById('search-food-form');
     const searched_food_input = document.getElementById('searched-food');
 
     const form = document.querySelector("form"); // Select the form element
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const url_searched_food = urlParams.get('searched-food');
 
-    var form_submit_count = localStorage.getItem('form-submit-count') || 0;
+    // const form_submit_count = localStorage.getItem('form-submit-count') || 0;
 
     if (url_searched_food) {
 
@@ -51,12 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var search_present = true;
 
-        if (form_submit_count == 0) {
-            localStorage.setItem('form-submit-count', 1);
-            search_food_form.submit();
-            return;
-            console.log("let's see");
-        }
+        // if (form_submit_count == 0) {
+        //     localStorage.setItem('form-submit-count', 1);
+        //     search_food_form.submit();
+        //     return;
+        // }
         
     }
 
@@ -98,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function () {
         updateRedirectUri();
     });
-    localStorage.setItem('form-submit-count', 0);
+    // localStorage.setItem('form-submit-count', 0);
 
 });
 

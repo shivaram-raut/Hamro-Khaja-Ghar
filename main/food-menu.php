@@ -59,7 +59,7 @@
 
                 <section class="search-menu">
                     <div class="container">
-                        <form action="search-food.php" id="food-form123" method="POST">
+                        <form action="search-food.php" id="search-food-form" method="POST">
                             <?php
                             if (isset($_SESSION['searched_food'])): ?>
 

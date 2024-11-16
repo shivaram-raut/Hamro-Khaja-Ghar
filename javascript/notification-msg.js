@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.notification-msg').classList.add('show-notification-msg');
 
         // Automatically close the notification after 4 seconds
-        setTimeout(closeNotification, 4000);
+        setTimeout(closeNotification, 6000);
     }
 
     // Function to close the notification
