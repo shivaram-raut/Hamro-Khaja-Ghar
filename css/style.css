@@ -705,6 +705,11 @@ table input:focus {
 
 }
 
+.add-background{
+    background-color: #008fb3;
+    color: white;
+}
+
 .table-update-btn:hover{
     background-color: #008fb3;
     color: white;

@@ -1,11 +1,22 @@
 <?php include("../partials/navigation-bar.php"); ?>
 
-<div id="cart-box" class="form">
+<div >
+
+    <!-- remove cart-items -->
     <form action="<?php echo SITEURL . 'customer-backend/remove-cart-item.php'; ?>" id="remove-cart-item-form" method="post">
         <input type="hidden" name="form-id" value="remove-cart-item-form">
         <input type="hidden" name="redirect-uri" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
         <input type="hidden" name="user-id" value="<?php echo $_SESSION['user-id']; ?>">
         <input type="hidden" name="food-item-id" id="food-item-id">
+    </form>
+
+    <!-- update food-item quantity -->
+    <form action="<?php echo SITEURL . 'customer-backend/update-cart-quantity.php'; ?>" id="update-cart-quantity-form" method="post">
+        <input type="hidden" name="form-id" value="update-cart-quantity-form">
+        <input type="hidden" name="redirect-uri" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+        <input type="hidden" name="user-id" value="<?php echo $_SESSION['user-id']; ?>">
+        <input type="hidden" name="food-item-id" id="update-food-item-id">
+        <input type="hidden" name="quantity" id="quantity">
     </form>
 </div>
 
@@ -36,6 +47,8 @@
                         $food_item_id = $rows['food_item_id'];
                         $quantity = $rows['quantity'];
                         $total_price = $rows['total_price'];
+
+                        $unit_price = $total_price/$quantity;
 
                         $grand_total_price += (float)$total_price;
 
@@ -71,12 +84,11 @@
 
                             </td>
                             <td style="width: 30%;">
-                                <input style="width:25%; height:30px; text-align: center;" type="number" name="item-quantity" id="item-quantity" value="<?php echo $quantity ?>" min="1" required>
-                                <span class="table-update-btn">&#9998;Update </span>
-
-
+                                <input style="width:25%; height:30px; text-align: center;"  type="number" class="item-quantity" data-food-item-id="<?php echo $food_item_id; ?>" value="<?php echo $quantity ?>" min="1" required>
+                                <span class="table-update-btn" data-food-item-id="<?php echo $food_item_id; ?>">&#9998;Update</span>
                             </td>
-                            <td><?php echo "Rs. " . number_format($total_price,2); ?> </td>
+
+                            <td class="total-price" data-food-item-id="<?php echo $food_item_id; ?>" data-unit-price = "<?php echo $unit_price ?>" ><?php echo "Rs. " . number_format($total_price, 2); ?> </td>
 
                         </tr>
 
@@ -93,7 +105,9 @@
                 <td class="grand-total-row"> <?php echo "Rs. " . number_format($grand_total_price, 2) ?> </td>
             </tr>
         </table>
-        <a href="<?php echo SITEURL. 'main/checkout.php'; ?>" style="color:white;">  <div class="checkout-btn">Proceed to Checkout </div></a>
+        <a href="<?php echo SITEURL . 'main/checkout.php'; ?>" style="color:white;">
+            <div class="checkout-btn">Proceed to Checkout </div>
+        </a>
 
     </div>
 </div>
@@ -102,3 +116,4 @@
 <?php include("../partials/footer.php"); ?>
 
 <script src="../javascript/remove-cart-item.js"></script>
+<script src="../javascript/update-cart-quantity.js"></script>
