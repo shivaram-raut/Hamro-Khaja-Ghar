@@ -46,11 +46,6 @@
                     while ($rows = mysqli_fetch_assoc($res)) {
                         $food_item_id = $rows['food_item_id'];
                         $quantity = $rows['quantity'];
-                        $total_price = $rows['total_price'];
-
-                        $unit_price = $total_price/$quantity;
-
-                        $grand_total_price += (float)$total_price;
 
 
                         $inner_sql = "SELECT title, price, image_name FROM tbl_menu WHERE id = $food_item_id ";
@@ -60,7 +55,11 @@
                             $inner_row = mysqli_fetch_assoc($inner_res);
                             $food_item = $inner_row['title'];
                             $image = $inner_row['image_name'];
-                            $price = $inner_row['price'];
+                            $unit_price = $inner_row['price'];
+
+                            $total_price = $quantity * $unit_price;
+
+                            $grand_total_price += (float)$total_price;
                         }
 
 
@@ -74,7 +73,7 @@
                                     </div>
                                     <div class="food-item-details">
                                         <div class="food-item"><?php echo $food_item; ?></div>
-                                        <div class="food-item-price"><?php echo 'Rs.' . $price; ?></div>
+                                        <div class="food-item-price"><?php echo 'Rs.' . $unit_price; ?></div>
                                         <div>
                                             <span class="table-delete-btn" data-food-item-id="<?php echo $food_item_id; ?>">&#128465;Remove</span>
                                         </div>
@@ -88,7 +87,7 @@
                                 <span class="table-update-btn" data-food-item-id="<?php echo $food_item_id; ?>">&#9998;Update</span>
                             </td>
 
-                            <td class="total-price" data-food-item-id="<?php echo $food_item_id; ?>" data-unit-price = "<?php echo $unit_price ?>" ><?php echo "Rs. " . number_format($total_price, 2); ?> </td>
+                            <td class="total-price" data-food-item-id="<?php echo $food_item_id; ?>" data-unit-price = "<?php echo $unit_price ?>" ><?php echo "Rs. " .$total_price; ?> </td>
 
                         </tr>
 
@@ -101,8 +100,9 @@
             ?>
             <tr>
                 <td></td>
-                <td class="grand-total-row">Grand-total:</td>
-                <td class="grand-total-row"> <?php echo "Rs. " . number_format($grand_total_price, 2) ?> </td>
+     
+                <td class="grand-total-row" style="border-top: 1.5px solid rgba(47, 54, 69, 0.3);">Grand-total:</td>
+                <td class="grand-total-row" style="border-top: 1.5px solid rgba(47, 54, 69, 0.3);"> <?php echo "Rs. " . number_format($grand_total_price, 2) ?> </td>
             </tr>
         </table>
         <a href="<?php echo SITEURL . 'main/checkout.php'; ?>" style="color:white;">

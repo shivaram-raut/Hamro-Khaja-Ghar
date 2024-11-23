@@ -27,6 +27,9 @@
                      <a href="manage-employees.php">Employees</a>
                  </li>
                  <li>
+                     <a href="order-table.php">Order</a>
+                 </li>
+                 <li>
                      <a href="index.php">My Account</a>
                  </li>
              </ul>

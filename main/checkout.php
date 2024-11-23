@@ -10,6 +10,7 @@
 
         $row = mysqli_fetch_assoc($res);
         $full_name = $row['full_name'];
+        $_SESSION['full-name']= $full_name;
         $adrs = $row['address'];
         $mobile_number= $row['mobile_number'];
         $email = $row['email'];
@@ -40,7 +41,7 @@
                 </div>
 
                 <div>
-                    <label for="address">Shipping Address (Modify if needed)</label>
+                    <label for="address">Delivery Location (Modify if needed)</label>
                     <textarea id="address" name="address" rows="2" cols="40" required><?php echo $adrs ?> </textarea>
                 </div>
             </div>
@@ -73,10 +74,7 @@
                         while ($rows = mysqli_fetch_assoc($res)) {
                             $food_item_id = $rows['food_item_id'];
                             $quantity = $rows['quantity'];
-                            $total_price = $rows['total_price'];
-
-                            $grand_total_price += (float)$total_price;
-
+        
 
                             $inner_sql = "SELECT title, price FROM tbl_menu WHERE id = $food_item_id ";
                             $inner_res = mysqli_query($conn, $inner_sql);
@@ -84,7 +82,11 @@
                             if (mysqli_num_rows($inner_res) == 1) {
                                 $inner_row = mysqli_fetch_assoc($inner_res);
                                 $food_item = $inner_row['title'];
-                                $price = $inner_row['price'];
+                                $unit_price = $inner_row['price'];
+
+                                $total_price = $quantity * $unit_price;
+
+                                $grand_total_price += (float)$total_price;
                             }
 
 
@@ -93,7 +95,7 @@
                             <tr>
                                 <td> <?php echo $sn++ ?> </td>
                                 <td style="text-align: left;"> <?php echo $food_item ?> </td>
-                                <td> <?php echo "Rs. " . number_format($price, 2) ?></td>
+                                <td> <?php echo "Rs. " . number_format($unit_price, 2) ?></td>
                                 <td> <?php echo $quantity ?></td>
                                 <td> <?php echo "Rs. " . number_format($total_price, 2); ?> </td>
                             </tr>
@@ -101,6 +103,7 @@
                 <?php
                         }
                         $grand_total_price = round($grand_total_price, 2);
+                        $_SESSION['total-price'] = $grand_total_price;
                     }
                 }
                 ?>
@@ -118,9 +121,13 @@
 
                 <div class="payment-method-box">
                     <div style="text-align: center; font-size: 18px;"> Choose a payment method: </div>
-                    <form>
+                    <form action="<?php echo SITEURL. "admin/process-order.php" ?>"  method="post">
+
+                        <input type="hidden" name="form-id" value="confirm-order-form">
+                        <input type="hidden" name="order-id" id="order-id">
+                        <input type="hidden" name="delivery-location" id="delivery-location">
                         <div class="payment-method">
-                            <input type="radio" name="payment-method" id="khalti" value="khalti"><label for="khalti" class="label-khalti"> <img src="../images/khalti-logo.svg" style="width:90%;"> </label>
+                            <input type="radio" name="payment-method" id="khalti" value="khalti" required><label for="khalti" class="label-khalti"> <img src="../images/khalti-logo.svg" style="width:90%;"> </label>
                         </div>
                         <div class="payment-method">
                             <input type="radio" name="payment-method" id="cod" value="cod"><label for="cod" class="label-cod" style="padding:8%;">Cash On Delivery (COD) </label>
@@ -128,7 +135,7 @@
                         </div>
                         <div class="clear-fix"></div>
                         <div>
-                            <button type="submit" name="submit" class="confirm-button">Confirm and Place Order</button>
+                            <button type="submit" name="submit" class="confirm-button" id="confirm-order">Confirm and Place Order</button>
                         </div>
                     </form>
                 </div>
@@ -142,3 +149,5 @@
 
 
 <?php include("../partials/footer.php"); ?>
+
+<script src ="../javascript/submit-order-form.js"></script>

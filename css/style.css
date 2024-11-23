@@ -709,11 +709,7 @@ table input:focus {
     background-color: #008fb3;
     color: white;
 }
-
-.table-update-btn:hover{
-    background-color: #008fb3;
-    color: white;
-}
+ 
 
 .table-delete-btn {
     border: 1px solid red;
@@ -814,10 +810,10 @@ table input:focus {
     padding: 3%;
 }
 
-.basic-details input:focus {
+/* .basic-details input:focus {
     border: 1px solid #E33E33;
 
-}
+} */
 
 .basic-details label {
     font-size: 18px;

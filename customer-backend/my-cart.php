@@ -27,7 +27,6 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'cart-popup-form') {
             }
     
             if (isset($parsed_url['path'])) {
-                echo "there is path, parsed path: ".$parsed_url['path'];
                 if($parsed_url['path'] == "/hamro-khaja-ghar/main/food-menu.php"){
                     $new_redirect_uri = $redirect_uri;
                 }
@@ -59,7 +58,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'cart-popup-form') {
         if(mysqli_num_rows($get_price_result) == 1){
             $row = mysqli_fetch_assoc($get_price_result);
             $unit_price = $row['price'];
-            $total_price = $unit_price * $item_quantity;
+           
         }
 
         //insert the food-item into the cart table
@@ -67,7 +66,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'cart-popup-form') {
         user_id = $user_id,
         food_item_id = $food_item_id,
         quantity = $item_quantity,
-        total_price = $total_price
+        unit_price = $unit_price
         ";
 
         $insert_query_result = mysqli_query($conn, $insert_query);
