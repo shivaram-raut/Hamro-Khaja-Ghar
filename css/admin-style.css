@@ -520,70 +520,26 @@ table tr:hover {
 
 .order-details-table tr:hover {
     background-color: #bfbfbf;
-} */
-
-.payment-method-box{
-    box-shadow: 0 0 3px 2px #e6e6e6;
-    padding: 3% 5%;
-    margin: 5% auto;
+} 
 
 
-}
-
-.payment-method{
-    width: 35%;
-    float:left;
-    margin: 1% 6%;
-    padding: 3%;
-
-}
-
-.payment-method input[type="radio"] {
-    display: none;  
-}
-
-.payment-method input[type="radio"]:checked + label {
-    border: 2px solid #008fb3;
-    color: #008fb3;
-     
-}
-
-.label-khalti,
-.label-cod{
-    display: block;
-    cursor: pointer;
-    box-shadow: 0 0 3px 2px #e6e6e6;
-    width: 100%;
-    padding: 5%;
-    border-radius: 5px;
-    text-align: center;
+.button{
+    width: 25%;
+    border: 1px solid #008fb3;
+    border-radius: 2px;
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 500;
+    text-align: center;
+    padding: 1% ;
     color: #008fb3;
-
+    cursor: pointer;
+    margin: 4%;
 }
 
-.label-khalti:hover,
-.label-cod:hover{
-    border: 1.5px solid #008fb3;
-    box-shadow: none;
-
-}
-
-.confirm-button{
-    width: 100%;
+.button:hover,
+.btn-hover{
     background-color:#008fb3;
     color: white;
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    margin: 1%;
-    cursor: pointer;
-}
-
-.confirm-button:hover{
-    background-color: #026e89;
 }
 
 /* css for footer section */

@@ -5,6 +5,8 @@
     <input type="hidden" name="user-id" id="user-id">
     <input type="hidden" name="order-id" id="order-id">
     <input type="hidden" name="delivery-adrs" id="delivery-adrs">
+    <input type="hidden" name="order-status" id="order-status">
+    <input type="hidden" name = "order-date" id="order-date">
 </form>
 
 <section class="main-content">
@@ -66,7 +68,7 @@
 
                                 <td>
                                     <div>
-                                        <span class="view-details-btn" data-user-id="<?php echo $user_id; ?>" data-order-id = "<?php echo $order_id; ?>" data-delivery-adrs = "<?php echo $delivery_adrs; ?>" >View Details</span>
+                                        <span class="view-details-btn" data-user-id="<?php echo $user_id; ?>" data-order-id = "<?php echo $order_id; ?>" data-delivery-adrs = "<?php echo $delivery_adrs; ?>" data-order-status = "<?php echo $status; ?>" data-order-date = "<?php echo $date; ?>" >View Details</span>
 
                                     </div>
                                 </td>

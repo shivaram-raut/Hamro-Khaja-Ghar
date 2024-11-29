@@ -5,7 +5,8 @@ if ($_POST['form-id'] == "order-details-form") {
     $user_id = $_POST['user-id'];
     $order_id = $_POST['order-id'];
     $delivery_adrs = $_POST['delivery-adrs'];
-
+    $order_status = $_POST['order-status'];
+    $date = $_POST['order-date'];
 
     $sql = "SELECT * FROM tbl_customer WHERE id = $user_id ";
 
@@ -20,6 +21,14 @@ if ($_POST['form-id'] == "order-details-form") {
     }
 
 ?>
+    <form action="<?php echo SITEURL. 'partials/generate-invoice.php'; ?>" method="post" id="generate-invoice-form" style="display: none;">
+        <input type="hidden" name="form-id" value="generate-invoice-form">
+        <input type="hidden" name="full-name" value="<?php echo $full_name; ?>">
+        <input type="hidden" name="mobile-number" value="<?php echo $mobile_number; ?>">
+        <input type="hidden" name="delivery-adrs" value="<?php echo $delivery_adrs; ?>">
+        <input type="hidden" name="order-id" value="<?php echo $order_id; ?>">
+        <input type="hidden" name="order-date" value="<?php echo $date; ?>" >
+    </form>
 
     <div class="container" style=" width: 90%; padding:5px 3%;">
 
@@ -127,20 +136,40 @@ if ($_POST['form-id'] == "order-details-form") {
 
                 </table>
                 <div>
+                    <div style="padding: 5% 1%;">
+                        <form action="update-order-status.php" method="post" id="update-status-form">
+                            <input type="hidden" name="form-id" value="update-status-form">
+                            <input type="hidden" name="order-id" value="<?php echo $order_id; ?>">
+                            <label for="order-status" style="font-size: 17px; margin: 5px;">Order Status:</label>
+                            <select id="order-status" name="order-status" style="font-size: 17px; text-align: center; padding: 5px;">
+                                <option value="Ordered" <?php echo ($order_status == 'Ordered') ? 'selected' : ''; ?>>Ordered</option>
+                                <option value="On-process" <?php echo ($order_status == 'On-process') ? 'selected' : ''; ?>>On-process</option>
+                                <option value="On-delivery" <?php echo ($order_status == 'On-delivery') ? 'selected' : ''; ?>>On-delivery</option>
+                                <option value="Delivered" <?php echo ($order_status == 'Delivered') ? 'selected' : ''; ?>>Delivered</option>
+                            </select>
+                        </form>
 
+                        <div>
+                            <div class="button" id="update-status-btn" style="float:left">&#x1F503; Update Status</div>
+                            <div class="button" id="print-invoice-btn" style="float:left">&#x1F5B6; Print Invoice</div>
+                            <div class="button" id="go-back-btn" style="float:left">&#x21A9; Go Back</div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
+
+    </div>
 
     </div>
 
 
 <?php
     include("../partials/admin-footer.php");
-}
-else{
+} else {
     header("Location:" . SITEURL . 'admin/order-table.php');
-
 }
 ?>
+
+<script src="../javascript/order-details-page.js"></script>
