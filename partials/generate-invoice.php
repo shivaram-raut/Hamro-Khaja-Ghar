@@ -33,8 +33,11 @@ $pdf->Cell(50, 10, 'Mobile Number:', 0, 0);
 $pdf->Cell(50, 10, $mobile_number, 0, 1);
 $pdf->Cell(50, 10, 'Delivery Address:', 0, 0);
 $pdf->MultiCell(100, 10, $delivery_adrs);
+$pdf->Cell(50, 10, 'Order ID:', 0, 0);
+$pdf->MultiCell(100, 10, $order_id);
 $pdf->Cell(50, 10, 'Order Date:', 0, 0);
 $pdf->MultiCell(100, 10, date('Y-m-d h:i:s A', strtotime($date)));
+
 
 $pdf->Ln(10);
 $pdf->Cell(40, 10, 'Order Details:', 0, 0, 'C');
@@ -109,10 +112,11 @@ if ($res == TRUE) {
     $pdf->Cell(125, 10, 'Grand Total', 1, 0, 'R');
     $pdf->Cell(40, 10, "Rs. " . number_format($grand_total_price, 2), 1, 1, 'C');
 
-    $pdf->SetFont('Arial', '', 12);
+    $pdf->SetFont('Arial', '', 9);
     $pdf->Ln(10);
-    $pdf->Cell(0, 10, 'Thank you for choosing us! ', 0, 1, 'C');
-    $pdf->Cell(0, 10, 'We look forward to serving you again. ', 0, 1, 'C');
+    $pdf->Cell(0, 5, 'Thank you for choosing us! We look forward to serving you again. ', 0, 1, 'C');
+    $pdf->Cell(0, 5, 'For more contact us at: hamro-khaja-ghar@gmail.com ', 0, 1, 'C');
+
 
 
     // Output PDF

@@ -132,7 +132,6 @@ table tr:nth-child(even) {
 }
 
 table tr:hover {
-    /* background-color: #cccccc; */
     background-color: #bfbfbf;
 
 }
@@ -424,7 +423,6 @@ table tr:hover {
  because the other forms are styled differently */
 
  .grand-total-row {
-    /* border-top: 1.5px solid rgba(47, 54, 69, 0.3); */
     padding: 1% 5%;
     color:#B43F3F;
     font-size: 17px;
@@ -523,7 +521,7 @@ table tr:hover {
 } 
 
 
-.button{
+.button, .odr-update-btn{
     width: 25%;
     border: 1px solid #008fb3;
     border-radius: 2px;
@@ -541,6 +539,7 @@ table tr:hover {
     background-color:#008fb3;
     color: white;
 }
+
 
 /* css for footer section */
 .footer {

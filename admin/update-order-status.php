@@ -1,15 +1,12 @@
 <?php
 include("../config/constants.php");
 
-echo "hello";
 
 if ($_POST['form-id'] == "update-status-form") {
 
     $order_id = $_POST['order-id'];
     $status_value = $_POST['order-status'];
 
-    echo $order_id;
-    echo $status_value;
 
     if ($status_value == "Delivered") {
         $sql_get_data = "SELECT * FROM tbl_order WHERE order_id = '$order_id' ";
@@ -24,10 +21,11 @@ if ($_POST['form-id'] == "update-status-form") {
             $total_price = $row['total_price'];
             $delivery_adrs = $row['delivery_adrs'];
             $payment_method = $row['payment_method'];
-            $order_status = $row['order_status'];
+            $order_status = "Delivered";
+            $visible ="yes";
 
-            $sql_insert_data = "INSERT INTO tbl_order_history (order_id, user_id, customer_name, total_price, delivery_adrs, payment_method, order_status)
-            VALUES('$order_id', $user_id, '$customer_name', $total_price, '$delivery_adrs', '$payment_method', '$order_status') ";
+            $sql_insert_data = "INSERT INTO tbl_order_history (order_id, user_id, customer_name, total_price, delivery_adrs, payment_method, order_status,visible)
+            VALUES('$order_id', $user_id, '$customer_name', $total_price, '$delivery_adrs', '$payment_method', '$order_status', '$visible') ";
 
             $res_insert_data = mysqli_query($conn, $sql_insert_data);
 

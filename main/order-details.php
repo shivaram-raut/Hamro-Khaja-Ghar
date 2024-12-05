@@ -1,7 +1,13 @@
 <?php
-include("../partials/admin-navigation-bar.php");
+if (!isset($_POST['form-id'])) {
+    include("../config/constants.php");
+    header("Location: " . SITEURL . 'main/order-page.php');
+    exit();
+}
+include("../partials/navigation-bar.php");
 
-if ($_POST['form-id'] == "order-details-form") {
+
+if ( isset($_POST['form-id']) && $_POST['form-id'] == "order-details-form") {
     $user_id = $_POST['user-id'];
     $order_id = $_POST['order-id'];
     $delivery_adrs = $_POST['delivery-adrs'];
@@ -60,7 +66,7 @@ if ($_POST['form-id'] == "order-details-form") {
 
                 <div class="header">Order Details:</div>
 
-                <table class="order-details-table">
+                <table class="order-table">
                     <tr>
                         <th>S.N.</th>
                         <th> Items </th>
@@ -140,11 +146,10 @@ if ($_POST['form-id'] == "order-details-form") {
                 </table>
                 <div>
                     <div style="padding: 5% 1%;">
-                        <form action="update-order-status.php" method="post" id="update-status-form">
                             <input type="hidden" name="form-id" value="update-status-form">
                             <input type="hidden" name="order-id" value="<?php echo $order_id; ?>">
                             <label for="order-status" style="font-size: 17px; margin: 5px;">Order Status:</label>
-                            <select id="order-status" name="order-status" style="font-size: 17px; text-align: center; padding: 5px;">
+                            <select id="order-status" name="order-status" style="font-size: 17px; text-align: center; padding: 5px;" disabled>
                                 <option value="Ordered" <?php echo ($order_status == 'Ordered') ? 'selected' : ''; ?>>Ordered</option>
                                 <option value="On-process" <?php echo ($order_status == 'On-process') ? 'selected' : ''; ?>>On-process</option>
                                 <option value="On-delivery" <?php echo ($order_status == 'On-delivery') ? 'selected' : ''; ?>>On-delivery</option>
@@ -152,10 +157,9 @@ if ($_POST['form-id'] == "order-details-form") {
                             </select>
                         </form>
 
-                        <div>
-                            <div class="odr-update-btn" id="update-status-btn" style="float:left">&#x1F503; Update Status</div>
+                        <div style="margin: 0 50px;">
                             <div class="button" id="print-invoice-btn" style="float:left">&#x1F5B6; Print Invoice</div>
-                            <div class="button" id="go-back-btn" style="float:left">&#x21A9; Go Back</div>
+                            <div class="button" id="go-back-btn" style="float:right">&#x21A9; Go Back</div>
 
                         </div>
                     </div>
@@ -169,10 +173,8 @@ if ($_POST['form-id'] == "order-details-form") {
 
 
 <?php
-    include("../partials/admin-footer.php");
-} else {
-    header("Location:" . SITEURL . 'admin/order-table.php');
-}
+    include("../partials/footer.php");
+}  
 ?>
 
 <script src="../javascript/order-details-page.js"></script>

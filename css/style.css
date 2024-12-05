@@ -10,7 +10,6 @@
 
 .container {
     width: 80%;
-    /* border: 1px solid red; */
     margin: 0 auto 5px auto;
     padding: 5px;
 
@@ -785,7 +784,8 @@ table input:focus {
 
 /* CSS for checkout page */
 
-.checkout-grid-container{
+.checkout-grid-container,
+.order-details-grid-container{
     display: grid;
     grid-template-columns: 35% auto;
     gap: 5px 5px;
@@ -809,11 +809,6 @@ table input:focus {
     outline: none;
     padding: 3%;
 }
-
-/* .basic-details input:focus {
-    border: 1px solid #E33E33;
-
-} */
 
 .basic-details label {
     font-size: 18px;
@@ -856,7 +851,6 @@ table input:focus {
     padding: 1%;
     text-align: center;
     color: white;
-    /* background-color:#D95F59; */
     background-color: #434956;
 
 
@@ -942,6 +936,58 @@ table input:focus {
 .confirm-button:hover{
     background-color: #026e89;
 }
+
+/* CSS for order and order history page */
+.order-table{
+    width: 100%;
+    box-shadow: 0 0 2px 1px #e6e6e6;
+}
+
+.order-table tr th {
+    padding: 1%;
+    text-align: center;
+    color: white;
+    background-color: #434956;
+
+
+}
+
+.order-table tr td {
+    padding: 1%;
+    text-align: center;
+
+
+}
+
+.order-table tr:nth-child(odd) {
+    background-color: white;
+
+
+}
+
+.order-table tr:nth-child(even) {
+    background-color: #F0F0F0;
+}
+
+.button, .odr-update-btn{
+    width: 25%;
+    border: 1px solid #008fb3;
+    border-radius: 2px;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    padding: 1% ;
+    color: #008fb3;
+    cursor: pointer;
+    margin: 4%;
+}
+
+.button:hover,
+.btn-hover{
+    background-color:#008fb3;
+    color: white;
+}
+
 
 
 /* CSS for footer */
