@@ -11,8 +11,6 @@
 
 <form id="delete-order-history" action="<?php echo SITEURL. 'customer-backend/delete-order-history.php' ?>"  method="POST" style="display: none;">
     <input type="hidden" name="form-id" value="delete-order-history">
-    <input type="hidden" name="order-id" id="delete-order-id">
-
     <input type="hidden" name="order-id" id="delete-odr-id">
 </form>
 

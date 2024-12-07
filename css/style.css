@@ -70,7 +70,17 @@ h2 {
 
 /* CSS for navigation-bar section */
 
-
+#cart-items-count {
+    font-size: 12px;
+    color: white;
+    background-color: red;
+    border-radius: 50%; 
+    width: 25px;  
+    height: 25px;  
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+}
 
 .navigation-bar {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
@@ -84,6 +94,7 @@ h2 {
 
 .logo {
     width: 28%;
+    margin-top: 3px;
     float: left;
 }
 
@@ -98,14 +109,13 @@ h2 {
 }
 
 .menu ul li {
-    padding: 10px;
+    padding: 10px 20px;
     display: inline;
 
 
 }
 
 .menu ul li a {
-
     color: #E33E33;
 }
 
@@ -119,7 +129,7 @@ h2 {
     color: white;
     background-color: #E33E33;
     padding: 10px 20px;
-    border-radius: 15px;
+    border-radius: 8px;
     opacity: 90%;
     font-weight: 500;
 }
@@ -127,7 +137,7 @@ h2 {
 /*CSS for login dropdown menu  */
 
 
-.login-btn {
+.dropdown-btn {
     position: relative;
 }
 
@@ -135,7 +145,7 @@ h2 {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 5px;
     background-color: #FCF8F3;
     box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.3);
     padding: 0;
@@ -145,7 +155,7 @@ h2 {
     overflow: auto;
 }
 
-.login-btn:hover #dropdown {
+.dropdown-btn:hover #dropdown {
     display: block;
 }
 
@@ -156,7 +166,6 @@ h2 {
     text-align: center;
     line-height: normal;
     z-index: 15;
-
 }
 
 #dropdown li:hover {
@@ -192,7 +201,6 @@ h2 {
 
 .show-overlay {
     opacity: 1;
-    /* display:block; */
     z-index: 50;
 }
 
@@ -213,7 +221,6 @@ h2 {
     top: -50%;
     z-index: 55;
     transform: translate(-50%, -50%);
-    /* box-shadow: 0 0 10px 3px grey; */
     overflow: hidden;
     transition: 0.8s;
 }
@@ -305,7 +312,8 @@ h2 {
     margin-top: 2% !important;
     width: 50%;
     padding: 3%;
-    box-shadow: 0 0 10px 3px grey;
+    box-shadow: 0 0 4px 3px #e6e6e6;
+
 }
 
 
@@ -478,7 +486,6 @@ h2 {
 .menu-grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
-    /* gap: 10px 10px; */
 }
 
 
@@ -488,8 +495,6 @@ h2 {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     padding: 2%;
     margin: 1%;
-
-
 }
 
 .food-menu-box:hover {
@@ -534,8 +539,8 @@ h2 {
     position: absolute;
     right: 8%;
     top: 6%;
-    width: 6%;
-    overflow: auto;
+    width: 25px;
+    height: 25px;
 
 }
 .cart-btn:hover{
@@ -649,7 +654,6 @@ h2 {
 .table-full {
     width: 100%;
     box-shadow: 0 0 2px 1px #e6e6e6;
-    /* box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4); */
 
 }
 
@@ -663,7 +667,6 @@ table tr th {
     padding: 1% 5%;
     text-align: left;
     color: white;
-    /* background-color:#D95F59; */
     background-color: #2F3645;
 
 
@@ -677,7 +680,6 @@ table tr td {
 }
 
 .grand-total-row {
-    /* border-top: 1.5px solid rgba(47, 54, 69, 0.3); */
     padding: 1% 5%;
     color:#B43F3F;
     font-size: 17px;
@@ -730,7 +732,6 @@ table input:focus {
 
 .food-item-box {
     background-color: transparent;
-    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); */
     padding: 1%;
 
 }
@@ -835,6 +836,7 @@ table input:focus {
     padding: 1rem 2rem;
     margin-bottom: 1rem;
     font-size: 17px;
+    text-align: center;
 
 }
 
@@ -859,14 +861,10 @@ table input:focus {
 .checkout-table tr td {
     padding: 1%;
     text-align: center;
-
-
 }
 
 .checkout-table tr:nth-child(odd) {
     background-color: white;
-
-
 }
 
 .checkout-table tr:nth-child(even) {
@@ -877,8 +875,6 @@ table input:focus {
     box-shadow: 0 0 3px 2px #e6e6e6;
     padding: 3% 5%;
     margin: 5% auto;
-
-
 }
 
 .payment-method{
@@ -921,7 +917,7 @@ table input:focus {
 
 }
 
-.confirm-button{
+.confirm-button, .update-button{
     width: 100%;
     background-color:#008fb3;
     color: white;
@@ -933,7 +929,7 @@ table input:focus {
     cursor: pointer;
 }
 
-.confirm-button:hover{
+.confirm-button:hover, .update-button:hover{
     background-color: #026e89;
 }
 
@@ -955,14 +951,10 @@ table input:focus {
 .order-table tr td {
     padding: 1%;
     text-align: center;
-
-
 }
 
 .order-table tr:nth-child(odd) {
     background-color: white;
-
-
 }
 
 .order-table tr:nth-child(even) {

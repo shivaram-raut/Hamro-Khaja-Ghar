@@ -88,10 +88,7 @@
 
                                 $grand_total_price += (float)$total_price;
                             }
-
-
                 ?>
-
                             <tr>
                                 <td> <?php echo $sn++ ?> </td>
                                 <td style="text-align: left;"> <?php echo $food_item ?> </td>

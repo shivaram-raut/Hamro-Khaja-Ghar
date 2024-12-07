@@ -6,7 +6,7 @@ include("../config/constants.php");
 // Check whether the submit button is clicked or not.
 if (isset($_POST['submit']) && $_POST['form-id'] === 'customer-sign-up-form') {
 
-    // Get data from the add-employee form
+    // Get data from the customer sign-up form
     // Sanitize user input
     $full_name = htmlspecialchars(trim($_POST['full-name']), ENT_QUOTES, 'UTF-8');
     $address = htmlspecialchars(trim($_POST['address']), ENT_QUOTES, 'UTF-8');
@@ -18,12 +18,12 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'customer-sign-up-form') {
 
     // Check if the passwords match
     if ($password === $re_password) {
-        // Check if the username already exists
+        // Check if the email already exists
         $check_email = "SELECT email FROM tbl_customer WHERE email = '$email'";
         $check_res = mysqli_query($conn, $check_email);
 
         if (mysqli_num_rows($check_res) > 0) {
-            // Username already exists
+            // email already exists
             $_SESSION['notification_msg'] = "There is already another account registered with this email id.";
             // Redirect back to the sign-up page
             header("Location:" . SITEURL . 'main/customer-signup.php');
@@ -57,14 +57,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'customer-sign-up-form') {
                 exit;
             }
         }
-    } else {
-
-        $_SESSION['notification_msg'] = "Confirmation password didn't match!";
-
-         // Redirect back to the sign-up page
-         header("Location:" . SITEURL . 'main/customer-signup.php');
-         exit;
-    }
+    } 
 }
  else {
     header("Location:" . SITEURL . 'main/customer-signup.php');

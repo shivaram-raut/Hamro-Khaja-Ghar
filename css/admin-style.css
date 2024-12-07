@@ -133,7 +133,6 @@ table tr:nth-child(even) {
 
 table tr:hover {
     background-color: #bfbfbf;
-
 }
 
 .table-update-btn {
@@ -162,8 +161,6 @@ table tr:hover {
 
 .btn-primary:hover {
     background-color: #26734d;
-    transform: scale(1.04, 1.04);
-    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
@@ -181,8 +178,6 @@ table tr:hover {
 
 .btn-secondary:hover {
     background-color: #026e89;
-    transform: scale(1.04, 1.04);
-    transition: transform 0.3s ease;
 }
 
 

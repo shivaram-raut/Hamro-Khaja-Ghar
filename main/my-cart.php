@@ -1,5 +1,6 @@
 <?php include("../partials/navigation-bar.php"); ?>
 
+<?php if (isset($_SESSION['user-id'])): ?>
 <div >
 
     <!-- remove cart-items -->
@@ -34,6 +35,7 @@
             </tr>
 
             <?php
+            $cart_empty = true;
             $user_id = $_SESSION['user-id'];
             $grand_total_price = 0.0;
             $sql = "SELECT * FROM tbl_cart WHERE user_id = $user_id ";
@@ -43,6 +45,7 @@
                 $count = mysqli_num_rows($res);
 
                 if ($count > 0) {
+                    $cart_empty = false;
                     while ($rows = mysqli_fetch_assoc($res)) {
                         $food_item_id = $rows['food_item_id'];
                         $quantity = $rows['quantity'];
@@ -105,9 +108,12 @@
                 <td class="grand-total-row" style="border-top: 1.5px solid rgba(47, 54, 69, 0.3);"> <?php echo "Rs. " . number_format($grand_total_price, 2) ?> </td>
             </tr>
         </table>
+        <?php if($cart_empty === false): ?>
         <a href="<?php echo SITEURL . 'main/checkout.php'; ?>" style="color:white;">
             <div class="checkout-btn">Proceed to Checkout </div>
         </a>
+        <?php endif; ?>
+
 
     </div>
 </div>
@@ -117,3 +123,5 @@
 
 <script src="../javascript/remove-cart-item.js"></script>
 <script src="../javascript/update-cart-quantity.js"></script>
+
+<?php endif; ?>

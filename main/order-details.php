@@ -7,7 +7,7 @@ if (!isset($_POST['form-id'])) {
 include("../partials/navigation-bar.php");
 
 
-if ( isset($_POST['form-id']) && $_POST['form-id'] == "order-details-form") {
+if (isset($_POST['form-id']) && $_POST['form-id'] == "order-details-form") {
     $user_id = $_POST['user-id'];
     $order_id = $_POST['order-id'];
     $delivery_adrs = $_POST['delivery-adrs'];
@@ -27,17 +27,17 @@ if ( isset($_POST['form-id']) && $_POST['form-id'] == "order-details-form") {
     }
 
 ?>
-    <form action="<?php echo SITEURL. 'partials/generate-invoice.php'; ?>" method="post" id="generate-invoice-form" style="display: none;">
+    <form action="<?php echo SITEURL . 'partials/generate-invoice.php'; ?>" method="post" id="generate-invoice-form" style="display: none;">
         <input type="hidden" name="form-id" value="generate-invoice-form">
         <input type="hidden" name="full-name" value="<?php echo $full_name; ?>">
         <input type="hidden" name="mobile-number" value="<?php echo $mobile_number; ?>">
         <input type="hidden" name="delivery-adrs" value="<?php echo $delivery_adrs; ?>">
         <input type="hidden" name="order-id" value="<?php echo $order_id; ?>">
-        <input type="hidden" name="order-date" value="<?php echo $date; ?>" >
+        <input type="hidden" name="order-date" value="<?php echo $date; ?>">
     </form>
 
     <div class="container" style=" width: 90%; padding:5px 3%;">
-    <div class="page-heading">
+        <div class="page-heading">
             <h2> Order ID: <?php echo $order_id; ?> </h2>
         </div>
 
@@ -144,24 +144,21 @@ if ( isset($_POST['form-id']) && $_POST['form-id'] == "order-details-form") {
 
 
                 </table>
-                <div>
-                    <div style="padding: 5% 1%;">
-                            <input type="hidden" name="form-id" value="update-status-form">
-                            <input type="hidden" name="order-id" value="<?php echo $order_id; ?>">
-                            <label for="order-status" style="font-size: 17px; margin: 5px;">Order Status:</label>
-                            <select id="order-status" name="order-status" style="font-size: 17px; text-align: center; padding: 5px;" disabled>
-                                <option value="Ordered" <?php echo ($order_status == 'Ordered') ? 'selected' : ''; ?>>Ordered</option>
-                                <option value="On-process" <?php echo ($order_status == 'On-process') ? 'selected' : ''; ?>>On-process</option>
-                                <option value="On-delivery" <?php echo ($order_status == 'On-delivery') ? 'selected' : ''; ?>>On-delivery</option>
-                                <option value="Delivered" <?php echo ($order_status == 'Delivered') ? 'selected' : ''; ?>>Delivered</option>
-                            </select>
-                        </form>
+                <div style="padding: 5% 1%;">
+                    <input type="hidden" name="form-id" value="update-status-form">
+                    <input type="hidden" name="order-id" value="<?php echo $order_id; ?>">
+                    <label for="order-status" style="font-size: 17px; margin: 5px;">Order Status:</label>
+                    <select id="order-status" name="order-status" style="font-size: 17px; text-align: center; padding: 5px;" disabled>
+                        <option value="Ordered" <?php echo ($order_status == 'Ordered') ? 'selected' : ''; ?>>Ordered</option>
+                        <option value="On-process" <?php echo ($order_status == 'On-process') ? 'selected' : ''; ?>>On-process</option>
+                        <option value="On-delivery" <?php echo ($order_status == 'On-delivery') ? 'selected' : ''; ?>>On-delivery</option>
+                        <option value="Delivered" <?php echo ($order_status == 'Delivered') ? 'selected' : ''; ?>>Delivered</option>
+                    </select>
 
-                        <div style="margin: 0 50px;">
-                            <div class="button" id="print-invoice-btn" style="float:left">&#x1F5B6; Print Invoice</div>
-                            <div class="button" id="go-back-btn" style="float:right">&#x21A9; Go Back</div>
+                    <div style="margin: 0 50px;">
+                        <div class="button" id="print-invoice-btn" style="float:left">&#x1F5B6; Print Invoice</div>
+                        <div class="button" id="go-back-btn" style="float:right">&#x21A9; Go Back</div>
 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -169,12 +166,9 @@ if ( isset($_POST['form-id']) && $_POST['form-id'] == "order-details-form") {
 
     </div>
 
-    </div>
-
-
 <?php
     include("../partials/footer.php");
-}  
+}
 ?>
 
 <script src="../javascript/order-details-page.js"></script>

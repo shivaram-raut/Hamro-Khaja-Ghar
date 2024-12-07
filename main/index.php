@@ -92,10 +92,13 @@
                                      <div class="food-price"><?php echo 'Rs.' . $price; ?></div>
                                      <div class="food-description"> <?php echo $description; ?> </div>
                                      <div class="cart-btn">
-                                         <!-- <span class="login-pop-up"><img src="images/cart.png" alt="cart-icon" class="image-responsive"></span> -->
+                                         <?php if (!isset($_SESSION['user-id'])) : ?>
+                                             <span class="login-pop-up"><img src="../images/cart.png" alt="cart-icon" class="image-responsive"></span>
 
-                                         <span class="cart-pop-up" data-food-item-id="<?php echo $food_item_id; ?>" data-title="<?php echo $title; ?>" data-price="<?php echo $price; ?>" data-description="<?php echo $description; ?>" data-image="<?php echo '../images/menu/' . $image; ?>"><img src="../images/cart.png" alt="cart-icon" class="image-responsive"> </span>
+                                         <?php else: ?>
+                                             <span class="cart-pop-up" data-food-item-id="<?php echo $food_item_id; ?>" data-title="<?php echo $title; ?>" data-price="<?php echo $price; ?>" data-description="<?php echo $description; ?>" data-image="<?php echo '../images/menu/' . $image; ?>"><img src="../images/cart.png" alt="cart-icon" class="image-responsive"> </span>
 
+                                         <?php endif; ?>
                                      </div>
                                  </div>
                                  <div class="clear-fix"></div>
@@ -118,4 +121,4 @@
  <?php include("../partials/footer.php"); ?>
 
  <script src="../javascript/cart-popup.js"></script>
-<script src="../javascript/login-popup.js"></script>
+ <script src="../javascript/login-popup.js"></script>
