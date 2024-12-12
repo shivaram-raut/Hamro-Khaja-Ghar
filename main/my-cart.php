@@ -22,7 +22,7 @@
 </div>
 
 <div class="container">
-    <h2 style="text-align: center; margin: 1%;"> My Cart </h2>
+    <h2 style="text-align: center; margin: 1%;">Items in the cart:</h2>
     <div class="items-list-table">
         <table class="table-full">
 

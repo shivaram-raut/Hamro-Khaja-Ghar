@@ -21,7 +21,7 @@
     
     <div class="basic-details" style="width: 45%; margin: auto;">
         <div class="header">
-            <h2>Update Your Account: </h2>
+            <h2>Update Account: </h2>
         </div>
     <div class="input-box form" style="position: static; left: auto; top: auto; z-index: auto; transform: none; width: 100%;  box-shadow: 0 0 4px 3px #e6e6e6; ">
 
@@ -48,7 +48,7 @@
                 <input type="text" id="address" name="address" value="<?php echo $adrs; ?>" required>
             </div>
             <div>
-                <label for="password2">Password</label>
+                <label for="password2">Update Password</label>
                 <input type="password" id="password2" class="password" name="password" placeholder="Password">
             </div>
             <div>

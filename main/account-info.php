@@ -22,7 +22,7 @@ include("../partials/navigation-bar.php");
 
     <div class="basic-details" style="width: 40%; margin: auto;">
         <div class="header">
-            <h2>Your Account Information:</h2>
+            <h2>Account Information:</h2>
         </div>
         <div class="input-box" style=" box-shadow: 0 0 4px 3px #e6e6e6;">
             <div>

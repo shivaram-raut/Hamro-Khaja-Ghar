@@ -9,11 +9,28 @@
     <input type="hidden" name="order-date" id="order-date">
 </form>
 
-<form id="delete-order-history" action="<?php echo SITEURL. 'customer-backend/delete-order-history.php' ?>"  method="POST" style="display: none;">
+<!-- <form id="delete-order-history" action="<?php echo SITEURL. 'customer-backend/delete-order-history.php' ?>"  method="POST" style="display: none;">
     <input type="hidden" name="form-id" value="delete-order-history">
     <input type="hidden" name="order-id" id="delete-odr-id">
-</form>
+</form> -->
 
+<!-- delete-order-history form starts here -->
+<div class="overlay"></div>
+<div class="form delete-form" style="width: 31%;">
+    <span class="cross">&times;</span>
+    <br>
+    <div class="form-heading">Clear Order History</div>
+    <div class="confirm-delete-qsn">Delete the order history permanently?</div>
+    <form action="<?php echo SITEURL.  'customer-backend/delete-order-history.php' ?> " method="post">
+        <input type="hidden" name="form-id" value="delete-order-history" />
+        <input type="hidden" name="order-id" id="delete-order-id" />
+
+        <input type="submit" name="submit" value="Delete" class="submit-button delete-yes" />
+        <span class="cross submit-button delete-no "  style="font-size: 18px; padding: 10px;"> Cancel</span>
+        <div class="clear-fix"></div>
+    </form>
+</div>
+<!-- delete-order-history form stops here! -->
 
 
 <section class="main-content">
@@ -146,3 +163,4 @@
 <?php include("../partials/footer.php"); ?>
 
 <script src="../javascript/order-details-form.js"> </script>
+<script src="../javascript/delete-order.js"></script>

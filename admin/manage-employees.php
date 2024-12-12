@@ -82,7 +82,7 @@ include("../partials/admin-navigation-bar.php");
         <input type="hidden" name="id" id="delete-employee-id" />
 
         <input type="submit" name="submit" value="Delete" class=" submit-button delete-yes" />
-        <span class="cross submit-button delete-no "> Cancel </span>
+        <span class="cross submit-button delete-no " style="font-size: 18px; padding: 10px;"> Cancel </span>
         <div class="clear-fix"></div>
 
 

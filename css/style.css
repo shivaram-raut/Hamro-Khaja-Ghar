@@ -307,6 +307,53 @@ h2 {
     text-align: center;
 }
 
+.submit-button {
+    width: 100%;
+    color: white;
+    border: none !important;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 4%;
+}
+
+.confirm-delete-qsn {
+    font-size: 20px;
+}
+
+.delete-yes {
+    background-color: #E33E33 !important;
+    width: 35% !important;
+    margin-top: 10% !important;
+    float: left;
+
+}
+
+.delete-yes:hover {
+    background-color: #B43F3F !important;
+    cursor: pointer;
+}
+
+.delete-no {
+    background-color: #2d8659;
+    width: 35%;
+    margin-top: 10%;
+    padding: 10px;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 5px !important;
+    position: relative !important;
+    float: right;
+
+}
+
+.delete-no:hover {
+    background-color: #26734d !important;
+    cursor: pointer;
+}
+
+
 #customer-sign-up-form{
     margin: auto;
     margin-top: 2% !important;
@@ -539,8 +586,9 @@ h2 {
     position: absolute;
     right: 8%;
     top: 6%;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
 
 }
 .cart-btn:hover{
@@ -1030,8 +1078,7 @@ table input:focus {
 }
 
 .company-info ul li a:hover{
-    text-decoration: underline;
-    color:#2d8659;
+    text-decoration: underline; 
 
 }
 

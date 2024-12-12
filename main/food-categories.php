@@ -1,14 +1,12 @@
 <?php include("../partials/navigation-bar.php"); ?>
 
- 
+
 
 <!-- categories section starts here -->
 <section class="categories">
     <div class="container">
-        <h2 class="text-center"> Featured Categories</h2>
-        <p class="text-center add-bottom-padding">We currently serve the following categories of food. Click on your
-            favourite category
-            to see the menu.</p>
+        <h2 class="text-center">Food Categories</h2>
+        <p class="text-center add-bottom-padding">Click on your favourite category to see the menu.</p>
         <div class="cat-grid-container">
 
             <?php
@@ -27,7 +25,7 @@
             ?>
                         <div class="box">
 
-                            <a href="<?php echo SITEURL."main/food-menu.php?category=".$title ?>"> <img src="<?php echo '../images/categories/' . $image; ?>" alt="<? echo $title ?>" class="image-responsive box-image">
+                            <a href="<?php echo SITEURL . "main/food-menu.php?category=" . $title ?>"> <img src="<?php echo '../images/categories/' . $image; ?>" alt="<? echo $title ?>" class="image-responsive box-image">
                                 <h3 class="food-title"> <?php echo $title ?> </h3>
                             </a>
                         </div>

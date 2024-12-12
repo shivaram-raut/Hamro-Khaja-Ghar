@@ -6,7 +6,7 @@
      <div class="container">
          <form action="search-food.php" method="POST">
              <input type="search" name="searched-food" id="searched-food" placeholder="Search your favourite food..." autocomplete="off" required>
-             <input type="submit" name="submit" value="Search">
+             <input type="submit" name="submit" value="&#128269;">
          </form>
          <div class="active-hour btn">
              <span> Active Hours<br> 7:00 AM - 10:00 PM </span>
@@ -20,9 +20,6 @@
  <section class="categories">
      <div class="container">
          <h2 class="text-center"> Featured Categories</h2>
-         <p class="text-center add-bottom-padding">We currently serve the following categories of food. Click on your
-             favourite category
-             to see the menu.</p>
          <div class="cat-grid-container">
 
              <?php
@@ -63,7 +60,6 @@
  <section class="food-menu">
      <div class="container">
          <h2 class="text-center"> Featured Foods</h2>
-         <p class="text-center add-bottom-padding">These are the popupar foods we serve.</p>
          <div class="menu-grid-container">
              <?php
                 $sql = "SELECT * FROM tbl_menu WHERE featured = 'Yes' AND available = 'Yes' LIMIT 6 ";

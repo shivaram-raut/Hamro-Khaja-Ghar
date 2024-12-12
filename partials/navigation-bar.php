@@ -32,7 +32,7 @@ include("set-user-id-session.php");
 
                 <?php if (isset($_SESSION['admin-user'])): ?>
                     <li>
-                        <a href="admin/index.php"> Dashboard </a>
+                        <a href="<?php echo SITEURL. 'admin/dashboard.php' ?>"> Dashboard </a>
                     </li>
                 <?php elseif (isset($_SESSION['user-id'])): ?>
                     <li class="dropdown-btn">
@@ -42,7 +42,7 @@ include("set-user-id-session.php");
                                 <li>Account Info</li>
                             </a>
                             <a href="<?php echo SITEURL . 'main/order-page.php' ?>">
-                                <li>Order Page</li>
+                                <li>Order History</li>
                             </a>
                             <a href="<?php echo SITEURL . 'customer-backend/customer-logout.php' ?>">
                                 <li>Logout</li>

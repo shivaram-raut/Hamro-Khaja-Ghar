@@ -57,9 +57,11 @@
                                 <td>
                                     <div>
                                         <?php if($status == "Ordered") : ?>
-                                        <span style="color:forestgreen"> <?php echo $status; ?></span>
-                                        <?php else: ?>
-                                        <span style="color:deepskyblue"> <?php echo $status; ?></span>
+                                        <span style="color:#28a745"> <?php echo $status; ?></span>
+                                        <?php elseif($status=="On-process"): ?>
+                                        <span style="color:#008080"> <?php echo $status; ?></span>
+                                        <?php elseif($status=="On-delivery"): ?>
+                                            <span style="color: #007bff"> <?php echo $status; ?></span>
                                          <?php endif; ?>  
 
 

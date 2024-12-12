@@ -15,6 +15,7 @@ if($_POST['form-id'] == 'delete-order-history'){
     $res = mysqli_query($conn, $sql);
 
     if($res == true){
+        $_SESSION['notification_msg'] = "Order History Deleted Successfully.";
        header("Location:".SITEURL."main/order-page.php");
         exit;
 
