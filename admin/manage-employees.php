@@ -35,43 +35,6 @@ include("../partials/admin-navigation-bar.php");
 </div>
 <!-- add-employee input form stops here! -->
 
-
-<!-- update-employee form starts here -->
-<div class="form  update-form">
-    <span class="cross">&times;</span>
-    <div class="form-heading">Update Employee</div>
-    <form action="update-employee.php" method="post">
-        <input type="hidden" name="form_id" value="update-employee-form" />
-        <input type="hidden" name="id" id="update-employee-id">
-        <div>
-            <label for="update-employee-fullname">Full Name</label>
-            <input type="text" id="update-employee-fullname" name="full_name" required>
-        </div>
-        <input type="hidden" name="existing-username" id="existing-username">
-        <div>
-            <label for="update-employee-username">Username</label>
-            <input type="text" id="update-employee-username" name="username" placeholder="Username" required>
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" class="password" name="password" placeholder="Password">
-        </div>
-        <div>
-            <label for="re_password">Retype Password</label>
-            <input type="password" id="re_password" class="re_password" name="re_password" placeholder="Retype Password">
-        </div>
-        <div>
-            <input type="checkbox" id="check-box" class="check-box">
-            <label id="show-password" class="show-password">Show Password</label>
-        </div>
-        <div class="clear-fix"></div>
-        <input type="submit" name="submit" value="Update Employee" class="form-update-btn submit-button">
-    </form>
-</div>
-<!-- update-employee form stops here! -->
-
-
-
 <!-- Delete employee form starts here -->
 <div class="form delete-form" style="width: 31%;">
     <span class="cross">&times;</span>
@@ -109,7 +72,7 @@ include("../partials/admin-navigation-bar.php");
         <?php endif; ?>
 
         <div class="page-heading">
-            <h1> Manage Employee Accounts</h1>
+            <h2> Manage Employee Accounts</h2>
         </div>
 
         <span class="btn-primary add-new-btn">Add Employee</span>
@@ -136,6 +99,7 @@ include("../partials/admin-navigation-bar.php");
                             $id = $rows['id'];
                             $full_name = $rows['full_name'];
                             $username = $rows['username'];
+                            $account_status = $rows['account_status'];
 
                 ?>
                             <tr>
@@ -145,7 +109,24 @@ include("../partials/admin-navigation-bar.php");
 
                                 <td>
                                     <div>
-                                        <span class="table-update-btn" data-id="<?php echo $id; ?>" data-fullname="<?php echo $full_name; ?>" data-username="<?php echo $username; ?>">&#9998;Update </span>
+                                    <span>
+                                            <form action="<?php echo SITEURL . 'admin/manage-employee-account-status.php'; ?>" method="POST" style="display: inline;">
+                                                <input type="hidden" name="form-id" value="employee-account-status">
+                                                <input type="hidden" name="username" value="<?php echo $username; ?>">
+                                                <input type="hidden" name="status" value="<?php echo $account_status; ?>">
+
+                                                <?php if ($account_status == 'activated'): ?>
+                                                    <button type="submit" style="background: none; border:none; margin-right: 20px; color: red; cursor: pointer; font-size: 15px;">
+                                                        &#9888; Deactivate Account
+                                                    </button>
+
+                                                    <?php elseif ($account_status == 'deactivated'): ?>
+                                                        <button type="submit" style="background: none; border: none; margin-right: 30px; color:green; cursor: pointer; font-size: 15px;">
+                                                            &#9888; Activate Account
+                                                        </button>
+                                                    <?php endif; ?>
+                                            </form>
+                                        </span>
                                         <span class="table-delete-btn" data-user-id="<?php echo $id; ?>">&#128465;Delete</span>
 
                                     </div>

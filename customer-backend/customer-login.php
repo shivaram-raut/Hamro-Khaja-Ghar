@@ -47,17 +47,24 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'customer-login-form') {
         $row = mysqli_fetch_assoc($res);
         $hashed_password = $row['password'];
         $user_id = $row['id'];
+        $account_status = $row['account_status'];
 
         if (password_verify($password, $hashed_password)) {
-            $_SESSION['user-id'] = $user_id;
 
-            //storing the user-id in the local storage
-            echo "<script> 
+            if ($account_status == 'deactivated') {
+                $_SESSION['notification_msg'] = "Dear Customer, your account has been disabled.";
+                header("Location:" . SITEURL . "main/index.php");
+                exit;
+            } else {
+                $_SESSION['user-id'] = $user_id;
+                //storing the user-id in the local storage
+                echo "<script> 
                 localStorage.setItem('user-id', '$user_id'); 
-                window.location.href = '" . SITEURL . "index.php';
+                window.location.href = '" . SITEURL . "main/index.php';
                 </script>";
-                
-            exit;
+
+                exit;
+            }
         } else {
             invalidCreds($redirect_uri);
         }
@@ -65,5 +72,5 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'customer-login-form') {
         invalidCreds($redirect_uri);
     }
 } else {
-    header("Location:" . SITEURL . "index.php");
+    header("Location:" . SITEURL . "main/index.php");
 }

@@ -9,10 +9,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     var buttons = document.querySelectorAll('.view-details-btn');
 
-    var delete_buttons = document.querySelectorAll('.delete-odr-btn');
-    const delete_odr_form_id = document.getElementById("delete-order-history");
-    const delete_odr_id = document.getElementById("delete-odr-id");
-
 
     if(buttons.length > 0){
         buttons.forEach(function(button){
@@ -25,15 +21,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 form_id.submit();
 
-            });
-        });
-    }
-
-    if(delete_buttons.length > 0){
-        delete_buttons.forEach(function(button){
-            button.addEventListener("click", function(){
-                delete_odr_id.value = this.getAttribute('data-order-id');
-                delete_odr_form_id.submit(); 
             });
         });
     }

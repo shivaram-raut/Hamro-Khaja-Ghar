@@ -1,13 +1,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const update_employee_id = document.getElementById('update-employee-id');
     const delete_employee_id = document.getElementById('delete-employee-id');
-    const update_employee_fullname = document.getElementById('update-employee-fullname');
-    const update_employee_username = document.getElementById('update-employee-username');
-    const existing_username = document.getElementById('existing-username');
-
-
 
     // Function to show the modal
     function showModal(formClass) {
@@ -33,23 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     }
 
-                    else {
-                        const id = this.getAttribute('data-id');
-                        if (id) {
-                            update_employee_id.value = id;
-                        }
-
-                        const full_name = this.getAttribute('data-fullname');
-                        if (full_name) {
-                            update_employee_fullname.value = full_name;
-                        }
-                        const username = this.getAttribute('data-username');
-                        if (username) {
-                            update_employee_username.value = username;
-                            existing_username.value = username;
-                        }
-                    }
-
                     showModal(formClass);
                 });
             });
@@ -67,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Setup event listeners for different buttons
     handleButtonClick(".add-new-btn", ".add-form");
-    handleButtonClick(".table-update-btn", ".update-form");
     handleButtonClick(".table-delete-btn", ".delete-form");
 
 });

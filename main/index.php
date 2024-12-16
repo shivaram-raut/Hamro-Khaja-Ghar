@@ -6,7 +6,7 @@
      <div class="container">
          <form action="search-food.php" method="POST">
              <input type="search" name="searched-food" id="searched-food" placeholder="Search your favourite food..." autocomplete="off" required>
-             <input type="submit" name="submit" value="&#128269;">
+             <input type="submit" name="submit" value="&#128269; Search">
          </form>
          <div class="active-hour btn">
              <span> Active Hours<br> 7:00 AM - 10:00 PM </span>

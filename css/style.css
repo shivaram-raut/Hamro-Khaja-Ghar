@@ -441,7 +441,7 @@ h2 {
 
 .search-food input[type="search"]:hover {
     transform: scale(1.009, 1.009);
-    box-shadow: 2px 12px 5px rgba(0, 0, 0, 0.3)
+    box-shadow: 2px 12px 5px rgba(0, 0, 0, 0.3);
 }
 
 .search-food input[type="submit"] {
@@ -508,7 +508,7 @@ h2 {
 
 }
 
-.view-all {
+/* .view-all {
     position: absolute;
     right: 40px;
     bottom: 10px;
@@ -519,7 +519,7 @@ h2 {
     transition: transform 0.3s ease;
     background-color: #B43F3F;
 
-}
+} */
 
 
 /* CSS for food-menu  */

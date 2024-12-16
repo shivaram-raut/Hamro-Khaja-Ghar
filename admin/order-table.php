@@ -13,7 +13,7 @@
     <div class="container" style="width: 90%;">
 
         <div class="page-heading">
-            <h1> Manage Orders</h1>
+            <h2> Manage Orders</h2>
         </div>
 
         <div class="items-list-table">

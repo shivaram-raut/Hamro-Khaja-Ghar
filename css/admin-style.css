@@ -90,8 +90,15 @@ a {
 /* CSs for   manage-employees section */
 
 .page-heading {
-    padding: 2% 0 2% 0;
-    margin: 1%;
+    text-align:left;
+    padding: 3%;
+    padding-left: 2%;
+    font-size: 28px;
+    color: #333;
+}
+.page-heading h2 {
+    font-size: 28px;
+    color: #333;
 }
 
 .table-full {
@@ -103,7 +110,7 @@ a {
 
 .items-list-table {
     min-height: 38vh;
-    margin-top: 2%;
+    margin-top: 1%;
 
 }
 
@@ -116,7 +123,7 @@ table tr th {
 }
 
 table tr td {
-    padding: 4px;
+    padding: 1%;
     text-align: center;
 
 
@@ -481,38 +488,33 @@ table tr:hover {
 .order-details{
     padding-left: 3%;
 }
-
-.order-details-table{
+.order-table{
     width: 100%;
     box-shadow: 0 0 2px 1px #e6e6e6;
 }
-
-.order-details-table tr th {
+.order-table tr th {
     padding: 1%;
     text-align: center;
     color: white;
     background-color: #434956;
 }
 
-
-.order-details-table tr td {
+.order-table tr td {
     padding: 1%;
     text-align: center;
 
 
 }
-
-.order-details-table tr:nth-child(odd) {
+.order-table tr:nth-child(odd) {
     background-color: #cccccc;
     
 }
 
-.order-details-table tr:nth-child(even) {
+.order-details-tab.order-table tr:nth-child(even) {
     background-color: #e6e6e6;
     
 }
-
-.order-details-table tr:hover {
+.order-table tr:hover {
     background-color: #bfbfbf;
 } 
 
@@ -538,16 +540,6 @@ table tr:hover {
 
 /* CSS for dashboard */
 
-.page-heading {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.page-heading h2 {
-    font-size: 28px;
-    color: #333;
-}
-
-/* Box Container Styles */
 .box-container {
     display: flex;
     justify-content: space-around;
@@ -566,6 +558,13 @@ table tr:hover {
     padding: 20px;
 }
 
+.box:hover{
+    transform: scale(1.009, 1.009);
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); */
+    box-shadow: 0 2px 2px 2px  #e6e6e6; 
+
+}
+
 .box-heading {
     font-size: 18px;
     font-weight: bold;
@@ -574,7 +573,7 @@ table tr:hover {
 }
 
 .box-content {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     color: #333;
 }
@@ -589,7 +588,8 @@ table tr:hover {
     margin-top: 40px;
     margin-bottom: 15px;
     color: #333;
-    text-align: center;
+    padding-left: 10px;
+    text-align: left;
 }
 
 .links-container {
@@ -663,4 +663,22 @@ table tr:hover {
     padding: 5px;
     text-align: center;
 
+}
+
+.filter-button {
+    padding: 8px 15px;
+    margin: 10px;
+    border: none;
+    background-color: white;
+    border: 1px solid #008fb3;
+    color: #005f73;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    float: right;
+}
+
+.filter-active {
+    background-color:#008fb3;
+    color: white;
 }

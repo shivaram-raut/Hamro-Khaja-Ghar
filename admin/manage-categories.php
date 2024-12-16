@@ -83,7 +83,7 @@
 
 
         <input type="submit" name="submit" value="Delete" class=" submit-button delete-yes" />
-        <span class="cross submit-button delete-no "  style="font-size: 18px; padding: 10px;"> Cancel</span>
+        <span class="cross submit-button delete-no " style="font-size: 18px; padding: 10px;"> Cancel</span>
         <div class="clear-fix"></div>
 
 
@@ -110,10 +110,16 @@
         <?php endif; ?>
 
         <div class="page-heading">
-            <h1> Manage Categories</h1>
+            <h2> Manage Categories</h2>
         </div>
 
         <span class="btn-primary add-new-btn">Add Category</span>
+
+        <form action="" method="GET">
+        <button type="submit" name="filter" id="filter-date" value="date" class="filter-button">Sort By Date</button>
+        <button type="submit" name="filter" id="filter-title" value="title" class="filter-button">Sort By Title</button>
+    </form>
+    <div class="clear-fix"></div>
 
         <div class="items-list-table">
             <table class="table-full">
@@ -124,12 +130,28 @@
                     <th>Featured</th>
                     <th>Available</th>
                     <th>Actions</th>
-
-
                 </tr>
 
                 <?php
-                $sql = "SELECT * FROM tbl_category ORDER BY title ASC ";
+                // Determine the sort order based on query parameters
+                $sort = isset($_GET['filter']) ? $_GET['filter'] : ''; // Default to sorting by title
+                if($sort === 'date'){
+                    $order = 'date DESC';
+                    echo "
+                <script> 
+                document.getElementById('filter-date').classList.add('filter-active');
+                </script>";
+                }
+                else{
+                    $order = 'title ASC';
+                    echo "
+                <script> 
+                document.getElementById('filter-title').classList.add('filter-active');
+                </script>";
+
+                }
+
+                $sql = "SELECT * FROM tbl_category ORDER BY $order";
                 $res = mysqli_query($conn, $sql);
 
                 if ($res == TRUE) {
@@ -143,8 +165,7 @@
                             $image = $rows['image_name'];
                             $featured = $rows['featured'];
                             $available = $rows['available'];
-
-
+                            $date = $rows['date']; 
                 ?>
                             <tr>
                                 <td><?php echo $sn++; ?></td>
@@ -152,20 +173,13 @@
                                 <td style="width: 13%; overflow:hidden;" ;><img src='<?php echo "../images/categories/" . $image; ?>' style="width: 100%; margin: 0 auto;"></td>
                                 <td><?php echo $featured; ?></td>
                                 <td><?php echo $available; ?></td>
-
-
                                 <td>
                                     <div>
                                         <span class="table-update-btn" data-id="<?php echo $id; ?>" data-title="<?php echo $title; ?>" data-image="<?php echo $image; ?>" data-featured="<?php echo $featured; ?>" data-available="<?php echo $available; ?>">&#9998;Update </span>
-
-                                        <!-- <span class ="table-update-btn">&#9998; Update </span> -->
-
                                         <span class="table-delete-btn" data-item-id="<?php echo $id; ?>" data-image="<?php echo $image; ?>">&#128465;Delete</span>
-
                                     </div>
                                 </td>
                             </tr>
-
                 <?php
                         }
                     }
@@ -173,11 +187,17 @@
                 ?>
             </table>
         </div>
+
+        <script>
+            function sortBy(criteria) {
+                const urlParams = new URLSearchParams(window.location.search);
+                urlParams.set('sort', criteria);
+                window.location.href = '?' + urlParams.toString(); // Reload page with updated query parameters
+            }
+        </script>
+
     </div>
 </section>
-
+<?php include("../partials/admin-footer.php"); ?>
 <!-- Adding the javascirpt file -->
 <script src="../javascript/manage-category-form.js"></script>
-
-
-<?php include("../partials/admin-footer.php"); ?>

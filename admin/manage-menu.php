@@ -209,10 +209,17 @@
         <?php endif; ?>
 
         <div class="page-heading">
-            <h1> Manage Menu</h1>
+            <h2> Manage Menu</h2>
         </div>
 
         <span class="btn-primary add-new-btn">Add Food</span>
+
+        <form action="" method="GET">
+        <button type="submit" name="filter" id="filter-date" value="date" class="filter-button">Sort By Date</button>
+        <button type="submit" name="filter" id="filter-category" value="category" class="filter-button">Sort By Category</button>
+        <button type="submit" name="filter" id="filter-title" value="title" class="filter-button">Sort By Title</button>
+    </form>
+    <div class="clear-fix"></div>
 
         <div class="items-list-table">
             <table class="table-full">
@@ -231,7 +238,33 @@
                 </tr>
 
                 <?php
-                $sql = "SELECT * FROM tbl_menu ORDER BY category ASC ";
+                  // Determine the sort order based on query parameters
+                  $sort = isset($_GET['filter']) ? $_GET['filter'] : ''; // Default to sorting by title
+                  if($sort === 'date'){
+                    $order = 'date DESC';
+                    echo "
+                <script> 
+                document.getElementById('filter-date').classList.add('filter-active');
+                </script>";
+
+                }
+                  elseif($sort === 'category'){
+                      $order = 'category ASC';
+                      echo "
+                  <script> 
+                  document.getElementById('filter-category').classList.add('filter-active');
+                  </script>";
+  
+                  }
+                  else{
+                    $order = 'title ASC';
+                    echo "
+                <script> 
+                document.getElementById('filter-title').classList.add('filter-active');
+                </script>";
+                }
+               
+                $sql = "SELECT * FROM tbl_menu ORDER BY $order ";
                 $res = mysqli_query($conn, $sql);
 
                 if ($res == TRUE) {

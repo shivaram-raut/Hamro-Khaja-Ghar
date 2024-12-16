@@ -7,12 +7,10 @@
     <input type="hidden" name="delivery-adrs" id="delivery-adrs">
     <input type="hidden" name="order-status" id="order-status">
     <input type="hidden" name="order-date" id="order-date">
+    <input type="hidden" name="mode" value="view-only">
+
 </form>
 
-<!-- <form id="delete-order-history" action="<?php echo SITEURL. 'customer-backend/delete-order-history.php' ?>"  method="POST" style="display: none;">
-    <input type="hidden" name="form-id" value="delete-order-history">
-    <input type="hidden" name="order-id" id="delete-odr-id">
-</form> -->
 
 <!-- delete-order-history form starts here -->
 <div class="overlay"></div>

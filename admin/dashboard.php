@@ -36,32 +36,32 @@ $order_row = getRowCount("tbl_order", $conn);
 
         <!-- Key Metrics Section -->
         <div class="box-container">
-            <div class="box">
+           <a href="<?php echo SITEURL.'admin/manage-menu.php'; ?>"> <div class="box">
                 <div class="box-heading">MENU ITEMS</div>
                 <div class="box-content"><?php echo $menu_items_row; ?></div>
-            </div>
-            <div class="box">
+            </div> </a>
+<a href="<?php echo SITEURL.'admin/manage-categories.php'; ?>"><div class="box">
                 <div class="box-heading">CATEGORIES</div>
                 <div class="box-content"><?php echo $categories_row; ?></div>
-            </div>
-            <div class="box">
+            </div> </a>
+            <a href="<?php echo SITEURL.'admin/manage-customers.php'; ?>"> <div class="box">
                 <div class="box-heading">CUSTOMERS</div>
                 <div class="box-content"><?php echo $customers_row; ?></div>
-            </div>
-            <div class="box">
+            </div> </a>
+            <a href="<?php echo SITEURL.'admin/order-table.php'; ?>"><div class="box">
                 <div class="box-heading">ORDERS</div>
                 <div class="box-content"><?php echo $order_row; ?></div>
-            </div>
+            </div> </a>
         </div>
 
         <!-- Quick Links Section -->
         <div class="quick-links">
             <h3>Quick Links</h3>
             <div class="links-container">
-                <a href="<?php echo SITEURL.'admin/manage-menu.php'; ?>" class="quick-link">Manage Menu Item</a>
+                <a href="<?php echo SITEURL.'admin/manage-menu.php'; ?>" class="quick-link">Manage Menu Items</a>
                 <a href="<?php echo SITEURL.'admin/manage-categories.php'; ?>" class="quick-link">Manage Categories</a>
                 <a href="<?php echo SITEURL.'admin/order-table.php'; ?>" class="quick-link">View Orders</a>
-                <a href="<?php echo SITEURL.'admin/manage-menu.php'; ?>" class="quick-link">Manage Customers</a>
+                <a href="<?php echo SITEURL.'admin/manage-customers.php'; ?>" class="quick-link">Manage Customers</a>
                 <a href="<?php echo SITEURL.'admin/manage-employees.php'; ?>" class="quick-link">Manage Employess</a>
                 <a href="<?php echo SITEURL.'admin/order-history.php'; ?>" class="quick-link">View Order History</a>
 
