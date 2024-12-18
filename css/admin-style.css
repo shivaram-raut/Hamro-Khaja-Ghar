@@ -80,6 +80,11 @@ a {
     opacity: 90%;
     font-weight: 500;
 }
+.navigation-bar .container {
+    margin: 0 auto;
+    padding: 0;
+}
+
 
 /*CSS for login dropdown menu  */
 .dropdown-btn {
@@ -98,35 +103,33 @@ a {
     margin: 0;
     border-radius: 5px;
     overflow: auto;
-    border: 1px solid red;
 }
 
 .dropdown-btn:hover #dropdown {
     display: block;
 }
 
-#dropdown li {
+#dropdown li{
     display: block;
-    padding: 10px;
-    color: #E33E33;  
+    min-width: 130px;
+    padding: 10px 5px;
+    color: #E33E33;
     text-align: center;
     line-height: normal;
     z-index: 15;
-    border: 1px solid red;
     margin: 0;
 }
 
 #dropdown li:hover {
     color: white;
     background-color: #B43F3F;
+    padding: 10px 5px;
     cursor: pointer;
 }
 
-.navigation-bar .container {
-    margin: 0 auto;
-    padding: 0;
+#dropdown li a:hover{
+    color: white;
 }
-
 
 /* CSs for   manage-employees section */
 

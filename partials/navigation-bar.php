@@ -30,7 +30,7 @@ include("set-user-id-session.php");
                 </li>
                 <?php endif; ?>
 
-                <?php if (isset($_SESSION['admin-user'])): ?>
+                <?php if (isset($_SESSION['user-admin']) || isset($_SESSION['user-employee'])): ?>
                     <li>
                         <a href="<?php echo SITEURL. 'admin/dashboard.php' ?>"> Dashboard </a>
                     </li>

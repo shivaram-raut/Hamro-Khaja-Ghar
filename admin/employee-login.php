@@ -50,7 +50,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'employee-login-form') {
 
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user-employee'] = $user_id;
-            header("Location:" . SITEURL . "admin/index.php");
+            header("Location:" . SITEURL . "admin/dashboard.php");
             exit;
         } else {
             invalidCreds($redirect_uri);

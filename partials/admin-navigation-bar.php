@@ -2,9 +2,9 @@
  <?php
     include('admin-header.php');
 
-    // if (!isset($_SESSION['admin-user'])) {
-    //     header('Location:' . SITEURL . 'index.php');
-    // }
+    if (!isset($_SESSION['user-admin']) && (!isset($_SESSION['user-employee']))) {
+        header('Location:' . SITEURL . 'index.php');
+    }
     ?>
 
  <section class="navigation-bar">
@@ -24,19 +24,18 @@
                      <a href="dashboard.php">Dashboard</a>
                  </li>
                  <li class="dropdown-btn">
-                        <a>My Account</a>
-                        <ul id="dropdown">
-                            <a href="<?php echo SITEURL . 'main/account-info.php' ?>">
-                                <li>Account Info</li>
-                            </a>
-                            <a href="<?php echo SITEURL . 'main/order-page.php' ?>">
-                                <li>Order History</li>
-                            </a>
-                            <a href="<?php echo SITEURL . 'customer-backend/customer-logout.php' ?>">
-                                <li>Logout</li>
-                            </a>
-                        </ul>
-                    </li>
+                     <a>My Account</a>
+                     <ul id="dropdown">
+                         <li><a href="<?php echo SITEURL . 'admin/my-account.php' ?>">Account Info</a></li>
+
+                         <?php if (isset($_SESSION['user-admin'])): ?>
+                             <li><a href="<?php echo SITEURL . 'admin/admin-logout.php' ?>">Logout</a></li>
+
+                         <?php elseif (isset($_SESSION['user-employee'])): ?>
+                             <li><a href="<?php echo SITEURL . 'admin/employee-logout.php' ?>">Logout</a></li>
+                         <?php endif; ?>
+                     </ul>
+                 </li>
              </ul>
          </div>
 
