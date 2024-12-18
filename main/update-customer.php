@@ -25,7 +25,7 @@
         </div>
     <div class="input-box form" style="position: static; left: auto; top: auto; z-index: auto; transform: none; width: 100%;  box-shadow: 0 0 4px 3px #e6e6e6; ">
 
-        <form action="<?php echo SITEURL . 'customer-backend/customer-update.php'; ?>" method="post" id="sign-up-form">
+        <form action="<?php echo SITEURL . 'customer-backend/customer-update.php'; ?>" method="post" id="form1">
         <input type="hidden" name="form-id" value="update-customer-form" />
             <div>
                 <label for="full-name">Full Name</label>
@@ -70,4 +70,4 @@
 
 <?php include("../partials/footer.php"); ?>
 
-<script src="../javascript/customer-re_password-check.js"> </script>
+<script src="../javascript/re_password-check.js"> </script>

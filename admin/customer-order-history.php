@@ -2,12 +2,7 @@
 <?php
 if (isset($_POST['submit']) && $_POST['form-id'] == "customer-details") {
     $user_id = $_POST['user-id'];
-    $_SESSION['customer-id'] = $user_id;
-} 
-elseif(isset($_SESSION['customer-id'])){
-    $user_id = $_SESSION['customer-id'];
-}
-    else {
+} else {
     header("Location: " . SITEURL . "admin/dashboard.php");
 }
 ?>

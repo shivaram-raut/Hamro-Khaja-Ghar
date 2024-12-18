@@ -1,6 +1,6 @@
 
     document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById('sign-up-form').addEventListener('submit', function(event) {
+        document.getElementById('form1').addEventListener('submit', function(event) {
             // Get the password and re-password values
             const password = document.getElementById('password2').value;
             const re_password = document.getElementById('re-password2').value;

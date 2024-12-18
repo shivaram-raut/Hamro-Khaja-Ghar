@@ -4,11 +4,11 @@ include("../config/constants.php");
 function invalidCreds($redirect_uri)
 {
     $errorMessage = "Invalid username or password.";
-    header("Location:" . $redirect_uri . "?error=" . urlencode($errorMessage) . "&show=admin-login-form");
+    header("Location:" . $redirect_uri . "?error=" . urlencode($errorMessage) . "&show=employee-login-form");
     exit;
 }
 
-if (isset($_POST['submit']) && $_POST['form-id'] == 'admin-login-form') {
+if (isset($_POST['submit']) && $_POST['form-id'] == 'employee-login-form') {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -39,7 +39,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'admin-login-form') {
 
 
 
-    $sql = "SELECT * FROM tbl_admin WHERE username = '$username' ";
+    $sql = "SELECT * FROM tbl_employee WHERE username = '$username' ";
 
     $res = mysqli_query($conn, $sql);
 
@@ -49,7 +49,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'admin-login-form') {
         $user_id = $row['id'];
 
         if (password_verify($password, $hashed_password)) {
-            $_SESSION['user-admin'] = $user_id;
+            $_SESSION['user-employee'] = $user_id;
             header("Location:" . SITEURL . "admin/index.php");
             exit;
         } else {

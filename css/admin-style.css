@@ -81,6 +81,47 @@ a {
     font-weight: 500;
 }
 
+/*CSS for login dropdown menu  */
+.dropdown-btn {
+    position: relative;
+}
+
+#dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 5px;
+    background-color: #FCF8F3;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    border-radius: 5px;
+    overflow: auto;
+    border: 1px solid red;
+}
+
+.dropdown-btn:hover #dropdown {
+    display: block;
+}
+
+#dropdown li {
+    display: block;
+    padding: 10px;
+    color: #E33E33;  
+    text-align: center;
+    line-height: normal;
+    z-index: 15;
+    border: 1px solid red;
+    margin: 0;
+}
+
+#dropdown li:hover {
+    color: white;
+    background-color: #B43F3F;
+    cursor: pointer;
+}
+
 .navigation-bar .container {
     margin: 0 auto;
     padding: 0;
@@ -368,17 +409,17 @@ table tr:hover {
 }
 
 /* css for showing and hiding password */
-.check-box {
+.check-box, #check-box {
     width: 20px;
     height: 20px;
     float: left;
-    margin: 0;
+    margin-right:  5px;
 
 }
 
 .show-password {
     font-size: 15px;
-    padding: 2px 6px;
+    padding: 3px 6px;
     float: left;
 }
 
@@ -681,4 +722,26 @@ table tr:hover {
 .filter-active {
     background-color:#008fb3;
     color: white;
+}
+
+.update-button{
+    width: 100%;
+    background-color:#008fb3;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10%;
+    /* margin-top: 100px; */
+    cursor: pointer;
+}
+
+.update-button:hover{
+    background-color: #026e89;
+}
+
+.error-msg {
+    color: red;
+    text-align: center;
 }

@@ -61,7 +61,7 @@ include("../partials/admin-navigation-bar.php");
                                             <form action="<?php echo SITEURL . 'admin/customer-order-history.php'; ?>" method="POST" style="display: inline;">
                                                 <input type="hidden" name="form-id" value="customer-details">
                                                 <input type="hidden" name="user-id" value="<?php echo $user_id; ?>">
-                                                <button type="submit" style="background: none; border: none; color: #008fb3; cursor: pointer; font-size: 15px;">
+                                                <button type="submit" name="submit" style="background: none; border: none; color: #008fb3; cursor: pointer; font-size: 15px;">
                                                     &#128065; Order History
                                                 </button>
                                             </form>

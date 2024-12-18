@@ -30,7 +30,37 @@
 
 <!-- Customer Login form stops here -->
 
-<!-- Admin/Employee Login form starts here -->
+<!-- Employee Login form starts here -->
+<div class="overlay"> </div>
+<div id="employee-login-form" class="form">
+    <span class="cross">&times;</span>
+    <div class="form-heading">Employee Login</div>
+    <form action="../admin/employee-login.php" method="post">
+        <input type="hidden" name="form-id" value="employee-login-form" />
+        <input type="hidden" name="redirect-uri" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+
+        <div>
+            <label for="">Username</label>
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" class="password" name="password" placeholder="Pssword" required>
+        </div>
+        <div>
+            <input type="checkbox" id="check-box" class="check-box" onclick="showPassword()">
+            <label id="show-password" class="show-password">Show Password</label>
+        </div>
+        <div class="clear-fix"></div>
+        <div class="error-msg"></div>
+        <button type="submit" name="submit">Login</button>
+    </form>
+
+</div>
+
+<!-- Employee Login form stops here -->
+
+<!-- Admin Login form starts here -->
 <div class="overlay"> </div>
 <div id="admin-login-form" class="form">
     <span class="cross">&times;</span>
@@ -58,4 +88,4 @@
 
 </div>
 
-<!-- Admin/Employee Login form stops here -->
+<!-- Admin Login form stops here -->

@@ -12,6 +12,7 @@ include('../config/constants.php');
     <!-- Making the webpage responsive! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamro Khaja Ghar</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
 
 
     <!-- linking css file -->

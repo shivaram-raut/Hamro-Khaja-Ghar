@@ -23,9 +23,20 @@
                  <li>
                      <a href="dashboard.php">Dashboard</a>
                  </li>
-                 <li>
-                     <a href="index.php">My Account</a>
-                 </li>
+                 <li class="dropdown-btn">
+                        <a>My Account</a>
+                        <ul id="dropdown">
+                            <a href="<?php echo SITEURL . 'main/account-info.php' ?>">
+                                <li>Account Info</li>
+                            </a>
+                            <a href="<?php echo SITEURL . 'main/order-page.php' ?>">
+                                <li>Order History</li>
+                            </a>
+                            <a href="<?php echo SITEURL . 'customer-backend/customer-logout.php' ?>">
+                                <li>Logout</li>
+                            </a>
+                        </ul>
+                    </li>
              </ul>
          </div>
 

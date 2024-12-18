@@ -135,8 +135,6 @@ h2 {
 }
 
 /*CSS for login dropdown menu  */
-
-
 .dropdown-btn {
     position: relative;
 }
@@ -431,8 +429,8 @@ h2 {
 
 .search-food input[type="search"] {
     width: 60%;
-    padding: 1.8%;
-    font-size: 1.1rem;
+    padding: 2%;
+    font-size: 15px;
     text-align: center;
     border-radius: 10px;
     border: none;
@@ -446,9 +444,9 @@ h2 {
 
 .search-food input[type="submit"] {
     width: 15%;
-    padding: 1.8%;
+    padding: 2%;
     margin-left: 5px;
-    font-size: 1.1rem;
+    font-size: 15px;
     border-radius: 10px;
     border: none;
     background-color: white;

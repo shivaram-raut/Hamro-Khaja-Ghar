@@ -7,7 +7,7 @@ include("../partials/admin-navigation-bar.php");
 <div class="form add-form">
     <span class="cross">&times;</span>
     <div class="form-heading">Add Employee</div>
-    <form action="add-employee.php" method="post">
+    <form action="add-employee.php" method="post" id="form1">
         <input type="hidden" name="form_id" value="add-employee-form" />
         <div>
             <label for="full-name">Full Name</label>
@@ -18,18 +18,20 @@ include("../partials/admin-navigation-bar.php");
             <input type="text" id="username" name="username" placeholder="Username" required>
         </div>
         <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" class="password" name="password" placeholder="Password" required>
+            <label for="password2">Password</label>
+            <input type="password" id="password2" class="password" name="password" placeholder="Password" required>
         </div>
         <div>
-            <label for="re_password">Retype Password</label>
-            <input type="password" id="re_password" class="re_password" name="re_password" placeholder="Retype Password" required>
+            <label for="re-password2">Retype Password</label>
+            <input type="password" id="re-password2" class="re_password" name="re_password" placeholder="Retype Password" required>
         </div>
         <div>
             <input type="checkbox" id="check-box" class="check-box">
             <label id="show-password" class="show-password">Show Password</label>
         </div>
         <div class="clear-fix"></div>
+        <div id="error-msg2" class="error-msg"></div>
+
         <input type="submit" name="submit" value="Add Employee" class="form-add-btn submit-button">
     </form>
 </div>
@@ -145,5 +147,6 @@ include("../partials/admin-navigation-bar.php");
 
 <!-- Adding the javascirpt file -->
 <script src="../javascript/manage-employee-forms.js"></script>
+<script src="../javascript/re_password-check.js"></script>
 
 <?php include("../partials/admin-footer.php"); ?>

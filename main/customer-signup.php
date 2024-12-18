@@ -7,7 +7,7 @@
     <!-- customer sign-up form starts here -->
     <div class="form" id="customer-sign-up-form" style="position: static; left: auto; top: auto; z-index: auto; transform: none;">
         <div class="form-heading">Sign Up</div>
-        <form action="<?php echo SITEURL . 'customer-backend/customer-signup.php'; ?>" method="post" id="sign-up-form">
+        <form action="<?php echo SITEURL . 'customer-backend/customer-signup.php'; ?>" method="post" id="form1">
             <input type="hidden" name="form-id" value="customer-sign-up-form" />
             <div>
                 <label for="full-name">Full Name</label>
@@ -51,4 +51,4 @@
 
 <?php include("../partials/footer.php"); ?>
 
-<script src="../javascript/customer-re_password-check.js"> </script>
+<script src="../javascript/re_password-check.js"> </script>

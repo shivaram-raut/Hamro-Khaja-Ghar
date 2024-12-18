@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     handleButtonClick("#admin-login-btn", "#admin-login-form");
-    handleButtonClick("#employee-login-btn", "#admin-login-form");
+    handleButtonClick("#employee-login-btn", "#employee-login-form");
     handleButtonClick("#customer-login-btn", "#customer-login-form");
     handleButtonClick("#login-btn", "#customer-login-form");
 

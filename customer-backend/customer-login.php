@@ -52,7 +52,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'customer-login-form') {
         if (password_verify($password, $hashed_password)) {
 
             if ($account_status == 'deactivated') {
-                $_SESSION['notification_msg'] = "Dear Customer, your account has been disabled.";
+                $_SESSION['notification_msg'] = "Dear Customer, your account has been deactivated.";
                 header("Location:" . SITEURL . "main/index.php");
                 exit;
             } else {

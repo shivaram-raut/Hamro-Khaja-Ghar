@@ -72,7 +72,7 @@
 
                             <?php endif; ?>
 
-                            <input type="submit" name="search-submit" value="Search">
+                            <input type="submit" name="search-submit" value="&#128269; Search">
                         </form>
 
                     </div>
