@@ -148,7 +148,11 @@ if ($_POST['form-id'] == "order-details-form") {
                             </select>
 
                             <div style="margin: 0 50px;">
+                            <?php if(isset($_SESSION['user-admin']) || isset($_SESSION['user-employee'])): ?>
                                 <div class="button" id="print-invoice-btn" style="float:left">&#x1F5B6; Print Invoice</div>
+                                <?php elseif(isset($_SESSION['user-id'])): ?>
+                                <div class="button" id="print-invoice-btn" style="float:left; width: 35%;">&#x1F5B6; Download Invoice</div> 
+                                <?php endif; ?>
                                 <div class="button" id="go-back-btn" style="float:right">&#x21A9; Go Back</div>
 
                             </div>
@@ -167,7 +171,6 @@ if ($_POST['form-id'] == "order-details-form") {
 
                             <div>
                                 <div class="odr-update-btn" id="update-status-btn" style="float:left">&#x1F503; Update Status</div>
-
                                 <div class="button" id="print-invoice-btn" style="float:left">&#x1F5B6; Print Invoice</div>
                                 <div class="button" id="go-back-btn" style="float:left">&#x21A9; Go Back</div>
                             <?php endif; ?>

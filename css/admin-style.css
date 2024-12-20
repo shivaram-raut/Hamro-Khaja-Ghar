@@ -659,32 +659,6 @@ table tr:hover {
     color: white;
 }
 
-/* Notifications Section */
-.notifications {
-    margin-bottom: 30px;
-}
-
-.notifications h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.notifications-list {
-    list-style: none;
-    padding: 0;
-}
-
-.notification-item {
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #555;
-}
-
-
 /* css for footer section */
 .footer {
     width: 100%;

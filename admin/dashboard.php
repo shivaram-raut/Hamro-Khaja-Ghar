@@ -75,22 +75,13 @@ $order_row = getRowCount("tbl_order", $conn);
                 <a href="<?php echo SITEURL . 'admin/manage-categories.php'; ?>" class="quick-link">Manage Categories</a>
                 <a href="<?php echo SITEURL . 'admin/order-table.php'; ?>" class="quick-link">View Orders</a>
                 <a href="<?php echo SITEURL . 'admin/manage-customers.php'; ?>" class="quick-link">Manage Customers</a>
-                <a href="<?php echo SITEURL . 'admin/order-history.php'; ?>" class="quick-link">View Order History</a>
                 <?php if (isset($_SESSION['user-admin'])): ?>
                     <a href="<?php echo SITEURL . 'admin/manage-employees.php'; ?>" class="quick-link">Manage Employess</a>
+                    <a href="<?php echo SITEURL . 'admin/order-history.php'; ?>" class="quick-link">View Order History</a>
+
                 <?php endif; ?>
 
             </div>
-        </div>
-
-        <!-- Recent Notifications Section -->
-        <div class="notifications">
-            <h3>Recent Notifications</h3>
-            <ul class="notifications-list">
-                <li class="notification-item">New Order #1234 placed by John Doe.</li>
-                <li class="notification-item">Low stock alert for "Chicken Burger".</li>
-                <li class="notification-item">New customer "Jane Smith" registered.</li>
-            </ul>
         </div>
 
     </div>

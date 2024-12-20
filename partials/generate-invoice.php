@@ -120,5 +120,12 @@ if ($res == TRUE) {
 
 
     // Output PDF
-    $pdf->Output('D', 'invoice.pdf');
+    if(isset($_SESSION['user-admin']) || isset($_SESSION['user-employee'])){
+        $pdf->Output('I', 'invoice.pdf');
+
+    }
+    elseif(isset($_SESSION['user-id'])){
+        $pdf->Output('D', 'invoice.pdf');
+
+    }
 }
