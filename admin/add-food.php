@@ -6,12 +6,10 @@ include("../config/constants.php");
 if (isset($_POST['submit']) && $_POST['form_id'] === 'add-food-form') {
 
     // Get data from the add-category form
-
     $title = $_POST['title'];
     $price = $_POST['price'];
     $description = $_POST['description'];
     $category_id = $_POST['category'];
-
 
     if (isset($_FILES["image"]["name"])) {
 
@@ -34,7 +32,6 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-food-form') {
             $image_extension = end($image_extension_array); //gets image extension
 
             $image_name = "menu-" . $title .  uniqid(mt_rand(0, 99999)) . "." . $image_extension;
-
 
             $destination_path = "../images/menu/" . $image_name;
 
@@ -95,5 +92,4 @@ exit();
 } else {
     header("Location:" . SITEURL . 'admin/manage-menu.php');
 }
-
 ?>

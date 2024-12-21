@@ -17,7 +17,6 @@ include("../partials/navigation-bar.php");
         $mobile_number = $row['mobile_number'];
         $email = $row['email'];
     }
-
     ?>
 
     <div class="basic-details" style="width: 40%; margin: auto;">
@@ -37,7 +36,6 @@ include("../partials/navigation-bar.php");
             <div>
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" value="<?php echo $email ?>" disabled>
-
             </div>
 
             <div>
@@ -46,12 +44,8 @@ include("../partials/navigation-bar.php");
             </div>
             <form action="<?php echo SITEURL.'main/update-customer.php' ?>" method="post">
             <input type="submit" name="submit" value="Update Account" class="update-button" style="border:none">
-
             </form>
-
         </div>
-
-
     </div>
 </div>
 

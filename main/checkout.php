@@ -15,8 +15,6 @@
         $mobile_number= $row['mobile_number'];
         $email = $row['email'];
     }
-
-
 ?>
 
 <div class="container" style=" width: 90%; padding:5px 3%;">
@@ -37,7 +35,6 @@
                 <div>
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" value="<?php echo $email ?>" disabled>
-
                 </div>
 
                 <div>
@@ -45,7 +42,6 @@
                     <textarea id="address" name="address" rows="2" cols="40" required><?php echo $adrs ?> </textarea>
                 </div>
             </div>
-
         </div>
 
         <div class="order-details">
@@ -75,7 +71,6 @@
                             $food_item_id = $rows['food_item_id'];
                             $quantity = $rows['quantity'];
         
-
                             $inner_sql = "SELECT title, price FROM tbl_menu WHERE id = $food_item_id ";
                             $inner_res = mysqli_query($conn, $inner_sql);
 
@@ -136,14 +131,10 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
-
     </div>
-
 </div>
-
 
 <?php include("../partials/footer.php"); ?>
 

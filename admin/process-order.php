@@ -3,8 +3,6 @@ include("../config/constants.php");
 
 if (isset($_POST['submit']) && $_POST['form-id'] == "confirm-order-form") {
 
-
-
     $user_id = $_SESSION['user-id'];
 
     $order_id = $_POST['order-id'];
@@ -19,11 +17,8 @@ if (isset($_POST['submit']) && $_POST['form-id'] == "confirm-order-form") {
 
     $order_status = "Ordered";
 
-
-
     $sql = "INSERT INTO tbl_order (order_id, user_id,customer_name, total_price, delivery_adrs, payment_method, order_status)  VALUES ('$order_id', $user_id, '$full_name', $total_price, '$delivery_adrs', '$payment_method', '$order_status')";
     $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-
 
     if ($res == true) {
 
@@ -69,3 +64,4 @@ if (isset($_POST['submit']) && $_POST['form-id'] == "confirm-order-form") {
         }
     }
 }
+?>

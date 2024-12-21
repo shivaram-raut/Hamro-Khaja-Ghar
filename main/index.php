@@ -4,7 +4,7 @@
  <!-- search-food Section -->
  <section class="search-food">
      <div class="container">
-         <form action="search-food.php" method="POST">
+         <form action="<?php echo SITEURL.'customer-backend/search-food.php'; ?>" method="POST">
              <input type="search" name="searched-food" id="searched-food" placeholder="Search your favourite food..." autocomplete="off" required>
              <input type="submit" name="submit" value="&#128269; Search">
          </form>
@@ -12,7 +12,6 @@
              <span> Active Hours<br> 7:00 AM - 10:00 PM </span>
          </div>
      </div>
-
  </section>
  <!-- search-food section ends here -->
 
@@ -36,10 +35,8 @@
                             // $featured = $rows['featured'];
                             // $available = $rows['available'];
 
-
                 ?>
                          <div class="box">
-
                              <a href="<?php echo SITEURL . "main/food-menu.php?category=" . $title ?>"> <img src="<?php echo '../images/categories/' . $image; ?>" alt="<?php echo $title ?>" class="image-responsive box-image">
                                  <h3 class="food-title"> <?php echo $title ?> </h3>
                              </a>
@@ -50,7 +47,6 @@
                 }
                 ?>
          </div>
-
      </div>
  </section>
  <!-- categories section ends here -->
@@ -64,10 +60,8 @@
              <?php
                 $sql = "SELECT * FROM tbl_menu WHERE featured = 'Yes' AND available = 'Yes' LIMIT 6 ";
                 $res = mysqli_query($conn, $sql);
-
                 if ($res == true) {
                     $count = mysqli_num_rows($res);
-
                     if ($count > 0) {
                         while ($rows = mysqli_fetch_assoc($res)) {
                             $food_item_id = $rows['id'];
@@ -76,7 +70,7 @@
                             $price = $rows['price'];
                             $description = $rows['food_description'];
                 ?>
-
+                
                          <div class="food-item" data-category="<?php echo $food_category ?>">
                              <div class="food-menu-box">
 
@@ -90,7 +84,6 @@
                                      <div class="cart-btn">
                                          <?php if (!isset($_SESSION['user-id'])) : ?>
                                              <span class="login-pop-up"><img src="../images/cart.png" alt="cart-icon" class="image-responsive"></span>
-
                                          <?php else: ?>
                                              <span class="cart-pop-up" data-food-item-id="<?php echo $food_item_id; ?>" data-title="<?php echo $title; ?>" data-price="<?php echo $price; ?>" data-description="<?php echo $description; ?>" data-image="<?php echo '../images/menu/' . $image; ?>"><img src="../images/cart.png" alt="cart-icon" class="image-responsive"> </span>
 

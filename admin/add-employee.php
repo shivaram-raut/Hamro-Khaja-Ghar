@@ -11,7 +11,6 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-employee-form') {
     $password = $_POST['password'];
     $re_password = $_POST['re_password'];
 
-
     // Check if the passwords match
     if ($password === $re_password) {
         // Check if the username already exists
@@ -51,12 +50,10 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-employee-form') {
         
         // Redirect back to the manage-employees page
         header("Location:" . SITEURL . 'admin/manage-employees.php');
-
     }
 }
 else{
     header("Location:" . SITEURL . 'admin/manage-employees.php');
 
 }
-
 ?>

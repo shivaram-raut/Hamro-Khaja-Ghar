@@ -8,7 +8,7 @@
         <input type="hidden" name="user-id" value="<?php echo $_SESSION['user-id']; ?>">
         <input type="hidden" name="food-item-id" id="food-item-id">
         <div class="popup-menu-box">
-
+            
             <div class="menu-image">
                 <img src="../images/menu/menu-Chicken Ham Burger 3724266e03e73bf82c.jpeg" id="image-src" class="image-responsive">
             </div>
@@ -24,7 +24,6 @@
             <div id="total-price" style="font-size: 18px; padding: 7px 0 0 7px;">
                 Total price: Rs. 100
             </div>
-
         </div>
         <button type="submit" name="submit">Add to Cart</button>
     </form>

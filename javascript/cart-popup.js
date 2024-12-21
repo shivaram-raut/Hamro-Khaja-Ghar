@@ -10,14 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const total_price = document.getElementById("total-price");
     price = 0; 
 
-
     // show login-form
     function showModal(formId){
         document.querySelector('.overlay').classList.add('show-overlay');
         document.querySelector(formId).classList.add('show-form');
-     
     }
-    
     
     // close login-form
     function closeModal(formId){
@@ -65,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // handleButtonClick(".login-pop-up", "#customer-login-form");
     handleButtonClick(".cart-pop-up", "#cart-box");
-    
     
     });
     

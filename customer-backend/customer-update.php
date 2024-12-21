@@ -22,7 +22,6 @@ function checkEmail($new_email, $existing_email, $conn)
     }
 }
 
-
 // setting the msg variables
 $success_msg = "Account updated successfully!";
 $failure_msg = "Something went wrong";
@@ -38,8 +37,6 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'update-customer-form') {
     $new_email = htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8');
     $existing_email = htmlspecialchars(trim($_POST['existing-email']), ENT_QUOTES, 'UTF-8');
 
-
-
     if (!empty($_POST['password'])) {
         $password = $_POST['password'];
         $re_password = $_POST['re-password'];
@@ -47,10 +44,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'update-customer-form') {
         // check if new email already exists
         checkEmail($new_email, $existing_email, $conn);
 
-
-
         if ($password === $re_password) {
-
             // Encrypt the password using bcrypt
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -105,6 +99,4 @@ if (isset($_POST['submit']) && $_POST['form-id'] === 'update-customer-form') {
     header("Location:" . SITEURL . 'main/update-customer.php');
     exit;
 }
-
-
 ?>

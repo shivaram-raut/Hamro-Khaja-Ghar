@@ -80,12 +80,9 @@
         <input type="hidden" name="form_id" value="delete-category-form" />
         <input type="hidden" name="id" id="delete-category-id" />
         <input type="hidden" name="image" id="delete-category-image" />
-
-
         <input type="submit" name="submit" value="Delete" class=" submit-button delete-yes" />
         <span class="cross submit-button delete-no " style="font-size: 18px; padding: 10px;"> Cancel</span>
         <div class="clear-fix"></div>
-
 
     </form>
 </div>

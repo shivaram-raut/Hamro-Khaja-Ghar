@@ -1,7 +1,5 @@
 <?php include("../partials/navigation-bar.php"); ?>
 
-
-
 <!-- categories section starts here -->
 <section class="categories">
     <div class="container">
@@ -20,8 +18,6 @@
                     while ($rows = mysqli_fetch_assoc($res)) {
                         $title = $rows['title'];
                         $image = $rows['image_name'];
-
-
             ?>
                         <div class="box">
 

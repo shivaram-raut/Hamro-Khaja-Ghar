@@ -49,6 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
             generate_invoice_form_id.submit();
         });
     }
-
-
 });

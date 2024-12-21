@@ -6,7 +6,6 @@ if($_POST['form-id'] == 'delete-order-history'){
     $order_id = $_POST['order-id'];
     $visible = "no";
     
-
     $sql = "UPDATE  tbl_order_history SET
         visible = '$visible'
         WHERE order_id = '$order_id' ;
@@ -18,13 +17,10 @@ if($_POST['form-id'] == 'delete-order-history'){
         $_SESSION['notification_msg'] = "Order History Deleted Successfully.";
        header("Location:".SITEURL."main/order-page.php");
         exit;
-
     }
   
 }
 else{
     header("Location:".SITEURL."index.php");
-
 }
-
 ?>

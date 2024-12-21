@@ -63,19 +63,15 @@
                                         <?php elseif($status=="On-delivery"): ?>
                                             <span style="color: #007bff"> <?php echo $status; ?></span>
                                          <?php endif; ?>  
-
-
                                     </div>
                                 </td>
 
                                 <td>
                                     <div>
                                         <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;margin-right: 10%;" data-user-id="<?php echo $user_id; ?>" data-order-id = "<?php echo $order_id; ?>" data-delivery-adrs = "<?php echo $delivery_adrs; ?>" data-order-status = "<?php echo $status; ?>" data-order-date = "<?php echo $date; ?>" >  &#128065;View Details</span>
-
                                     </div>
                                 </td>
                             </tr>
-
                 <?php
                         }
                     }
@@ -85,7 +81,6 @@
         </div>
     </div>
 </section>
-
 
 <?php include("../partials/admin-footer.php"); ?>
 

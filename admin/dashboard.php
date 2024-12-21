@@ -4,7 +4,6 @@
 // function to count the rows
 function getRowCount($tableName, $conn)
 {
-
     $sql = "SELECT COUNT(*) AS total_rows FROM $tableName";
 
     $result = mysqli_query($conn, $sql);
@@ -23,9 +22,7 @@ $menu_items_row = getRowCount("tbl_menu", $conn);
 $categories_row = getRowCount("tbl_category", $conn);
 $customers_row = getRowCount("tbl_customer", $conn);
 $order_row = getRowCount("tbl_order", $conn);
-
 ?>
-
 
 <div class="container" style="min-height: 65vh;">
     <div style="margin: auto;">
@@ -36,7 +33,6 @@ $order_row = getRowCount("tbl_order", $conn);
             <?php elseif (isset($_SESSION['user-employee'])): ?>
                 <h2>Employee Dashboard</h2>
             <?php endif; ?>
-
         </div>
 
         <!-- Key Metrics Section -->
@@ -78,12 +74,9 @@ $order_row = getRowCount("tbl_order", $conn);
                 <?php if (isset($_SESSION['user-admin'])): ?>
                     <a href="<?php echo SITEURL . 'admin/manage-employees.php'; ?>" class="quick-link">Manage Employess</a>
                     <a href="<?php echo SITEURL . 'admin/order-history.php'; ?>" class="quick-link">View Order History</a>
-
                 <?php endif; ?>
-
             </div>
         </div>
-
     </div>
 </div>
 

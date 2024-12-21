@@ -20,8 +20,7 @@
         $username = $row['username'];
     }
     ?>
-
-
+    
     <div class="basic-details" style="width: 45%; margin: auto;">
         <div class="header">
             <h2>Update Account: </h2>

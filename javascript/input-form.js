@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
     // close login-form
     function closeModal(formId) {
         document.querySelector('.overlay').classList.remove('show-overlay');
@@ -28,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 div.innerText = "";
             });
         }
-
-
     }
 
     function handleButtonClick(button, formId) {
@@ -48,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         }
-
     }
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -64,12 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
         showModal(formId);
     }
 
-
     handleButtonClick("#admin-login-btn", "#admin-login-form");
     handleButtonClick("#employee-login-btn", "#employee-login-form");
     handleButtonClick("#customer-login-btn", "#customer-login-form");
     handleButtonClick("#login-btn", "#customer-login-form");
-
-
 
 });

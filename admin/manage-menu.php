@@ -31,7 +31,6 @@
             <select name="category" style="width: 65%;" required>
 
                 <?php
-
                 $sql = "SELECT * FROM tbl_category WHERE available = 'Yes' ";
 
                 $res = mysqli_query($conn, $sql);
@@ -40,7 +39,6 @@
                     $count = mysqli_num_rows($res);
 
                     if ($count > 0) {
-
                         while ($row = mysqli_fetch_assoc($res)) {
                             $id = $row['id'];
                             $title = $row['title'];
@@ -49,7 +47,6 @@
                             <option value="<?php echo $id ?>"> <?php echo $title ?> </option>
 
                         <?php
-
 
                         }
                     } else {
@@ -135,12 +132,10 @@
 
                         <?php
 
-
                         }
                     } else {
                         ?>
                         <option value="0">No categories </option>
-
                 <?php
 
                     }

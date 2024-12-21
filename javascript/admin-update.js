@@ -7,13 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
     }
     
-    
     // close login-form
     function closeModal(formId){
         document.querySelector('.overlay').classList.remove('show-overlay');
         document.querySelector(formId).classList.remove('show-form');
-    
-    
     }
     
     function handleButtonClick(button, formId) {
@@ -35,7 +32,5 @@ document.addEventListener("DOMContentLoaded", function () {
     
     }
      handleButtonClick("#admin-update-btn","#admin-update-form");
-    
-    
     });
     

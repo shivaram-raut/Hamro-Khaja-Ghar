@@ -14,13 +14,11 @@ if (isset($_POST['submit']) && $_POST['form_id'] == 'delete-employee-form') {
         $_SESSION['notification_msg'] = "Employee Deleted Successfully!";
          header("Location:" . SITEURL . 'admin/manage-employees.php');
          exit();
-
-
     }
- 
+
 }
 else{
         $_SESSION['notification_msg'] = "Something went wrong!";
          header("Location:" . SITEURL . 'admin/manage-employees.php');
-
 }
+?>

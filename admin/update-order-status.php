@@ -49,3 +49,4 @@ if ($_POST['form-id'] == "update-status-form") {
 } else {
     header("Location:" . SITEURL . "admin/order-table.php");
 }
+?>

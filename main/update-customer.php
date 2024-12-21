@@ -17,7 +17,6 @@
         $email = $row['email'];
     }
     ?>
-     
     
     <div class="basic-details" style="width: 45%; margin: auto;">
         <div class="header">

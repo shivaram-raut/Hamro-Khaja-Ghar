@@ -32,7 +32,6 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
 
             $image_name = "food-category-" .$title.  uniqid(mt_rand(0, 99999)) . "." . $image_extension;
 
-
             $destination_path = "../images/categories/" . $image_name;
 
             //upload the image
@@ -62,7 +61,6 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
         $available = "No";
     }
 
-
     $sql = "INSERT INTO tbl_category SET
                 title = '$title',
                 featured = '$featured',
@@ -83,5 +81,4 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'add-category-form') {
 } else {
     header("Location:" . SITEURL . 'admin/manage-categories.php');
 }
-
 ?>

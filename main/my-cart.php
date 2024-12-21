@@ -30,8 +30,6 @@
                 <th>Food-items</th>
                 <th>Quantity</th>
                 <th> Total Price </th>
-
-
             </tr>
 
             <?php
@@ -50,7 +48,6 @@
                         $food_item_id = $rows['food_item_id'];
                         $quantity = $rows['quantity'];
 
-
                         $inner_sql = "SELECT title, price, image_name FROM tbl_menu WHERE id = $food_item_id ";
                         $inner_res = mysqli_query($conn, $inner_sql);
 
@@ -64,8 +61,6 @@
 
                             $grand_total_price += (float)$total_price;
                         }
-
-
             ?>
                         <tr>
                             <td style="width: 45%;">
@@ -91,9 +86,7 @@
                             </td>
 
                             <td class="total-price" data-food-item-id="<?php echo $food_item_id; ?>" data-unit-price = "<?php echo $unit_price ?>" ><?php echo "Rs. " .$total_price; ?> </td>
-
                         </tr>
-
 
             <?php
                     }
@@ -114,10 +107,8 @@
         </a>
         <?php endif; ?>
 
-
     </div>
 </div>
-
 
 <?php include("../partials/footer.php"); ?>
 

@@ -10,8 +10,6 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'update-food-form') {
     $category_id = $_POST['category'];
     $existing_image = $_POST['existing-image'];
 
-
-
     // check whether the update image input fied is empty or not
     if (isset($_FILES["image"]["name"]) && $_FILES["image"]["name"] !== "") {
 
@@ -39,7 +37,6 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'update-food-form') {
             $image_extension = end(explode(".", $image_name)); //gets image extension
 
             $image_name = "food-menu-" .$title. uniqid(mt_rand(0, 99999)) . "." . $image_extension;
-
 
             $destination_path = "../images/menu/" . $image_name;
 
@@ -72,7 +69,6 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'update-food-form') {
         $available = "No";
     }
  
-   
         // Prepare the SQL statement using placeholders
         $stmt = $conn->prepare("UPDATE tbl_menu 
         SET title = ?, 
@@ -90,7 +86,6 @@ if ($stmt === false) {
 die('Prepare failed: ' . htmlspecialchars($conn->error));
 }
 
- 
 $stmt->bind_param("sdssissi", $title, $price,$image_name, $description,  $category_id, $featured, $available,$id);
 
 // Execute the prepared statement
@@ -107,3 +102,5 @@ header("Location:" . SITEURL . 'admin/manage-menu.php');
 } else {
     header("Location:" . SITEURL . 'admin/manage-menu.php');
 }
+
+?>

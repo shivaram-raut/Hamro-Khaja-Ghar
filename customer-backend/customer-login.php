@@ -37,8 +37,6 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'customer-login-form') {
         $redirect_uri = $new_redirect_uri;
     }
 
-
-
     $sql = "SELECT * FROM tbl_customer WHERE email = '$email' ";
 
     $res = mysqli_query($conn, $sql);

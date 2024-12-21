@@ -1,7 +1,6 @@
 <?php
 include("../config/constants.php");
 
-
 if (isset($_SESSION['user-id'])) {
     session_unset();
     session_destroy();

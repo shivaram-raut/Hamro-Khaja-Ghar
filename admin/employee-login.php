@@ -37,8 +37,6 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'employee-login-form') {
         $redirect_uri = $new_redirect_uri;
     }
 
-
-
     $sql = "SELECT * FROM tbl_employee WHERE username = '$username' ";
 
     $res = mysqli_query($conn, $sql);
@@ -61,3 +59,4 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'employee-login-form') {
 } else {
     header("Location:" . SITEURL . "index.php");
 }
+?>

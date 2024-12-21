@@ -1,7 +1,6 @@
 <?php include("../partials/navigation-bar.php"); ?>
 <?php include("../partials/cart-popup.php"); ?>
 
-
 <section class="food-menu">
 
     <div class="container" style="width:95%;">
@@ -50,21 +49,18 @@
 
                     </ul>
                 </div>
-
             </div>
 
             <div class="menu-list">
+
                 <!-- search-food Section -->
-
-
                 <section class="search-menu">
                     <div class="container">
-                        <form action="search-food.php" id="search-food-form" method="POST">
+                        <form action="<?php echo SITEURL.'customer-backend/search-food.php'; ?>" id="search-food-form" method="POST">
                             <?php
                             if (isset($_SESSION['searched_food'])): ?>
 
                                 <input type="search" name="searched-food" id="searched-food" value="<?php echo $_SESSION['searched_food'] ?>" autocomplete="off" required>
-
 
                             <?php else: ?>
 
@@ -74,12 +70,9 @@
 
                             <input type="submit" name="search-submit" value="&#128269; Search">
                         </form>
-
                     </div>
-
                 </section>
                 <!-- search-food section ends here -->
-
 
                 <div class="menu-grid-container">
 
@@ -145,12 +138,10 @@
                                     </div>
                                 </div>
 
-
                     <?php
                             }
                         }
                     }
-
                     ?>
                 </div>
             </div>

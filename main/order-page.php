@@ -8,9 +8,7 @@
     <input type="hidden" name="order-status" id="order-status">
     <input type="hidden" name="order-date" id="order-date">
     <input type="hidden" name="mode" value="view-only">
-
 </form>
-
 
 <!-- delete-order-history form starts here -->
 <div class="overlay"></div>
@@ -29,7 +27,6 @@
     </form>
 </div>
 <!-- delete-order-history form stops here! -->
-
 
 <section class="main-content">
     <div class="container" style="width: 90%;">
@@ -65,7 +62,6 @@
                             $price = $rows['total_price'];
                             $status = $rows['order_status'];
                             $date = $rows['date'];
-
                 ?>
                             <tr>
                                 <td><?php echo $sn++; ?></td>
@@ -80,19 +76,15 @@
                                         <?php else: ?>
                                             <span style="color:deepskyblue"> <?php echo $status; ?></span>
                                         <?php endif; ?>
-
-
                                     </div>
                                 </td>
 
                                 <td style="text-align: left;">
                                     <div>
                                         <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;" data-user-id="<?php echo $user_id; ?>" data-order-id="<?php echo $order_id; ?>" data-delivery-adrs="<?php echo $delivery_adrs; ?>" data-order-status="<?php echo $status; ?>" data-order-date="<?php echo $date; ?>"> &#128065;View Details</span>
-
                                     </div>
                                 </td>
                             </tr>
-
                 <?php
                         }
                     }
@@ -130,23 +122,17 @@
                                         <?php else: ?>
                                             <span style="color:deepskyblue"> <?php echo $status; ?></span>
                                         <?php endif; ?>
-
-
                                     </div>
                                 </td>
-
-
 
                                 <td style="text-align: left;">
                                     <div>
                                         <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;margin-right: 10%;" data-user-id="<?php echo $user_id; ?>" data-order-id="<?php echo $order_id; ?>" data-delivery-adrs="<?php echo $delivery_adrs; ?>" data-order-status="<?php echo $status; ?>" data-order-date="<?php echo $date; ?>"> &#128065;View Details</span>
 
                                         <span class="delete-odr-btn" style=" color: red;cursor: pointer;" data-order-id="<?php echo $order_id; ?>"> &#128465;Delete</span>
-
                                     </div>
                                 </td>
                             </tr>
-
                 <?php
                         }
                     }

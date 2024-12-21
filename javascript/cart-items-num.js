@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const previousCartCount = localStorage.getItem('previousCartCount') || 0;
     document.getElementById('cart-items-count').textContent = previousCartCount;
 
-
     const xhr = new XMLHttpRequest();
     xhr.open('GET', '../customer-backend/cart-items-num.php', true);
     xhr.onload = function () {

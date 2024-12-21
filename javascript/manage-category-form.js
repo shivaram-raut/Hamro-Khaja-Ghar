@@ -12,11 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const delete_category_id = document.getElementById('delete-category-id');
     const delete_category_image = document.getElementById('delete-category-image');
 
-
-
-
-
-
     // Function to show the modal
     function showModal(formClass) {
         document.querySelector('.overlay').classList.add('show-overlay');

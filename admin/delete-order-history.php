@@ -18,7 +18,6 @@ if($_POST['form-id'] == 'delete-order-history'){
 }
 else{
     header("Location:".SITEURL."admin/dashboard.php");
-
 }
 
 ?>

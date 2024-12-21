@@ -55,14 +55,11 @@ include("../partials/admin-navigation-bar.php");
 </div>
 <!-- delete-employee form stops here! -->
 
-
 <!-- Main Content Section starts here -->
-
 <section class="main-content">
     <div class="container">
 
         <!--  notification-msg box-->
-
         <?php if (isset($_SESSION['notification_msg'])): ?>
             <div class="notification-msg">
                 <?php echo $_SESSION['notification_msg']; ?>

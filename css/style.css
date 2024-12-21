@@ -1,6 +1,4 @@
 /* This is the main css file. */
-
-
 * {
     margin: 0;
     padding: 0;
@@ -65,9 +63,6 @@ h2 {
 }
 
 
-
-
-
 /* CSS for navigation-bar section */
 
 #cart-items-count {
@@ -111,8 +106,6 @@ h2 {
 .menu ul li {
     padding: 10px 20px;
     display: inline;
-
-
 }
 
 .menu ul li a {
@@ -172,9 +165,7 @@ h2 {
     cursor: pointer;
 }
 
-
 /* CSS for login form */
-
 
 .btn-login {
     padding: 10px;
@@ -182,7 +173,6 @@ h2 {
     color: white;
     cursor: pointer;
     border: none;
-
 }
 
 .overlay {
@@ -194,7 +184,6 @@ h2 {
     opacity: 0;
     transition: 0.6s;
     z-index: -50;
-
 }
 
 .show-overlay {
@@ -205,7 +194,6 @@ h2 {
 .form-heading {
     font-size: 40px;
     margin-bottom: 15px;
-
 }
 
 
@@ -263,7 +251,6 @@ h2 {
 
 .form label {
     font-size: 18px;
-
 }
 
 .form button {
@@ -358,12 +345,10 @@ h2 {
     width: 50%;
     padding: 3%;
     box-shadow: 0 0 4px 3px #e6e6e6;
-
 }
 
 
 /* css for notification-msg box */
-
 .notification-msg {
     position: absolute;
     right: 5%;
@@ -383,7 +368,6 @@ h2 {
 
 .show-notification-msg {
     top: 12%;
-
 }
 
 .cross, .cross1 {
@@ -406,7 +390,6 @@ h2 {
     width: 20px;
     float: left;
     margin: 0;
-
 }
 
 .form .show-password {
@@ -424,7 +407,6 @@ h2 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
 }
 
 .search-food input[type="search"] {
@@ -466,13 +448,11 @@ h2 {
 
 }
 
-
 /*  CSS for categories */
 .categories {
     padding: 3% 0 7% 0;
     position: relative;
 }
-
 
 .cat-grid-container {
     display: grid;
@@ -505,19 +485,6 @@ h2 {
     text-align: center;
 
 }
-
-/* .view-all {
-    position: absolute;
-    right: 40px;
-    bottom: 10px;
-}
-
-.view-all:hover {
-    transform: scale(1.04, 1.04);
-    transition: transform 0.3s ease;
-    background-color: #B43F3F;
-
-} */
 
 
 /* CSS for food-menu  */
@@ -652,7 +619,6 @@ h2 {
     padding: 1%;
     margin: 1% auto;
     width: 100%;
-
 }
 
 .active-menu{
@@ -660,8 +626,6 @@ h2 {
     border-radius: 5px;
     color: crimson;
 }
-
- 
 
 /* CSS for cart-popup */
 
@@ -706,7 +670,6 @@ h2 {
 .items-list-table {
     min-height: 38vh;
     margin-top: 2%;
-
 }
 
 table tr th {
@@ -714,15 +677,11 @@ table tr th {
     text-align: left;
     color: white;
     background-color: #2F3645;
-
-
 }
 
 table tr td {
     padding: 4px;
     text-align: center;
-
-
 }
 
 .grand-total-row {
@@ -736,7 +695,6 @@ table input:focus {
     outline: none;
     border: 1px solid  #2F3645 ;
     border-radius: 2px;
-
 }
 
 
@@ -749,7 +707,6 @@ table input:focus {
     color: #008fb3;
     cursor: pointer;
     margin-left: 4%;
-
 }
 
 .add-background{
@@ -774,7 +731,6 @@ table input:focus {
     color: white;
 }
 
- 
 
 .food-item-box {
     background-color: transparent;
@@ -799,7 +755,6 @@ table input:focus {
     margin: auto;
     margin-left: 3%;
 }
-
 
 .food-item {
     font-size: 15px;
@@ -838,11 +793,9 @@ table input:focus {
     gap: 5px 5px;
 }
 
-
 .input-box{
     box-shadow: 0 0 2px 1px #e6e6e6;
     padding: 4%;
-
 }
 
 .basic-details input {
@@ -859,7 +812,6 @@ table input:focus {
 
 .basic-details label {
     font-size: 18px;
-
 }
 
 .basic-details textarea{
@@ -873,7 +825,6 @@ table input:focus {
     border-radius: 5px;
     outline: none;
     padding: 3%;
-
 }
 
 .basic-details .header,
@@ -883,7 +834,6 @@ table input:focus {
     margin-bottom: 1rem;
     font-size: 17px;
     text-align: center;
-
 }
 
 .order-details{
@@ -900,8 +850,6 @@ table input:focus {
     text-align: center;
     color: white;
     background-color: #434956;
-
-
 }
 
 .checkout-table tr td {
@@ -928,7 +876,6 @@ table input:focus {
     float:left;
     margin: 1% 6%;
     padding: 3%;
-
 }
 
 .payment-method input[type="radio"] {
@@ -937,8 +884,7 @@ table input:focus {
 
 .payment-method input[type="radio"]:checked + label {
     border: 2px solid #008fb3;
-    color: #008fb3;
-     
+    color: #008fb3; 
 }
 
 .label-khalti,
@@ -953,14 +899,12 @@ table input:focus {
     font-size: 17px;
     font-weight: bold;
     color: #008fb3;
-
 }
 
 .label-khalti:hover,
 .label-cod:hover{
     border: 1.5px solid #008fb3;
     box-shadow: none;
-
 }
 
 .confirm-button, .update-button{
@@ -990,8 +934,6 @@ table input:focus {
     text-align: center;
     color: white;
     background-color: #434956;
-
-
 }
 
 .order-table tr td {
@@ -1026,8 +968,6 @@ table input:focus {
     color: white;
 }
 
-
-
 /* CSS for footer */
 
 .footer {
@@ -1035,7 +975,6 @@ table input:focus {
     margin-top: 6%;
     padding-top: 5%;
     border: 1px solid #2F3645;
-
 }
 
 .footer-section {
@@ -1050,7 +989,6 @@ table input:focus {
 
 .company-desc {
     color: #EEEDEB;
-
 }
 
 .company-info {
@@ -1060,14 +998,12 @@ table input:focus {
 
 .company-info ul {
     list-style-type: none;
-
 }
 
 .company-info ul li {
     padding: 5px;
     display: block;
     font-size: 20px;
-
 }
 
 .company-info ul li a {
@@ -1077,23 +1013,19 @@ table input:focus {
 
 .company-info ul li a:hover{
     text-decoration: underline; 
-
 }
 
 .social-media ul {
     list-style-type: none;
-
 }
 
 .social-media ul li {
     display: inline;
-
 }
 
 .social-media ul li a {
     color: #EEEDEB;
     padding: 5px;
-
 }
 
 .footer-heading {
@@ -1101,7 +1033,6 @@ table input:focus {
     font-weight: bold;
     color: #EEEDEB;
     padding: 5% 0;
-
 }
 
 .icon-container {
@@ -1116,9 +1047,7 @@ table input:focus {
 
 .social-media-icon:hover {
     transform: scale(1.1, 1.1);
-
 }
-
 
 .copyright-msg {
     color: white;

@@ -48,10 +48,7 @@ include("../partials/admin-navigation-bar.php");
             <input type="submit" name="submit" value="Update Account" class="update-button" style="border:none">
 
             </form>
-
         </div>
-
-
     </div>
 </div>
 

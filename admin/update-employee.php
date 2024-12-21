@@ -22,7 +22,6 @@ function checkUsername($new_username, $existing_username, $conn)
     }
 }
 
-
 // setting the msg variables
 $success_msg = "Employee updated successfully!";
 $failure_msg = "Something went wrong";
@@ -37,16 +36,12 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'update-employee-form') {
     $existing_username = $_POST['existing-username'];
     $id = $_POST['id'];
 
-    
-
     if (!empty($_POST['password'])) {
         $password = $_POST['password'];
         $re_password = $_POST['re_password'];
 
         // check if username has been changed
         checkUsername($new_username, $existing_username, $conn);
-
-
 
         if ($password === $re_password) {
 
@@ -97,6 +92,4 @@ if (isset($_POST['submit']) && $_POST['form_id'] === 'update-employee-form') {
     header("Location:" . SITEURL . 'admin/manage-employees.php');
     exit;
 }
-
- 
 ?>

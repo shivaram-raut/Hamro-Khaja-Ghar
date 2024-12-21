@@ -14,7 +14,6 @@ if($_POST['form-id'] === 'remove-cart-item-form'){
     if($res == true){
         header("Location:".$redirect_uri);
         exit;
-
     }
     else{
         $_SESSION['notification-msg']="Something went wrong!";
@@ -22,12 +21,8 @@ if($_POST['form-id'] === 'remove-cart-item-form'){
         exit;
 
     }
-
 }
 else{
     header("Location:".SITEURL."index.php");
-
 }
-
-
 ?>

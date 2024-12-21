@@ -6,14 +6,11 @@ if (isset($_POST['submit']) && $_POST['form_id'] == 'delete-food-form') {
     $id = $_POST['id'];
     $image = $_POST['image'];
 
-
     // remove the image from the image/categories folder:
-
     $path = "../images/menu/" . $image;
     $remove = unlink($path);
 
     if ($remove == true) {
-
         // delte the category from the database:
         $sql = "DELETE FROM tbl_menu WHERE id = '$id' && image_name = '$image' ";
 
@@ -29,3 +26,4 @@ if (isset($_POST['submit']) && $_POST['form_id'] == 'delete-food-form') {
     $_SESSION['notification_msg'] = "Something went wrong!";
     header("Location:" . SITEURL . 'admin/manage-menu.php');
 }
+?>

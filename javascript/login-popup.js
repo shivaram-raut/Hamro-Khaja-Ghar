@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
      
     }
     
-    
     // close login-form
     function closeModal(formId){
         document.querySelector('.overlay').classList.remove('show-overlay');
