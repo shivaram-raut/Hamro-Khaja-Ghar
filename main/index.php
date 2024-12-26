@@ -1,6 +1,16 @@
  <?php include("../partials/navigation-bar.php"); ?>
  <?php include("../partials/cart-popup.php"); ?>
 
+
+ <?php
+    if (isset($_SESSION['transaction_msg'])) {
+        // Include SweetAlert2 script if not already included in your HTML <head>
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+        echo $_SESSION['transaction_msg'];
+        unset($_SESSION['transaction_msg']);
+    }
+    ?>
+
  <!-- search-food Section -->
  <section class="search-food">
      <div class="container">

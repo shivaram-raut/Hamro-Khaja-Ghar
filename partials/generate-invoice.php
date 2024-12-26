@@ -8,7 +8,10 @@ if ($_POST['form-id'] == "generate-invoice-form") {
     $mobile_number = $_POST['mobile-number'];
     $delivery_adrs = $_POST['delivery-adrs'];
     $order_id = $_POST['order-id'];
+    $payment_method = $_POST['payment-method'];
+    // $payment_method = "check";
     $date = $_POST['order-date'];
+
 }
 
 $pdf = new FPDF('P', 'mm', 'A4');
@@ -35,6 +38,8 @@ $pdf->Cell(50, 10, 'Delivery Address:', 0, 0);
 $pdf->MultiCell(100, 10, $delivery_adrs);
 $pdf->Cell(50, 10, 'Order ID:', 0, 0);
 $pdf->MultiCell(100, 10, $order_id);
+$pdf->Cell(50, 10, 'Payment Method:', 0, 0);
+$pdf->MultiCell(100, 10, $payment_method);
 $pdf->Cell(50, 10, 'Order Date:', 0, 0);
 $pdf->MultiCell(100, 10, date('Y-m-d h:i:s A', strtotime($date)));
 

@@ -6,6 +6,7 @@
     <input type="hidden" name="order-id" id="order-id">
     <input type="hidden" name="delivery-adrs" id="delivery-adrs">
     <input type="hidden" name="order-status" id="order-status">
+    <input type="hidden" name="payment-method" id="payment-method">
     <input type="hidden" name="order-date" id="order-date">
     <input type="hidden" name="mode" value="view-only">
 </form>
@@ -42,6 +43,7 @@
                     <th>Order-id</th>
                     <th>Total Price</th>
                     <th>Time </th>
+                    <th> Payment</th>
                     <th> Order Status </th>
                     <th>Actions</th>
                 </tr>
@@ -60,6 +62,7 @@
                             $order_id = $rows['order_id'];
                             $delivery_adrs = $rows['delivery_adrs'];
                             $price = $rows['total_price'];
+                            $payment_method =$rows['payment_method'];
                             $status = $rows['order_status'];
                             $date = $rows['date'];
                 ?>
@@ -69,6 +72,7 @@
                                 <td><?php echo "Rs. " . number_format($price, 2); ?></td>
                                 <td><?php echo date('Y-m-d h:i:s A', strtotime($date)); ?></td>
 
+                                <td><?php echo $payment_method; ?></td>
                                 <td>
                                     <div>
                                         <?php if ($status == "Ordered") : ?>
@@ -81,7 +85,7 @@
 
                                 <td style="text-align: left;">
                                     <div>
-                                        <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;" data-user-id="<?php echo $user_id; ?>" data-order-id="<?php echo $order_id; ?>" data-delivery-adrs="<?php echo $delivery_adrs; ?>" data-order-status="<?php echo $status; ?>" data-order-date="<?php echo $date; ?>"> &#128065;View Details</span>
+                                        <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;" data-user-id="<?php echo $user_id; ?>" data-order-id="<?php echo $order_id; ?>" data-delivery-adrs="<?php echo $delivery_adrs; ?>" data-order-status="<?php echo $status; ?>" data-payment-method="<?php echo $payment_method; ?>" data-order-date="<?php echo $date; ?>"> &#128065;View Details</span>
                                     </div>
                                 </td>
                             </tr>
@@ -114,6 +118,7 @@
                                 <td><?php echo $order_id; ?></td>
                                 <td><?php echo "Rs. " . number_format($price, 2); ?></td>
                                 <td><?php echo date('Y-m-d h:i:s A', strtotime($date)); ?></td>
+                                <td><?php echo $payment_method; ?></td>
 
                                 <td>
                                     <div>
@@ -127,7 +132,7 @@
 
                                 <td style="text-align: left;">
                                     <div>
-                                        <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;margin-right: 10%;" data-user-id="<?php echo $user_id; ?>" data-order-id="<?php echo $order_id; ?>" data-delivery-adrs="<?php echo $delivery_adrs; ?>" data-order-status="<?php echo $status; ?>" data-order-date="<?php echo $date; ?>"> &#128065;View Details</span>
+                                        <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;margin-right: 10%;" data-user-id="<?php echo $user_id; ?>" data-order-id="<?php echo $order_id; ?>" data-delivery-adrs="<?php echo $delivery_adrs; ?>" data-order-status="<?php echo $status; ?>" data-payment-method="<?php echo $payment_method; ?>" data-order-date="<?php echo $date; ?>"> &#128065;View Details</span>
 
                                         <span class="delete-odr-btn" style=" color: red;cursor: pointer;" data-order-id="<?php echo $order_id; ?>"> &#128465;Delete</span>
                                     </div>

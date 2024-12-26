@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const order_id = document.getElementById('order-id');
     const delivery_adrs = document.getElementById('delivery-adrs');
     const order_status = document.getElementById('order-status');
+    const payment_method = document.getElementById('payment-method');
     const order_date = document.getElementById("order-date");
 
     var buttons = document.querySelectorAll('.view-details-btn');
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 order_id.value = this.getAttribute('data-order-id');
                 delivery_adrs.value = this.getAttribute('data-delivery-adrs');
                 order_status.value = this.getAttribute('data-order-status');
+                payment_method.value = this.getAttribute('data-payment-method');
                 order_date.value = this.getAttribute('data-order-date');
 
                 form_id.submit();

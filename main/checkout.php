@@ -1,23 +1,32 @@
 <?php include("../partials/navigation-bar.php"); ?>
 
 <?php
-    $user_id = $_SESSION['user-id'];
-    $sql = "SELECT * FROM tbl_customer WHERE id = $user_id ";
+$user_id = $_SESSION['user-id'];
+$sql = "SELECT * FROM tbl_customer WHERE id = $user_id ";
 
-    $res = mysqli_query($conn, $sql);
+$res = mysqli_query($conn, $sql);
 
-    if($res == true){
+if ($res == true) {
 
-        $row = mysqli_fetch_assoc($res);
-        $full_name = $row['full_name'];
-        $_SESSION['full-name']= $full_name;
-        $adrs = $row['address'];
-        $mobile_number= $row['mobile_number'];
-        $email = $row['email'];
-    }
+    $row = mysqli_fetch_assoc($res);
+    $full_name = $row['full_name'];
+    $_SESSION['full-name'] = $full_name;
+    $adrs = $row['address'];
+    $mobile_number = $row['mobile_number'];
+    $email = $row['email'];
+}
 ?>
 
 <div class="container" style=" width: 90%; padding:5px 3%;">
+
+    <?php
+    if (isset($_SESSION['transaction_msg'])) {
+        // Include SweetAlert2 script if not already included in your HTML <head>
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+        echo $_SESSION['transaction_msg'];
+        unset($_SESSION['transaction_msg']);
+    }
+    ?>
 
     <div class="checkout-grid-container">
         <div class="basic-details">
@@ -70,7 +79,7 @@
                         while ($rows = mysqli_fetch_assoc($res)) {
                             $food_item_id = $rows['food_item_id'];
                             $quantity = $rows['quantity'];
-        
+
                             $inner_sql = "SELECT title, price FROM tbl_menu WHERE id = $food_item_id ";
                             $inner_res = mysqli_query($conn, $inner_sql);
 
@@ -113,11 +122,15 @@
 
                 <div class="payment-method-box">
                     <div style="text-align: center; font-size: 18px;"> Choose a payment method: </div>
-                    <form action="<?php echo SITEURL. "admin/process-order.php" ?>"  method="post">
+                    <form action="<?php echo SITEURL . "admin/process-order.php" ?>" method="post">
 
                         <input type="hidden" name="form-id" value="confirm-order-form">
                         <input type="hidden" name="order-id" id="order-id">
                         <input type="hidden" name="delivery-location" id="delivery-location">
+                        <input type="hidden" name="full-name" value="<?php echo $full_name; ?>">
+                        <input type="hidden" name="email" value="<?php echo $email; ?>">
+                        <input type="hidden" name="mobile-num" value="<?php echo $mobile_number; ?>">
+
                         <div class="payment-method">
                             <input type="radio" name="payment-method" id="khalti" value="khalti" required><label for="khalti" class="label-khalti"> <img src="../images/khalti-logo.svg" style="width:90%;"> </label>
                         </div>
@@ -138,4 +151,4 @@
 
 <?php include("../partials/footer.php"); ?>
 
-<script src ="../javascript/submit-order-form.js"></script>
+<script src="../javascript/submit-order-form.js"></script>

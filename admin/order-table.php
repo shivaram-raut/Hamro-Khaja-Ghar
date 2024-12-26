@@ -6,11 +6,12 @@
     <input type="hidden" name="order-id" id="order-id">
     <input type="hidden" name="delivery-adrs" id="delivery-adrs">
     <input type="hidden" name="order-status" id="order-status">
+    <input type="hidden" name="payment-method" id="payment-method">
     <input type="hidden" name = "order-date" id="order-date">
 </form>
 
 <section class="main-content">
-    <div class="container" style="width: 90%;">
+    <div class="container" style="width: 95%;">
 
         <div class="page-heading">
             <h2> Manage Orders</h2>
@@ -24,6 +25,7 @@
                     <th>Customer Name</th>
                     <th>Total Price</th>
                     <th>Time </th>
+                    <th> Payment</th>
                     <th> Order Status </th>
                     <th>Actions</th>
                 </tr>
@@ -43,6 +45,7 @@
                             $customer_name = $rows['customer_name'];
                             $delivery_adrs = $rows['delivery_adrs'];
                             $price = $rows['total_price'];
+                            $payment_method = $rows['payment_method'];
                             $status = $rows['order_status'];
                             $date = $rows['date'];
 
@@ -53,6 +56,7 @@
                                 <td><?php echo $customer_name; ?></td>
                                 <td><?php echo "Rs. " .number_format($price, 2); ?></td>
                                 <td><?php echo date('Y-m-d h:i:s A', strtotime($date)); ?></td>
+                                <td><?php echo $payment_method; ?></td>
 
                                 <td>
                                     <div>
@@ -68,7 +72,7 @@
 
                                 <td>
                                     <div>
-                                        <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;margin-right: 10%;" data-user-id="<?php echo $user_id; ?>" data-order-id = "<?php echo $order_id; ?>" data-delivery-adrs = "<?php echo $delivery_adrs; ?>" data-order-status = "<?php echo $status; ?>" data-order-date = "<?php echo $date; ?>" >  &#128065;View Details</span>
+                                        <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;margin-right: 10%;" data-user-id="<?php echo $user_id; ?>" data-order-id = "<?php echo $order_id; ?>" data-delivery-adrs = "<?php echo $delivery_adrs; ?>" data-order-status = "<?php echo $status; ?>" data-payment-method = "<?php echo $payment_method; ?>" data-order-date = "<?php echo $date; ?>" >  &#128065;View Details</span>
                                     </div>
                                 </td>
                             </tr>

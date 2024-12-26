@@ -1,5 +1,6 @@
 <?php
 include("../config/constants.php");
+include("insert-order-details.php");
 
 if (isset($_POST['submit']) && $_POST['form-id'] == "confirm-order-form") {
 
@@ -11,57 +12,48 @@ if (isset($_POST['submit']) && $_POST['form-id'] == "confirm-order-form") {
 
     $total_price = $_SESSION['total-price'];
 
-    $full_name = $_SESSION['full-name'];
+    $full_name = $_POST['full-name'];
+
+    $email = $_POST['email'];
+
+    $phone = $_POST['mobile-num'];
 
     $payment_method = $_POST['payment-method'];
 
     $order_status = "Ordered";
 
-    $sql = "INSERT INTO tbl_order (order_id, user_id,customer_name, total_price, delivery_adrs, payment_method, order_status)  VALUES ('$order_id', $user_id, '$full_name', $total_price, '$delivery_adrs', '$payment_method', '$order_status')";
-    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-    if ($res == true) {
+    // handling the khalti payment cases:
 
-        $item_id_list = [];
-        $quantity_list = [];
-        $unit_price_list = [];
-        $sql_get_items = "SELECT * FROM tbl_cart WHERE user_id = $user_id ";
+    if ($payment_method === 'khalti') {
+        $_SESSION['order-id'] = $order_id;
 
-        $res_get_items = mysqli_query($conn, $sql_get_items);
+        $_SESSION['customer-name'] = $full_name;
 
-        if ($res_get_items == true) {
-
-            while ($rows = mysqli_fetch_assoc($res_get_items)) {
-
-                $item_id_list[] = $rows['food_item_id'];
-                $quantity_list[] = $rows['quantity'];
-                $unit_price_list[] = $rows['unit_price'];
-            }
-
-            $item_id_list_json = json_encode($item_id_list);
-            $quantity_list_json = json_encode($quantity_list);
-            $unit_price_list_json = json_encode($unit_price_list);
-
-            $sql_insert_order = "INSERT INTO tbl_order_details (order_id, item_id_list, quantity_list, unit_price_list) 
-        VALUES ('$order_id', '$item_id_list_json', '$quantity_list_json', '$unit_price_list_json' )";
+        $_SESSION['delivery-adrs'] = $delivery_adrs;
 
 
-            $res_insert_order = mysqli_query($conn, $sql_insert_order);
 
-            if ($res_insert_order == true) {
+        include("../khalti-payment-gateway/payment-request.php");
+    } else {
+        // Process for other payment methods
+        $sql = "INSERT INTO tbl_order (order_id, user_id, customer_name, total_price, delivery_adrs, payment_method, order_status)  VALUES ('$order_id', $user_id, '$full_name', $total_price, '$delivery_adrs', '$payment_method', '$order_status')";
 
-                // delete the items from the tbl_cart
+        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-                $sql_delete = "DELETE FROM tbl_cart WHERE user_id = $user_id ";
+        if ($res == true) {
+            // Insert order details into order table:
+            insertOrderDetails($order_id, $user_id);
 
-                $res_delete = mysqli_query($conn, $sql_delete);
+            // clear cart:
+            $sql_delete = "DELETE FROM tbl_cart WHERE user_id = $user_id ";
 
-                if ($res_delete == true) {
-                    $_SESSION['notification_msg'] = "Your order has been successfullly placed.";
-                    header("Location:" . SITEURL . "main/index.php");
-                }
+            $res_delete = mysqli_query($conn, $sql_delete);
+
+            if ($res_delete == true) {
+                $_SESSION['notification_msg'] = "Your order has been successfullly placed.";
+                header("Location:" . SITEURL . "main/index.php");
             }
         }
     }
 }
-?>

@@ -4,6 +4,7 @@ if ($_POST['form-id'] == "order-details-form") {
     $order_id = $_POST['order-id'];
     $delivery_adrs = $_POST['delivery-adrs'];
     $order_status = $_POST['order-status'];
+    $payment_method = $_POST['payment-method'];
     $date = $_POST['order-date'];
 
     $sql = "SELECT * FROM tbl_customer WHERE id = $user_id ";
@@ -25,6 +26,7 @@ if ($_POST['form-id'] == "order-details-form") {
         <input type="hidden" name="mobile-number" value="<?php echo $mobile_number; ?>">
         <input type="hidden" name="delivery-adrs" value="<?php echo $delivery_adrs; ?>">
         <input type="hidden" name="order-id" value="<?php echo $order_id; ?>">
+        <input type="hidden" name="payment-method" value="<?php echo $payment_method; ?>">
         <input type="hidden" name="order-date" value="<?php echo $date; ?>">
     </form>
 

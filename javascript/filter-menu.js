@@ -50,12 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
         searched_food_input.value = url_searched_food;
 
         var search_present = true;
-
-        // if (form_submit_count == 0) {
-        //     localStorage.setItem('form-submit-count', 1);
-        //     search_food_form.submit();
-        //     return;
-        // }
         
     }
 
@@ -86,10 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 filterItems(selectedCategory); // Filter items in-place
                 history.pushState(null, '', `${window.location.pathname}?category=${selectedCategory}`);
                 updateRedirectUri();
-
-
             }
-
         });
     });
 
@@ -97,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function () {
         updateRedirectUri();
     });
-    // localStorage.setItem('form-submit-count', 0);
 
 });
 

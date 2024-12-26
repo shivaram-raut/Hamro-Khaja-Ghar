@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const generate_invoice_form_id = document.getElementById("generate-invoice-form");
     const update_status_btn = document.getElementById("update-status-btn");
     const order_status_input = document.getElementById("order-status");
-    const print_invoice_btn = document.getElementById("print-invoice-btn"); // will work on this later
+    const print_invoice_btn = document.getElementById("print-invoice-btn");
     const go_back_btn = document.getElementById("go-back-btn");
 
 
