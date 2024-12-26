@@ -110,6 +110,7 @@
                             $delivery_adrs = $rows['delivery_adrs'];
                             $price = $rows['total_price'];
                             $status = $rows['order_status'];
+                            $payment_method = $rows['payment_method'];
                             $date = $rows['date'];
 
                 ?>
