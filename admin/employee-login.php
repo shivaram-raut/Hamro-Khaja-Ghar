@@ -46,10 +46,20 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'employee-login-form') {
         $hashed_password = $row['password'];
         $user_id = $row['id'];
 
+
         if (password_verify($password, $hashed_password)) {
-            $_SESSION['user-employee'] = $user_id;
-            header("Location:" . SITEURL . "admin/dashboard.php");
-            exit;
+
+            $account_status = $row['account_status'];
+
+            if ($account_status === "activated") {
+                $_SESSION['user-employee'] = $user_id;
+                header("Location:" . SITEURL . "admin/dashboard.php");
+                exit;
+            } else {
+                $_SESSION['notification_msg'] = "Your account has been deactivated.";
+                header("Location:" . SITEURL . "index.php");
+                exit;
+            }
         } else {
             invalidCreds($redirect_uri);
         }
@@ -59,4 +69,3 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'employee-login-form') {
 } else {
     header("Location:" . SITEURL . "index.php");
 }
-?>
