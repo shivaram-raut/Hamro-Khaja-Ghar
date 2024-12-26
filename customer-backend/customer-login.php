@@ -54,6 +54,9 @@ if (isset($_POST['submit']) && $_POST['form-id'] == 'customer-login-form') {
                 header("Location:" . SITEURL . "main/index.php");
                 exit;
             } else {
+                session_unset(); //unsetting the session variables if there are any with already loggedin account.
+                session_destroy();
+                
                 $_SESSION['user-id'] = $user_id;
                 //storing the user-id in the local storage
                 echo "<script> 

@@ -13,6 +13,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] == "customer-details") {
     <input type="hidden" name="order-id" id="order-id">
     <input type="hidden" name="delivery-adrs" id="delivery-adrs">
     <input type="hidden" name="order-status" id="order-status">
+    <input type="hidden" name="payment-method" id="payment-method">
     <input type="hidden" name="order-date" id="order-date">
     <input type="hidden" name="mode" value="view-only">
 </form>
@@ -47,6 +48,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] == "customer-details") {
                         $delivery_adrs = $rows['delivery_adrs'];
                         $price = $rows['total_price'];
                         $status = $rows['order_status'];
+                        $payment_method = $rows['payment_method'];
                         $date = $rows['date'];
 
             ?>
@@ -70,7 +72,7 @@ if (isset($_POST['submit']) && $_POST['form-id'] == "customer-details") {
 
                             <td style="text-align: left;">
                                 <div>
-                                    <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;" data-user-id="<?php echo $user_id; ?>" data-order-id="<?php echo $order_id; ?>" data-delivery-adrs="<?php echo $delivery_adrs; ?>" data-order-status="<?php echo $status; ?>" data-order-date="<?php echo $date; ?>"> &#128065;View Details</span>
+                                    <span class="view-details-btn" style=" color: #008fb3;cursor: pointer;" data-user-id="<?php echo $user_id; ?>" data-order-id="<?php echo $order_id; ?>" data-delivery-adrs="<?php echo $delivery_adrs; ?>" data-order-status="<?php echo $status; ?>"  data-payment-method="<?php echo $payment_method; ?>" data-order-date="<?php echo $date; ?>"> &#128065;View Details</span>
 
                                 </div>
                             </td>
