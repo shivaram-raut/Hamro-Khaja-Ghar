@@ -79,7 +79,7 @@ if ($response) {
     $_SESSION['transaction_msg'] = '<script>
                 Swal.fire({
                     icon: "error",
-                    title: "Failed to initiate Khalti payment. Please try again.",
+                    title: "Failed to initiate Khalti payment!. Please try again.",
                     showConfirmButton: false,
                     timer: 3500
                 });

@@ -65,7 +65,7 @@ if ($pidx && $order_id) {
                        $_SESSION['transaction_msg'] = '<script>
                     Swal.fire({
                         icon: "success",
-                        title: "Transaction successful. Order placed.",
+                        title: "Transaction successful! Your order has been placed.",
                         showConfirmButton: false,
                         timer: 3500
                     });

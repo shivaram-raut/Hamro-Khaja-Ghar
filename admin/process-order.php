@@ -12,17 +12,31 @@ if (isset($_POST['submit']) && $_POST['form-id'] == "confirm-order-form") {
 
     $total_price = $_SESSION['total-price'];
 
-    $full_name = $_POST['full-name'];
-
-    $email = $_POST['email'];
-
-    $phone = $_POST['mobile-num'];
-
     $payment_method = $_POST['payment-method'];
 
     $order_status = "Ordered";
 
+    // check account status before processing the order.
 
+    $sql = "SELECT * FROM tbl_customer WHERE id=$user_id";
+
+    $res = mysqli_query($conn, $sql);
+
+    if($res == true){
+        if(mysqli_num_rows($res) == 1){
+            $row= mysqli_fetch_assoc($res);
+            $full_name = $row['full_name'] ;
+            $email = $row['email'];
+            $phone = $row['mobile_number'];
+            $account_status = $row['account_status'];
+        }
+
+        if($account_status == 'deactivated'){
+            $_SESSION['notification_msg']="Dear Customer, your account has been deactivated. You can't make any orders.";
+            header("Location:". SITEURL."main/index.php");
+            exit();
+        }
+    }
     // handling the khalti payment cases:
 
     if ($payment_method === 'khalti') {
@@ -31,7 +45,6 @@ if (isset($_POST['submit']) && $_POST['form-id'] == "confirm-order-form") {
         $_SESSION['customer-name'] = $full_name;
 
         $_SESSION['delivery-adrs'] = $delivery_adrs;
-
 
 
         include("../khalti-payment-gateway/payment-request.php");

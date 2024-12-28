@@ -1,6 +1,7 @@
 <?php include("../partials/navigation-bar.php"); ?>
 
-<?php if (isset($_SESSION['user-id'])): ?>
+<?php if (isset($_SESSION['user-id'])) : ?>
+    
 <div >
 
     <!-- remove cart-items -->
@@ -116,3 +117,4 @@
 <script src="../javascript/update-cart-quantity.js"></script>
 
 <?php endif; ?>
+

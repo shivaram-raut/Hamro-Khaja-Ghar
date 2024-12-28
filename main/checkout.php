@@ -127,9 +127,6 @@ if ($res == true) {
                         <input type="hidden" name="form-id" value="confirm-order-form">
                         <input type="hidden" name="order-id" id="order-id">
                         <input type="hidden" name="delivery-location" id="delivery-location">
-                        <input type="hidden" name="full-name" value="<?php echo $full_name; ?>">
-                        <input type="hidden" name="email" value="<?php echo $email; ?>">
-                        <input type="hidden" name="mobile-num" value="<?php echo $mobile_number; ?>">
 
                         <div class="payment-method">
                             <input type="radio" name="payment-method" id="khalti" value="khalti" required><label for="khalti" class="label-khalti"> <img src="../images/khalti-logo.svg" style="width:90%;"> </label>
