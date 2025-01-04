@@ -48,11 +48,11 @@
             </div>
             <div>
                 <label for="password2">Update Password</label>
-                <input type="password" id="password2" class="password" name="password" placeholder="Password">
+                <input type="password" id="password2" class="password" name="password" placeholder="Password" required>
             </div>
             <div>
                 <label for="re-password2">Retype Password</label>
-                <input type="password" id="re-password2" class="re_password" name="re-password" placeholder="Retype Password">
+                <input type="password" id="re-password2" class="re_password" name="re-password" placeholder="Retype Password" required>
             </div>
             <div>
                 <input type="checkbox" id="check-box" class="check-box">

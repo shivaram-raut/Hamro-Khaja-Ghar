@@ -40,6 +40,7 @@
                 <label id="show-password" class="show-password">Show Password</label>
             </div>
             <div class="clear-fix"></div>
+            <div id="error-msg3" class="error-msg"></div>
             <div id="error-msg2" class="error-msg"></div>
             <button type="submit" name="submit">Sign Up</button>
 
@@ -50,5 +51,7 @@
 <!-- customer sign-up  form stops here -->
 
 <?php include("../partials/footer.php"); ?>
+
+<script src="../javascript/validate-full-name.js"></script>
 
 <script src="../javascript/re_password-check.js"> </script>
